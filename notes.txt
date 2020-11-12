@@ -15,6 +15,7 @@ Features:
   * List of exhibitors
   * Bios of presenters?
   * Music conference - list of performing groups?
+  * Search function for presenters & exhibitors, attendees (maybe this only for organizers? Why?)
 
 Attendee:
   * Full CRUD access to own information
@@ -35,6 +36,7 @@ Presenter:
 
 Organizer:
   * Attendee access PLUS:
+  * Sets in person/virtual
   * Sets location, dates, times
   * Sets which features they want access to
   * Can restrict number of attendees
@@ -45,4 +47,4 @@ Organizer:
   * Ability to GET and DELETE attendee information for any attendee
   * Ability to GET and DELETE/Set Not Attending exhibitor information for any exhibitor
   * Ability to GET and DELETE/Set Not Attending presenter information for any presenter
-  * Alerts for when presenters and exhibitors delete themselves
+  * Alerts for when presenters and exhibitors delete themselves/set as Not Attending
