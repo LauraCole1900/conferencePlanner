@@ -1,30 +1,25 @@
 Features:
   * Encrypted signup
   * Credit card information links to appropriate processing service, does NOT enter database
-  * PayPal?
+  * PayPal option?
   * Ability to edit people's information as permissions allow
-  * Ability to upload (or retrieve?) maps
-  * If presenter deletes their info, their session is deleted automatically and an alert sent to organizer--also to attendees if during conference (need to compare date information!)
+  * Ability to upload (or retrieve?) convention center/exhibit hall maps
+  * If presenter deletes their info, their session is deleted automatically and an alert is sent to organizer--also to attendees if during conference (need to compare date information!)
   * If exhibitor deletes their info, their exhibit is deleted and exhibit-hall map automatically updates
+  * Maybe indicator that presenter or exhibitor can no longer attend, instead of deleting themselves? Available to organizer, presenter, and exhibitor - with a confirm "Are you sure?"
+  * Ability to set a new presenter before deleting a session?
+  * Session location highlights on map for presenters?
+  * Session location highlights on map for attendees?
   * 4 permission levels: organizer, presenter, exhibitor, and attendee
+    * Is exhibitor permission really different from presenter permission?
+  * List of exhibitors
+  * Bios of presenters?
+  * Music conference - list of performing groups?
 
-Organizer:
-  * Attendee access PLUS: 
-  * Sets location, dates, times
-  * Full CRUD access to schedule
-  * Can restrict number of attendees
-  * Ability to GET and DELETE attendee information for any attendee
-  * Ability to GET and DELETE exhibitor information for any exhibitor
-  * Ability to GET and DELETE presenter information for any presenter
-  * Full CRUD access to exhibit hall map
-  * Full CRUD access to sessions map
-  * Alerts for when presenters and exhibitors rescind their information
-
-Presenter:
-  * Attendee access PLUS:
-  * Full CRUD access to own information, including sessions
-  * Ability to POST and UPDATE supplemental materials for own presentation
-  * Ability to GET schedule
+Attendee:
+  * Full CRUD access to own information
+  * GET access to conference session and exhibit hall maps
+  * GET access to session schedules, including who is presenting
 
 Exhibitor:
   * Attendee access PLUS:
@@ -32,7 +27,22 @@ Exhibitor:
   * Ability to POST and UPDATE exhibit information
   * Ability to GET schedule
 
-Attendee:
-  * Full CRUD access to own information
-  * GET access to conference session and exhibit hall maps
-  * GET access to session schedules, including who is presenting
+Presenter:
+  * Attendee access PLUS:
+  * Full CRUD access to own information, including sessions
+  * Ability to POST and UPDATE supplemental materials for own presentation
+  * Ability to GET schedule
+
+Organizer:
+  * Attendee access PLUS:
+  * Sets location, dates, times
+  * Sets which features they want access to
+  * Can restrict number of attendees
+  * Sets Exhibitor and Presenter permissions
+  * Full CRUD access to schedule
+  * Full CRUD access to exhibit hall map
+  * Full CRUD access to sessions map
+  * Ability to GET and DELETE attendee information for any attendee
+  * Ability to GET and DELETE/Set Not Attending exhibitor information for any exhibitor
+  * Ability to GET and DELETE/Set Not Attending presenter information for any presenter
+  * Alerts for when presenters and exhibitors delete themselves
