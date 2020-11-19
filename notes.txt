@@ -1,10 +1,10 @@
 Features:
-  * Encrypted signup
+  * Encrypted registration
   * Credit card information links to appropriate processing service, does NOT enter database
   * PayPal option?
-  * Ability to edit people's information as permissions allow
+  * Ability to edit participants' information as permissions allow
   * Ability to upload (or retrieve?) convention center/exhibit hall maps
-  * If presenter deletes their info, their session is deleted automatically and an alert is sent to organizer--also to attendees if during conference (need to compare date information!)
+  * If presenter deletes their info, their session is deleted automatically and an alert is sent to organizer--also to attendees if during conference (will need to compare date information!)
   * If exhibitor deletes their info, their exhibit is deleted and exhibit-hall map automatically updates
   * Maybe indicator that presenter or exhibitor can no longer attend, instead of deleting themselves? Available to organizer, presenter, and exhibitor - with a confirm "Are you sure?"
   * Ability to set a new presenter before deleting a session?
@@ -16,6 +16,13 @@ Features:
   * Bios of presenters?
   * Music conference - list of performing groups?
   * Search function for presenters & exhibitors, attendees (maybe this only for organizers? Why?)
+  * Exhibitors given the option to transact business through the app or link to their website
+  * Presenters given the option to link to their website
+  * Translated?
+  * Breakout sessions vs. tracks
+  * Preferred method of communication: email vs text, enter info as is required by that
+  * Capability to send mass texts/emails
+  * List of local restaurants?
 
 Attendee:
   * Full CRUD access to own information
@@ -25,19 +32,26 @@ Attendee:
 Exhibitor:
   * Attendee access PLUS:
   * Full CRUD access to own information, including exhibit(s)
-  * Ability to POST and UPDATE exhibit information
+  * Ability to POST, UPDATE, and DELETE exhibit information
+  * Ability to sell merch through app?
   * Ability to GET schedule
+  * Ability to link to website
+  * Set up as a store?
 
 Presenter:
   * Attendee access PLUS:
   * Full CRUD access to own information, including sessions
   * Ability to POST and UPDATE supplemental materials for own presentation
   * Ability to GET schedule
+  * Ability to link to website
 
 Organizer:
   * Attendee access PLUS:
   * Sets in person/virtual
   * Sets location, dates, times
+  * Sets whether the conference uses breakout sessions, tracks
+  * Do breakout sessions need to be signed up for in advance?
+  * Sets how many breakout sessions/tracks
   * Sets which features they want access to
   * Can restrict number of attendees
   * Sets Exhibitor and Presenter permissions
