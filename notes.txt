@@ -23,6 +23,9 @@ Features:
   * Preferred method of communication: email vs text, enter info as is required by that
   * Capability to send mass texts/emails
   * List of local restaurants?
+  * Organizer inputs list of presenters/exhibitors; presenters/exhibitors receive link to register that already has their permissions set?
+  * QR code to scan at check-in?
+  * Link to venue website
 
 Attendee:
   * Full CRUD access to own information
@@ -62,3 +65,15 @@ Organizer:
   * Ability to GET and DELETE/Set Not Attending exhibitor information for any exhibitor
   * Ability to GET and DELETE/Set Not Attending presenter information for any presenter
   * Alerts for when presenters and exhibitors delete themselves/set as Not Attending
+
+
+MVP
+* At least two permission levels, organizer and attendee
+* Permissions set as outlined above
+* Registration page
+* Link to venue website where available
+* Digital registration packet
+  * digital ticket/wristband
+  * uploaded maps (not interactive)
+  * session & presenter details
+  * exhibit list
