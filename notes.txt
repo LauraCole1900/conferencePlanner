@@ -77,3 +77,5 @@ MVP
   * uploaded maps (not interactive)
   * session & presenter details
   * exhibit list
+* Organizer can access list of attendees
+* If sessions require pre-registration, presenters can access session roster
