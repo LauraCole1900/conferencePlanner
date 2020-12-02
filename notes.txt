@@ -57,7 +57,7 @@ Organizer:
   * Sets how many breakout sessions/tracks
   * Sets which features they want access to
   * Can restrict number of attendees
-  * Sets Exhibitor and Presenter permissions
+  * Sets Co-Organizer, Exhibitor and Presenter permissions (Not MVP)
   * Full CRUD access to schedule
   * Full CRUD access to exhibit hall map
   * Full CRUD access to sessions map
@@ -68,14 +68,97 @@ Organizer:
 
 
 MVP
-* At least two permission levels, organizer and attendee
+* At least two permission levels, organizer and attendee (managed through the database)
 * Permissions set as outlined above
-* Registration page
+* Registration page (Signup/login)
 * Link to venue website where available
-* Digital registration packet
+* Digital registration packet (not MVP)
   * digital ticket/wristband
   * uploaded maps (not interactive)
   * session & presenter details
   * exhibit list
 * Organizer can access list of attendees
-* If sessions require pre-registration, presenters can access session roster
+* If sessions require pre-registration, presenters can access session roster (not MVP)
+* Generate a link or search string for attendees to register
+
+* Signup/login from
+* Profile page
+  * Conferences you've created
+  * Conferences you've joined
+  * Share which conferences you're attending (Not MVP)
+  * Interests?
+* Conference IDs - Mongo-generated
+  * Conference collection
+    * Name
+    * Description
+    * Conference owner/organizer
+      * Contact info
+    * Umbrella organization
+    * Date/times
+    * Location (Live vs virtual)
+    * Registration count
+    * Invite link
+    * Conference ID
+    * Sessions
+      * Title
+      * Description
+      * Presenter(s)
+      * Session ID
+  * User collection
+    * User's name (real name)
+    * Username for login
+    * Password (hashed, salted, peppered, etc)
+    * email
+    * Address?
+* Conference page
+  * Description of conference
+  * If joined
+    * List of presenters
+    * List of exhibitors
+    * List of sessions
+    * Conference center maps where available?
+    * Schedule
+* Homepage
+  * Public conferences
+  * Search conferences?
+
+auth0.com
+
+Components
+* Navbar
+  * Home
+  * Profile
+  * My Conferences
+* Conference card
+  * Conf name
+  * Your role (organizer/admin/attendee)
+  * Co-admins for organizers & admins
+  * Conf dates
+  * Conf location
+  * Details button
+  * Add admins button (where applicable)
+  * Join button (where applicable)
+  * Edit button (where applicable)
+  * Delete button
+* Profile page
+  * Profile card
+    * Your name
+    * Your job title
+    * Edit my information
+  * Conference cards
+    * Conferences I've created
+    * Conferences I've attended
+* Create conference
+  * Name of conference
+  * Date(s) of conference
+  * Radio buttons for live or virtual
+    * if virtual, link
+    * if live
+      * location
+* Create session
+  * tracks or breakouts?
+    * How many?
+    * If unison, choose tracks and input 1
+* Create schedule
+  * Times
+  * Sessions
