@@ -16,7 +16,7 @@ function App() {
       <header>
         {/* <Navbar /> */}
       </header>
-      <body>
+      <main>
         <Router>
           <Container fluid className="mycontainer">
             {/* <Route exact path={["/", "/login"]} component={Login} />
@@ -27,7 +27,7 @@ function App() {
             <Route path="/" component={Login} /> */}
           </Container>
         </Router>
-      </body>
+      </main>
     </div>
   );
 }
