@@ -30,10 +30,10 @@ function Conference(props) {
                 <p className="cardBody">This would be a description of the conference.  It might include the subject, speakers, who its for etc.</p>
               </Row>
               <Row>
-                <h3 className="cardBody">Location:</h3>
+                <h3 className="cardBody">Location:added by user</h3>
               </Row>
               <Row>
-                <h3 className="cardBody">Date:</h3>
+                <h3 className="cardBody">Date: added by user</h3>
               </Row>
             </Card.Text>
             <div className="btndiv">
