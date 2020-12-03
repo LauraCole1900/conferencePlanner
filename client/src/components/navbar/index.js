@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import UserContext from "../../utils/userContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import "./style.css";
 
 const Navigation = () => {
   const location = useLocation();
+  const { name } = useContext(UserContext);
 
   return (
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand>
-        <Link to="/conference" className={location.pathname === "/conference" ? "mylogo active" : "mylogo"}>
-          BaCoMaMeMiRe
+        <Link to="/profile" className={location.pathname === "/profile" ? "mylogo active" : "mylogo"}>
+          Hello, {name}!
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
