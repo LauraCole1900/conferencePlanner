@@ -1,15 +1,32 @@
 .row {
   height: 150px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .column {
   height: 100%;
   margin-top: -5px;
-  outline: solid 2px gray;
+}
+
+.job {
+  margin-top: -10px;
 }
 
 .info {
   text-align: center;
+}
+
+#textbox {
+  padding-top: 15px;
+}
+
+#pleft {
+  float: left;
+}
+
+#pright {
+  float: right;
 }
 
 .stats {
