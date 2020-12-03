@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Container from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Login from "./components/login";
 import Signup from "./components/signup";
 import Navbar from "./components/navbar";
@@ -16,18 +16,18 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <body>
+      <main>
         <Router>
           <Container fluid className="mycontainer">
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/profile/" component={Profile} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/conference" component={Conference} />
             <Route exact path="/session" component={Session} />
             <Route path="/" component={Login} />
           </Container>
         </Router>
-      </body>
+      </main>
     </div>
   );
 }
