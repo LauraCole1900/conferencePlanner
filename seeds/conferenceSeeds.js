@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const db = require("../models/");
+const db = require("../models");
 
 // This file empties the Confrence  collection and inserts the books below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/confrence"
+  "mongodb://localhost/conference"
 );
 
 const CollectionSeed = [
@@ -28,9 +28,9 @@ const CollectionSeed = [
     
 ];
 
-db.ConfrenceInfo
+db.Conference
   .remove({})
-  .then(() => db.ConfrenceInfo.collection.insertMany(CollectionSeed))
+  .then(() => db.Conference.collection.insertMany(CollectionSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

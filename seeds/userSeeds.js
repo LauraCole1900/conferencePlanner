@@ -5,7 +5,7 @@ const db = require("../models/");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/confrence"
+  "mongodb://localhost/conefrence"
 );
 
 const userSeed = [
@@ -24,9 +24,9 @@ const userSeed = [
     
 ];
 
-db.UserInfo
+db.User
   .remove({})
-  .then(() => db.UserInfo.collection.insertMany(userSeed))
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

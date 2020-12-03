@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const routes = require("./routes")
+const routes = require("./api_routes")
 const app = express();
 
 // Middleware
@@ -25,7 +25,7 @@ app.get("*", (req, res) => {
 });
 
 //Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/confrences");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/conference");
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}`);

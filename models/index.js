@@ -1,4 +1,6 @@
+
+
 module.exports = {
-    ConfrenceInfo: require("./Confrence"),
-    UserInfo: require("./User")
+    Conference: require("./Conference"),
+    User: require("./User")
 }

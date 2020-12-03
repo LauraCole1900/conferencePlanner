@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const confrenceInfoSchema = new Schema({
+const conferenceSchema = new Schema({
     title: { type: String, required: true },
     discription: {type: String, required: true},
     organization: {type: String, required: true},
@@ -10,6 +10,6 @@ const confrenceInfoSchema = new Schema({
     attendingCount: {type: Number},
 })
 
-const ConfrenceInfo = mongoose.model("Confrence", confrenceInfoSchema)
+const Conference = mongoose.model("Conference", conferenceSchema)
 
-module.exports = ConfrenceInfo;
+module.exports = Conference;
