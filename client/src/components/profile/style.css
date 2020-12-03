@@ -1,0 +1,18 @@
+.row {
+  height: 150px;
+}
+
+.column {
+  height: 100%;
+  margin-top: -5px;
+  outline: solid 2px gray;
+}
+
+.info {
+  text-align: center;
+}
+
+.stats {
+  font-size: large;
+  padding: 42px 5px;
+}
