@@ -9,7 +9,7 @@ const { ConfrenceInfo } = require("../../models");
 
 
 router.get("/", (req, res) => {
-    ConfrenceInfo.find().then(confrence => {
+    ConfrenceInfo.find({}).then(confrence => {
         res.json(confrence);
     }).catch(err => {
         res.json(err)
