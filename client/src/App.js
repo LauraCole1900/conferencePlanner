@@ -19,12 +19,13 @@ function App() {
       <main>
         <Router>
           <Container fluid className="mycontainer">
-            {/* <Route exact path={["/", "/login"]} component={Login} />
-            <Route exact path="/signup" component={Signup} /> */}
+            {/* <Route exact path={["/", "/login"]} component={Login} /> */}
+            {/* <Route exact path="/signup" component={Signup} /> */}
             <Route exact path="/profile/" component={Profile} />
             <Route exact path="/conference" component={Conference} />
             <Route exact path="/session" component={Session} />
             {/* <Route path="/" component={Login} /> */}
+
           </Container>
         </Router>
       </main>

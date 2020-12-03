@@ -41,28 +41,6 @@ function Conference(props) {
             </div>
           </Card.Body>
         </Card>
-        <Card col-8 className="conferenceCard">
-          <Card.Header className="card-title"><h2>Conference Name</h2></Card.Header>
-          <Card.Body>
-            <Card.Text>
-              <Row className="cardBody">
-                <h3 className="cardBody">Description</h3>
-              </Row>
-              <Row>
-                <p className="cardBody">This would be a description of the conference.  It might include the subject, speakers, who its for etc.</p>
-              </Row>
-              <Row>
-                <h3 className="cardBody">Location:</h3>
-              </Row>
-              <Row>
-                <h3 className="cardBody">Date:</h3>
-              </Row>
-            </Card.Text>
-            <div className="btndiv">
-              <Button className="btn" href={props.register} rel="noreferrer noopener" target="_blank">Register</Button>
-            </div>
-          </Card.Body>
-        </Card>
       </Row>  
     </Container>
   );
