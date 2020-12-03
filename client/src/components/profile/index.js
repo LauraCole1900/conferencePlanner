@@ -18,8 +18,8 @@ function Profile() {
         </Col>
         <Col lg={9} className="column stats">
           <Container fluid className="mycontainer">
-            <Row className="row">
-              <Col  lg={3} className="d-lg-block d-md-none"></Col>
+            <Row>
+              <Col lg={3} className="d-lg-block d-md-none"></Col>
               <Col lg={2} className="column">
                 <p id="pcreate">Created: X</p>
               </Col>
@@ -30,6 +30,31 @@ function Profile() {
               <Col lg={3} className="column"></Col>
             </Row>
           </Container>
+        </Col>
+      </Row>
+      <Row id="confRow">
+        <h1>My Conferences</h1>
+      </Row>
+      {/* These will be dynamically generated */}
+      <Row className="conference">
+        <Col lg={4} className="conferenceCol">
+          <h3>Conference Name</h3>
+          <h4>Role: Yourrole</h4>
+          <h4>Organizer: Whoever</h4>
+          <h4 id="admins">Admins: Names of every admin</h4>
+        </Col>
+        <Col lg={4} className="conferenceCol dates">
+          <h4>Dates: Dates</h4>
+          <h4>Location: Where</h4>
+          <h4 >Attendees: #ofAttendees</h4>
+        </Col>
+        <Col lg={4} className="conferenceCol buttons">
+          <button className="detailsBtn">Details</button>
+          {/* If admin/organizer  */}
+          <div id="buttonBox">
+            <button className="adminBtn">Add Admin</button>
+            <button className="editBtn">Edit</button>
+          </div>
         </Col>
       </Row>
     </Container>
