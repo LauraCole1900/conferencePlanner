@@ -58,11 +58,11 @@ Base code and front-end functionality developed and provided by Trinity Educatio
 
 ## Contributing
 
-N/A
+This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
 
 ## Questions
 
-If you have further questions, you can reach me at lauracole1900@comcast.net. For more of my work, see [my GitHub](https://github.com/LauraCole1900).
+If you have further questions, you can find us on Github: [Anna Battista](https://github.com/abattista24), [Laura Cole](https://github.com/LauraCole1900), [Beni Mahat](https://github.com/benimahat1291), [Travis Messall](https://github.com/tmessall), [Brenda Miller](https://github.com/millerbee), and [Alec Rewinkel](https://github.com/arewinkl).
 
 ## License
 
