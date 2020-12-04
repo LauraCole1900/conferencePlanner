@@ -26,7 +26,7 @@ function App() {
           <Container fluid className="mycontainer">
             <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path={["/", "/logout"]} component={Logout} />
-            <Route exact path="/profile/" component={Profile} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session" component={Session} />
             <Route exact path="/create_conference" component={CreateConference} />
