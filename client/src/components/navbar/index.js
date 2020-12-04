@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <Navbar expand="sm" className="navbar">
-      <Navbar.Brand>
+      <Navbar.Brand className="mylogo">
         Hello, <Link to="/profile" className={location.pathname === "/profile" ? "mylogo active" : "mylogo"}>
           {name}!
         </Link>
