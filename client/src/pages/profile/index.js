@@ -3,13 +3,19 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
 import "./style.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
-function Profile() {
+const Profile = () => {
+  const { user, isAuthenticated } = useAuth0();
+
   return (
+    isAuthenticated && (
+      <div>
     <Container fluid className="mycontainer">
       <Row className="rowMain">
         <Col lg={3} className="column info">
-          <h1>Name Goes Here</h1>
+          {/* <img src={user.picture} alt ={user.name} /> */}
+          <h1>{user.name}</h1>  
           <h3 className="job">Job Title goes Here</h3>
           <div id="textbox">
             <p id="pleft">Edit your information</p>
@@ -58,7 +64,9 @@ function Profile() {
         </Col>
       </Row>
     </Container>
-  );
-}
+    </div>
+  )
+  )  
+};
 
-export default Profile;
+export default Profile

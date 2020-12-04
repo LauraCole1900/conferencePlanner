@@ -8,7 +8,6 @@ import "./style.css";
 const Navigation = () => {
   const { name } = useContext(UserContext);
   const location = useLocation();
-
   return (
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand className="mylogo">
@@ -26,7 +25,7 @@ const Navigation = () => {
           <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
             My Profile
           </Link>
-          <Link to="/conference" className={location.pathname === "/conference" ? "navlink active" : "navlink"}>
+          <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
             Conferences
           </Link>
         </Nav>
