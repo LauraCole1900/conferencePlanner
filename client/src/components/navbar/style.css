@@ -7,7 +7,7 @@
 .navlink {
   padding: 1em;
   color: #d5d5d5;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navlink:visited {
@@ -17,7 +17,7 @@
 .mylogo { 
   color: #d5d5d5;
   font-size: 24px;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Playfair Display', serif;
 }
 
 .mylogo:visited {
