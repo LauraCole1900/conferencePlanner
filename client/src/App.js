@@ -12,12 +12,12 @@ import "./App.css";
 
 function App() {
   return (
-    <div> 
-      <header>
-        {/* <Navbar /> */}
-      </header>
-      <main>
-        <Router>
+    <div>
+      <Router>
+        <header>
+          <Navbar />
+        </header>
+        <main>
           <Container fluid className="mycontainer">
             <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path="/profile/" component={Profile} />
@@ -25,8 +25,8 @@ function App() {
             <Route exact path="/session" component={Session} />
             <Route exact path="/create_conference" component={CreateConference} />
           </Container>
-        </Router>
-      </main>
+        </main>
+      </Router>
     </div>
   );
 }
