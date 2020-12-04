@@ -8,8 +8,8 @@ import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./pages/session";
 import CreateConference from "./components/forms/createConference";
+import CreateSession from "./components/forms/createSession";
 import { useAuth0}  from "@auth0/auth0-react";
- 
 import "./App.css";
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session" component={Session} />
             <Route exact path="/create_conference" component={CreateConference} />
+            <Route exact path="/add_session" component={CreateSession} />
           </Container>
         </main>
       </Router>
