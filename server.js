@@ -13,15 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/conferences',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
+
 
 // Define API routes here
 app.use(routes);
@@ -34,8 +26,17 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/conferences',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
 //Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/conference");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/conference");
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}`);

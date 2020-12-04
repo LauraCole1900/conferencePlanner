@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Login from "./components/login";
-import Navbar from "./components/navbar";
+// import Navbar from "./components/navbar";
 import Profile from "./components/profile";
 import Conference from "./components/conference";
 import Session from "./components/session";
@@ -14,7 +14,7 @@ function App() {
   return (
     <div> 
       <header>
-        <Navbar />
+        {/* <Navbar /> */}
       </header>
       <main>
         <Router>
