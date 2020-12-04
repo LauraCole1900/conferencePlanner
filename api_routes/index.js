@@ -1,9 +1,11 @@
 const path = require("path");
 const router = require("express").Router();
 const apiConference = require("./conference");
+const apiUser = require("./user");
 
 // API Routess
 router.use("/api", apiConference);
+router.use("/api", apiUser);
 
 
 // If no API routes are hit, send the React app
