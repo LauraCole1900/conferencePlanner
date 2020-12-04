@@ -8,16 +8,16 @@ import "./style.css";
 function Session(props) {
   return (
     <Card className="session-card">
-      <Card.Header className="card-title"><h2>Session</h2></Card.Header>
+      <Card.Header className="card-title"><h2>{props.name}</h2></Card.Header>
       <Card.Img src={props.image} alt="{props.name}" />
       <Card.Body>
         <Card.Text>
           <Row>
-            <h3 className="float-left">Jack Harkness</h3>
+            <h3 className="float-left">{props.presenter}</h3>
             <Image src={props.image} alt="{props.presenter}" thumbnail className="float-right" />
           </Row>
           <Row>
-            <p>Description McDescriptionFace{props.description}</p>
+            <p>{props.description}</p>
           </Row>
         </Card.Text>
         <div className="btndiv">
