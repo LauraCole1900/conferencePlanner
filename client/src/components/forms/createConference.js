@@ -14,7 +14,7 @@ const CreateConference = () => {
         e.preventDefault();
         console.log(formObject);
     }
-
+    
     return (
         <Form>
 
