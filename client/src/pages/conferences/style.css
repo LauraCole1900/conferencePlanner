@@ -1,0 +1,14 @@
+.conferenceCard {
+    border: 2px solid;
+    background: #e8f3ff;
+    margin-bottom: 50px;
+}
+
+.searchArea {
+    text-align: right;
+}
+
+.cardBody{
+    text-align: center;
+}
+

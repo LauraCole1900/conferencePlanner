@@ -9,9 +9,9 @@ const Title= () => {
   return (
     <Jumbotron fluid className="jumbotron">
   <Container>
-    <h1 className="top">My Conference Planner</h1>
+    <h1 className="top">COOL CATS</h1>
     <h2 className="subtitle">
-     Plan   -   Share   -   Attend
+     Conference Planner
     </h2>
   </Container>
 </Jumbotron>
