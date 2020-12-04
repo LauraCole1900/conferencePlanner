@@ -7,6 +7,7 @@ import Profile from "./components/profile";
 import Conference from "./components/conference";
 import Session from "./components/session";
 import CreateConference from "./components/forms/createConference";
+import CreateSession from "./components/forms/createSession";
 
 import "./App.css";
 
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/conference" component={Conference} />
             <Route exact path="/session" component={Session} />
             <Route exact path="/create_conference" component={CreateConference} />
+            <Route exact path="/add_session" component={CreateSession} />
           </Container>
         </main>
       </Router>
