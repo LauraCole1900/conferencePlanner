@@ -1,4 +1,4 @@
-# Conference Planner
+# My Conference Planner
 
 ## Table of Contents
 
@@ -16,11 +16,11 @@
 
 ## Description
 
-Application description and instructions here
+Welcome to My Conference Planner.  This application is desgined to be a hub for creating, managing and finding conferences.  Once a user signs up for My Conference Planer they will be able to create a conference, search and join excisting conferences and see all the conferences they have created or are attending.  My confernce Planner allows a user to easily keep track of all the details related to their conference and get their conference in front of possible attendees.  Simply go to the home page to get started.      
 
 ## Links
 
-[Deployed application on Heroku](https://#/)
+[Deployed application on Heroku](https://conference-planner.herokuapp.com/)
 
 ## Screenshots
 
@@ -38,15 +38,22 @@ Notes page with new note, showing "Save" icon in upper-right corner:
 
 ## Installation Instructions
 
-npm i
+npm i 
 
 ## Usage
 
-Application intended usage here
+Application is intended to be used by anyone interested in creating or attending a conference.  To get started follow the heroku link and sign up or add your login information.  You will then be taken to the profile page where you can see your conferences and conferences you are attending. Clicking the create button will allow you to make a new conference.  The conference page will show you conferences that have been created by any user.  Utilizing the search function will allow you to search the excisting conferences for ones you are interested in.  You can also register for a conference on this page.  
+
+### Usage Photos
+Login 
+Profile
+Add Conference
+Conferences 
+Register
 
 ## Technologies Used
 
-Node.js, Mongo, Mongoose
+Node.js, Mongo, Mongoose, auth0
 
 ## Tests
 
@@ -55,10 +62,12 @@ npm run test
 ## Credits
 
 Base code and front-end functionality developed and provided by Trinity Education Services
+This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
 
 ## Contributing
 
-This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
+Please contribute to enhance the functionality of this code with additionl features.  Please adhere to the Code of Conduct for the Contributer Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+
 
 ## Questions
 

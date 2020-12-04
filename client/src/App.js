@@ -5,9 +5,9 @@ import Container from "react-bootstrap/Container";
 // import Signup from "./components/signup";
 // import Navbar from "./components/navbar";
 import Profile from "./components/profile";
-// import Conference from "./components/conference";
-// import Session from "./components/session";
-import CreateConference from "./components/forms/createConference";
+import Conference from "./components/conference";
+import Session from "./components/session";
+// import CreateConference from "./components/forms/createConference";
 
 import "./App.css";
 
