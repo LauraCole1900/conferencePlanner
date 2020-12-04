@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -8,8 +8,13 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Conference from "../../components/conference"
 import "./style.css";
+import UserContext from "../../utils/userContext";
 
 function Conferences() {
+
+  const userCtx = useContext(UserContext)
+  console.log(userCtx)
+  
   return (
     <Container fluid className="mycontainer">
       <Row>
