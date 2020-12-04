@@ -12,8 +12,9 @@ const Navigation = () => {
   return (
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand className="mylogo">
-        Hello, <Link to="/profile" className={location.pathname === "/profile" ? "mylogo active" : "mylogo"}>
-          {name}!
+      <div><img src="images/ccLogo.png" weign="60" height="60"/>Hello!</div>
+      <Link to="/profile" className={location.pathname === "/profile" ? "mylogo active" : "mylogo"}>
+          {name}
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
