@@ -8,7 +8,6 @@ import "./style.css";
 const Navigation = () => {
   const { name } = useContext(UserContext);
   const location = useLocation();
-
   return (
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand className="mylogo">
