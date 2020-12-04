@@ -12,7 +12,7 @@ const CreateConference = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("click");
+    console.log(formObject);
    }
 
   return (
@@ -33,10 +33,10 @@ const CreateConference = () => {
       </Form.Group>
       <Form.Group controlId="radioButtons">
         <Form.Label>Live or virtual?</Form.Label>
-        <Form.Check type="radio" id="confTypeLive" name="confType" label="Live" />
-        <Form.Check type="radio" id="confTypeVirtual" name="confType" label="Virtual" />
+        <Form.Check type="radio" id="confTypeLive" name="confType" label="Live" value="live" onChange={handleInputChange} />
+        <Form.Check type="radio" id="confTypeVirtual" name="confType" label="Virtual" value="virtual" onChange={handleInputChange} />
       </Form.Group>
-      <Button onClick={() => handleFormSubmit()} type="submit">Submit form</Button>
+      <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
     </Form>
   )
 }
