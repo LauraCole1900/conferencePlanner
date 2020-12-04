@@ -9,22 +9,21 @@ import Conference from "./pages/conferences";
 import Session from "./pages/session";
 import CreateConference from "./components/forms/createConference";
 import CreateSession from "./components/forms/createSession";
-import { useAuth0}  from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
 function App() {
   const { isLoading } = useAuth0();
   if (isLoading) return <div>Loading...</div>
   return (
-    <div> 
+    <div>
       <Profile />
-        <Router>
-      <header>
-        <Navbar />
-      </header>
-      <main>
+      <Router>
+        <header>
+          <Navbar />
+        </header>
+        <main>
           <Container fluid className="mycontainer">
-
             <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path={["/", "/logout"]} component={Logout} />
             <Route exact path="/profile/" component={Profile} />
