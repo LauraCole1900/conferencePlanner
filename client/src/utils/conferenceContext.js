@@ -2,7 +2,8 @@ import { createContext } from "react";
 
 const ConferenceContext = createContext({
   confName: "",
-  confId: "",
+  confDates: "",
+  confType: "",
 })
 
 export default ConferenceContext;
