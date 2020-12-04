@@ -24,7 +24,7 @@ const Navigation = () => {
           <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
             My Profile
           </Link>
-          <Link to="/conference" className={location.pathname === "/conference" ? "navlink active" : "navlink"}>
+          <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
             Conferences
           </Link>
           <p>Logout</p>

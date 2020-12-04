@@ -4,11 +4,11 @@ import Button from "react-bootstrap/Button";
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateConference = () => {
-    let [formObject, setFormObject] = useState({})
+  let [formObject, setFormObject] = useState({})
 
-    const handleInputChange = (e) => {
-        setFormObject({ ...formObject, [e.target.name]: e.target.value });
-    };
+  const handleInputChange = (e) => {
+    setFormObject({ ...formObject, [e.target.name]: e.target.value });
+  };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +46,7 @@ const CreateConference = () => {
                 <Form.Control required type="date" name="EndDate" placeholder="Enter conference dates" value={formObject.date} className="confendDates" onChange={handleInputChange} />
                 <Form.Control.Feedback type="invalid">
                 </Form.Control.Feedback>
-            </Form.Group>
+      </Form.Group>
 
             <Form.Group controlId="radioButtons">
                 <Form.Label>Live or virtual?</Form.Label>
@@ -63,9 +63,9 @@ const CreateConference = () => {
 
 
 
-            <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
-        </Form>
-    )
+      <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
+    </Form>
+  )
 }
 
 export default CreateConference;

@@ -20,21 +20,28 @@ Application description and instructions here
 
 ## Links
 
-[Deployed application on Heroku](https://#/)
+[Deployed application on Heroku](https://conference-planner.herokuapp.com/)
 
 ## Screenshots
 
 Landing page:
 ![Landing page:](public/assets/#)
 
-Notes page with previously-entered notes on the left:
-![Notes page, showing previous notes on the left](public/assets/#)
+Profile page:
+![Profile page](public/assets/#)
 
-Notes page with previously-entered note selected:
-![Notes page with a previously-entered note selected](public/assets/#)
+Main conferences page:
+![Main conferences page](public/assets/#)
 
-Notes page with new note, showing "Save" icon in upper-right corner:
-![Notes page with a new note, showing "Save" icon](public/assets/#)
+"Create conference" page:
+!["Create conference" page](public/assets/#)
+
+"Create session" page:
+!["Create session" page](public/assets/#)
+
+Page for a specific conference:
+![Page for a specific conference](public/assets/#)
+
 
 ## Installation Instructions
 
@@ -42,11 +49,11 @@ npm i
 
 ## Usage
 
-Application intended usage here
+This application is intended to be used to facilitate the creation and management of conventions, conferences and seminars.
 
 ## Technologies Used
 
-Node.js, Mongo, Mongoose
+MongoDB, Express.js, React, Node.js
 
 ## Tests
 
@@ -54,7 +61,7 @@ npm run test
 
 ## Credits
 
-Base code and front-end functionality developed and provided by Trinity Education Services
+N/A
 
 ## Contributing
 

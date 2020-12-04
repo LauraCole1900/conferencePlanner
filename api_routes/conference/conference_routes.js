@@ -3,7 +3,7 @@ const conferenceController = require("../../controllers/conferenceController.js"
 const { Conference } = require("../../models");
 
 
-// matches with "/api/confrence"
+// matches with "/api/conference"
 router.route("/")
     .get(conferenceController.findAll)
 
