@@ -1,0 +1,25 @@
+.navbar {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  width: 100%;
+  font-size: 16px;
+}
+
+.navlink {
+  padding: 1em;
+  color: #d5d5d5;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.navlink:visited {
+  color: #c5c5c5;
+}
+
+.mylogo { 
+  color: #d5d5d5;
+  font-size: 24px;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.mylogo:visited {
+  color: #c5c5c5;
+}
