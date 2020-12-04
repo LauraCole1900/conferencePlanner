@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Login from "./pages/login";
 import Logout from "./components/logout";
-import Navbar from "./components/navbar";
+import Navbar from "./pages/navbar";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./pages/session";
