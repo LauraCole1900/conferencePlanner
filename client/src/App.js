@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 // import Signup from "./components/signup";
 // import Navbar from "./components/navbar";
 import Profile from "./components/profile";
-// import Conference from "./components/conference";
+import Conference from "./components/conference";
 // import Session from "./components/session";
 
 import "./App.css";
@@ -21,7 +21,10 @@ function App() {
           <Container fluid className="mycontainer">
             {/* <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path="/signup" component={Signup} /> */}
+
             <Route exact path="/profile/" component={Profile} />
+            <Route exact path="/conference" component={Conference} />
+
             {/* <Route exact path="/conference" component={Conference} />
             <Route exact path="/session" component={Session} />
             <Route path="/" component={Login} /> */}
