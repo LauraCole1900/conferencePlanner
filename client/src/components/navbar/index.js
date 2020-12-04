@@ -6,9 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import "./style.css";
 
 const Navigation = () => {
-  const location = useLocation();
   const { name } = useContext(UserContext);
-
+  const location = useLocation();
   return (
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand>
