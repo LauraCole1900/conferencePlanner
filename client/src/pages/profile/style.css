@@ -38,6 +38,7 @@
 
 .conference {
   outline: solid 1px gray;
+  background-color: #D0DCE0
 }
 
 .conferenceCol {
@@ -74,4 +75,8 @@
   height: 50px;
   width: 100px;
   background-color: lightcoral;
+}
+
+.rowMain {
+  background-color:#86949A ;
 }
