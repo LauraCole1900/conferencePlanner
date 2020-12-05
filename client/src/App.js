@@ -16,34 +16,30 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
 function App() {
-    const { isLoading } = useAuth0();
-    if (isLoading) return <div>Loading...</div>
-    return (
-        <div>
-           
-            <Router>
-                <header>
-                    <Navbar />
-                    <Title />
-                </header>
-                <main>
-                    <Container fluid className="mycontainer">
-                        
-                    
-                        <Route exact path={["/", "/login"]} component={Login} />
-                        <Route exact path={["/", "/logout"]} component={Logout} />
-                        <Route exact path="/profile" component={Profile} />
-                        <Route exact path="/conferences" component={Conference} />
-                        <Route exact path="/session" component={Session} />
-                        <Route exact path="/create_conference" component={CreateConference} />
-                        <Route exact path="/add_session" component={CreateSession} />
-                        <Route exact path="/conference_added" component={ConfSuccess} />
-                        <Route exact path="/session_added" component={SessionSuccess} />
-                    </Container>
-                </main>
-            </Router>
-        </div>
-    );
-}
+  
+  const { isLoading } = useAuth0();
+  if (isLoading) return <div>Loading...</div>
+  return (
+    <div>
+      <Router>
+        <header>
+          <Title/>
+          <Navbar />
+        </header>
+        <main>
+          <Container fluid className="mycontainer">
+            <Profile />
+            <Route exact path={["/", "/login"]} component={Login} />
+            <Route exact path={["/", "/logout"]} component={Logout} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/conferences" component={Conference} />
+            <Route exact path="/session" component={Session} />
+            <Route exact path="/create_conference" component={CreateConference} />
+            <Route exact path="/add_session" component={CreateSession} />
+          </Container>
+        </main>
+      </Router>
+    </div>
+  );
 
 export default App;
