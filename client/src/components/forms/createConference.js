@@ -42,6 +42,11 @@ const CreateConference = () => {
         <Form.Check type="radio" id="confTypeVirtual" name="confType" label="Virtual" value="virtual" onChange={handleInputChange} />
       </Form.Group>
 
+      <Form.Group controlId="formLocation">
+        <Form.Label>Location or link</Form.Label>
+        <Form.Control as="textarea" rows={5} name="confPlace" placeholder="Enter location or link" value={formObject.place} className="confPlace" onChange={handleInputChange} />
+      </Form.Group>
+
       <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
     </Form>
   )
