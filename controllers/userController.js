@@ -11,12 +11,6 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    create: function (req, res) {
-        db.User
-            .create(req.body)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    },
     findById: function (req, res) {
         db.User
             .findById(req.params.id)
@@ -24,10 +18,28 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
+        console.log("from Controller")
+        console.log(req)
         db.User
-            .create(req.body)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+            .findOne({ email: req.body.email }, function (err, user) {
+                if (err) {
+                    //handle error here
+                }
+
+                //if a user was found, that means the user's email matches the entered email
+                if (user) {
+                    var err = new Error('A user with that email has already registered. Please use a different email..')
+                    err.status = 400;
+                    return err;
+                } else {
+                    db.User
+                    .create(req.body)
+                    .then(dbModel => res.json(dbModel))
+                    .catch(err => res.status(422).json(err));
+                    
+                }
+            })
+
     },
     update: function (req, res) {
         db.User
@@ -43,4 +55,4 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     }
 };
-    
+

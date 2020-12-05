@@ -10,10 +10,13 @@ import Conference from "./pages/conferences";
 import Session from "./pages/session";
 import CreateConference from "./components/forms/createConference";
 import CreateSession from "./components/forms/createSession";
+import ConfSuccess from "./pages/success/confSuccess";
+import SessionSuccess from "./pages/success/sessionSuccess";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
 function App() {
+  
   const { isLoading } = useAuth0();
   if (isLoading) return <div>Loading...</div>
   return (
@@ -38,6 +41,5 @@ function App() {
       </Router>
     </div>
   );
-}
 
 export default App;
