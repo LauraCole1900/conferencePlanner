@@ -4,6 +4,7 @@ import Conference from "../../components/conference"
 import API from "../../utils/API"
 import { Link } from "react-router-dom"
 import "./style.css";
+import UserContext from "../../utils/userContext";
 
 
 function Conferences() {

@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Login from "./pages/login";
 import Logout from "./components/logout";
-import Navbar from "./components/navbar/index";
+import Navbar from "./pages/navbar";
+import Title from "./pages/title";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./pages/session";
 import CreateConference from "./components/forms/createConference";
 import CreateSession from "./components/forms/createSession";
+import ConfSuccess from "./pages/success/confSuccess";
+import SessionSuccess from "./pages/success/sessionSuccess";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
@@ -20,6 +23,7 @@ function App() {
       <Profile />
       <Router>
         <header>
+          <Title/>
           <Navbar />
         </header>
         <main>
@@ -31,6 +35,8 @@ function App() {
             <Route exact path="/session" component={Session} />
             <Route exact path="/create_conference" component={CreateConference} />
             <Route exact path="/add_session" component={CreateSession} />
+            <Route exact path="/conference_added" component={ConfSuccess} />
+            <Route exact path="/session_added" component={SessionSuccess} />
           </Container>
         </main>
       </Router>

@@ -76,7 +76,7 @@ This application is intended to be used to facilitate the creation and managemen
 
 ## Technologies Used
 
-MongoDB, Express.js, React, Node.js
+MongoDB, Express.js, React, Node.js, auth0.com
 
 ## Tests
 
