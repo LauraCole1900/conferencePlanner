@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
-import Conference from "../../components/conference"
-import API from "../../utils/API"
-import { Link } from "react-router-dom"
-import "./style.css";
+import Session from "../../components/session";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
 import UserContext from "../../utils/userContext";
+import "./style.css";
 
 
-function Conferences() {
+function ConfDetails() {
 
-	const [conferenceArray, setConferenceArray] = useState([])
+	const [sessionArray, setSessionArray] = useState([])
 	const [search, setSearch] = useState("")
 
 
 	useEffect(() => {
-		API.getConference().then(resp => {
-			const conferenceArr = resp.data
-			return setConferenceArray(conferenceArr)
+		API.getSession().then(resp => {
+			const sessionArr = resp.data
+			return setSessionArray(sessionArr)
 		})
 	}, [])
 
 	function searchFilter(data) {
-		return data.filter((conference) => conference.title.toLowerCase().indexOf(search) !== -1)
+		return data.filter((session) => session.title.toLowerCase().indexOf(search) !== -1)
 	}
 
-	console.log("conference array")
-	console.log(conferenceArray)
+	console.log("session array")
+	console.log(sessionArray)
 
 
 	return (
@@ -46,17 +46,17 @@ function Conferences() {
 				<Col lg={6}>
 					<Card col-4>
 						<Card.Body>
-							<Form inline className="newConference">
-								<Link exact to="/create_conference"><Button variant="outline-success">Create a Conference</Button></Link>
+							<Form inline className="newSession">
+								<Link exact to="/add_session"><Button variant="outline-success">Add a Session</Button></Link>
 							</Form>
 						</Card.Body>
 					</Card>
 				</Col>
 				<Col lg={10}>
-					{/* Heres where the conferences are generated, make new rows and then in each row make a conference, give it props */}
+					{/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
 					<Container fluid className="mycontainer">
 						<Row>
-							<Conference conference={searchFilter(conferenceArray)} />
+							<Session session={searchFilter(sessionArray)} />
 						</Row>
 					</Container>
 				</Col>
@@ -75,4 +75,4 @@ function Conferences() {
 	);
 }
 
-export default Conferences;
+export default ConfDetails;
