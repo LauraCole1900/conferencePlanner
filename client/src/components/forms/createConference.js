@@ -30,11 +30,7 @@ const CreateConference = () => {
     return (
         isAuthenticated && (
         <Form>
-            {/* <Form.Group controlId="formConferenceName">
-                <Form.Control required type="hidden" name="userEmail" placeholder="Enter name of conference" value={formObject.name} className="confemail" onChange={handleInputChange}/>
-                <Form.Control.Feedback type="invalid">
-                </Form.Control.Feedback>
-            </Form.Group> */}
+y
 
             <Form.Group controlId="formConferenceName">
                 <Form.Label>Name of conference</Form.Label>
