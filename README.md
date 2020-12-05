@@ -4,20 +4,19 @@
 
 
 BACK END
-- Querry Confrences associacted with Users from DB
+- Query Conferences associated with Users from DB
 - Edit Conference
 - Delete Conference
-- Add Admin???
 - Everything With Sessions
 
 FRONT END 
 
 Add session button
-Edit confrence button
+Edit conference button
 Edit Session button
-Details Component ( bootstrap model?)
+Details Component (bootstrap modal?)
 
-imporove flow (suggestions)
+improve flow (suggestions)
         >Move Nav > top
         >Move logOut button > nav bar
 

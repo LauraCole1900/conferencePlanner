@@ -12,7 +12,10 @@ const CreateSession = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formObject);
+    // API.saveSession(formObject)
+    // .then if successful, send to /session_added page
+    // if fail, send to error page
+    // .catch(err => console.log(err));
   }
 
   return (
@@ -23,7 +26,7 @@ const CreateSession = () => {
         <Form.Control required type="input" name="sessName" placeholder="Enter name of session" value={formObject.name} className="sessName" onChange={handleInputChange} />
         <Form.Control.Feedback type="invalid">
           Please name your session.
-                </Form.Control.Feedback>
+        </Form.Control.Feedback>
       </Form.Group>
 
       <Form.Group controlId="formSessionPresenter">
@@ -36,7 +39,7 @@ const CreateSession = () => {
         <Form.Control required as="textarea" rows={15} name="sessionDesc" placeholder="Enter session description" value={formObject.date} className="sessDesc" onChange={handleInputChange} />
         <Form.Control.Feedback type="invalid">
           Please provide a description of your session.
-                </Form.Control.Feedback>
+        </Form.Control.Feedback>
       </Form.Group>
 
       <Button onClick={handleFormSubmit} type="submit">Submit form</Button>

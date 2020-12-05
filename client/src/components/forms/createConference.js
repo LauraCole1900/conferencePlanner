@@ -23,7 +23,9 @@ const CreateConference = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         API.saveConference(formObject)
-        //   .then(res => loadConferences())
+        // .then
+        // if successful, send to /conference_created page
+        // if fail, send to error page
           .catch(err => console.log(err));
     }
 
