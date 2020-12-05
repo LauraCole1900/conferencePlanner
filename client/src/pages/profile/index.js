@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
 import API from "../../utils/API"
 import { useAuth0 } from "@auth0/auth0-react";
-import UserContext from "../../utils/userContext";
 import "./style.css";
 
 
@@ -20,7 +19,6 @@ const Profile = () => {
            
   }
 
-
   function UserConferences() {
     API.getConferencebyUser(user).then(resp => {
         // const userConferenceArr = resp.data
@@ -31,7 +29,7 @@ const Profile = () => {
   useEffect(() => {
       saveUserToDb();
       UserConferences();
-}, [])
+})
 
 
  
