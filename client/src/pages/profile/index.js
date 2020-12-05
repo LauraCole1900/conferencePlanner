@@ -1,24 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
 import API from "../../utils/API"
 import { useAuth0 } from "@auth0/auth0-react";
-import UserContext from "../../utils/userContext";
 import "./style.css";
 
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  const {userConferenceArr, setuserConferenceArr} = useState([])
+
 
   function saveUserToDb() {
-
         API.saveUser(user)
         //   .then(res => loadConferences())
           .catch(err => console.log(err));
-
+           
   }
-  saveUserToDb()
+
+  function UserConferences() {
+    API.getConferencebyUser(user).then(resp => {
+        // const userConferenceArr = resp.data
+        // return setuserConferenceArr(userConferenceArr)
+    })
+  }
+
+  useEffect(() => {
+      saveUserToDb();
+      UserConferences();
+})
+
+
+ 
+
+
+
 
   return (
     isAuthenticated && (

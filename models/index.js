@@ -2,5 +2,6 @@
 
 module.exports = {
     Conference: require("./Conference"),
-    User: require("./User")
+    User: require("./User"),
+    Session: require("./Session")
 }

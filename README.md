@@ -14,7 +14,7 @@ FRONT END
 Add session button
 Edit conference button
 Edit Session button
-Details Component (bootstrap modal?)
+Details Component
 
 improve flow (suggestions)
   * Move Nav > top

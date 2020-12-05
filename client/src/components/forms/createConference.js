@@ -7,36 +7,30 @@ import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateConference = () => {
-  const { user, isAuthenticated } = useAuth0();
-  console.log("from Create conference")
+    const { user, isAuthenticated } = useAuth0();
+    console.log("from Create conference")
 
-  let [formObject, setFormObject] = useState({})
-  // setFormObject({...formObject, "email": user.email})
-  useEffect(() => {
-    setFormObject({ ...formObject, "email": user.email })
-  }, [])
+    let [formObject, setFormObject] = useState({})
+    // setFormObject({...formObject, "email": user.email})
+    useEffect(() => {
+        setFormObject({...formObject, "email": user.email})
+    },[])
 
-  const handleInputChange = (e) => {
-    setFormObject({ ...formObject, [e.target.name]: e.target.value });
-  };
+    const handleInputChange = (e) => {
+        setFormObject({ ...formObject, [e.target.name]: e.target.value });
+    };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    API.saveConference(formObject)
-      // .then
-      // if successful, send to /conference_created page
-      // if fail, send to error page
-      .catch(err => console.log(err));
-  }
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        API.saveConference(formObject)
+        //   .then(res => loadConferences())
+          .catch(err => console.log(err));
+    }
 
-  return (
-    isAuthenticated && (
-      <Form>
-        {/* <Form.Group controlId="formConferenceName">
-                <Form.Control required type="hidden" name="userEmail" placeholder="Enter name of conference" value={formObject.name} className="confemail" onChange={handleInputChange}/>
-                <Form.Control.Feedback type="invalid">
-                </Form.Control.Feedback>
-            </Form.Group> */}
+    return (
+        isAuthenticated && (
+        <Form>
+y
 
         <Form.Group controlId="formConferenceName">
           <Form.Label>Name of conference</Form.Label>

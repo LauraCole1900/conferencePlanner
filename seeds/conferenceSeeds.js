@@ -8,7 +8,7 @@ mongoose.connect(
   "mongodb://localhost/conference"
 );
 
-const CollectionSeed = [
+const ConferenceSeed = [
     {
         EndDate: "2020-12-11",
         StartDate: "2020-12-14",
@@ -38,7 +38,7 @@ const CollectionSeed = [
 
 db.Conference
   .remove({})
-  .then(() => db.Conference.collection.insertMany(CollectionSeed))
+  .then(() => db.Conference.collection.insertMany(ConferenceSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

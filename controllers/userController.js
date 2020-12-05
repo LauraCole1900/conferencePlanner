@@ -17,6 +17,7 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    //checks if user is in DB, if not then saves
     create: function (req, res) {
         console.log("from Controller")
         console.log(req)
