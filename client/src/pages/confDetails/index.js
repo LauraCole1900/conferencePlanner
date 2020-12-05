@@ -27,6 +27,16 @@ function ConfDetails() {
   console.log("session array")
   console.log(sessionArray)
 
+  function addSession() {
+    // takes in conference ID
+    // Redirect to /add_session and calls POST route
+  }
+
+  function handleSessionEdit() {
+    // takes in session ID
+    // Redirect to /add_session and calls PUT route
+  }
+
 
   return (
     <Container fluid className="mycontainer">
@@ -39,10 +49,8 @@ function ConfDetails() {
                   <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
                   <Button>Search</Button>
                 </Form>
-                <Button type="button">Edit session CALLS PUT ROUTE</Button>
-                <Link to="/add_session" className={location.pathname === "/add_session" ? "sessionbtn active" : "sessionbtn"}>
-                  <Button type="button">Add sessions</Button>
-                </Link>
+                <Button type="button" onClick={handleSessionEdit}>Edit this session</Button>
+                <Button type="button" variant="outline-success" onClick={addSession}>Add a session</Button>
               </Card.Body>
             </Col>
           </Card>

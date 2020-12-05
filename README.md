@@ -17,8 +17,8 @@ Edit Session button
 Details Component (bootstrap modal?)
 
 improve flow (suggestions)
-        >Move Nav > top
-        >Move logOut button > nav bar
+  * Move Nav > top
+  * Move logout button > nav bar
 
 
 
@@ -83,11 +83,11 @@ npm run test
 
 ## Credits
 
-N/A
+This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
 
 ## Contributing
 
-This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
+
 
 ## Questions
 
