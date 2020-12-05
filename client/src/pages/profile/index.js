@@ -2,11 +2,22 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
+import API from "../../utils/API"
 import "./style.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
+
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+
+  function saveUserToDb() {
+
+        API.saveUser(user)
+        //   .then(res => loadConferences())
+          .catch(err => console.log(err));
+
+  }
+  saveUserToDb()
 
   return (
     isAuthenticated && (
@@ -15,8 +26,9 @@ const Profile = () => {
       <Row className="rowMain">
         <Col lg={3} className="column info">
           {/* <img src={user.picture} alt ={user.name} /> */}
-          <h1>{user.name}</h1>  
-          <h3 className="job">Job Title goes Here</h3>
+          <h1>{user.name.toUpperCase()}</h1>  
+          <img className="profilePic" src={user.picture} alt="profilePic"></img>
+          <h3 className="job">{user.email}</h3>
           <div id="textbox">
             <p id="pleft">Edit your information</p>
             <p id="pright">Change Password</p>
@@ -39,7 +51,7 @@ const Profile = () => {
         </Col>
       </Row>
       <Row id="confRow">
-        <h1>My Conferences</h1>
+        <h1 style={{textAlign: "center"}}>My Conferences</h1>
       </Row>
       {/* These will be dynamically generated */}
       <Row className="conference">

@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useAuth0 } from "@auth0/auth0-react";
+import API from "../../utils/API"
+import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateConference = () => {
-  let [formObject, setFormObject] = useState({})
+    const { user, isAuthenticated } = useAuth0();
+    console.log("from Create conference")
 
-  const handleInputChange = (e) => {
-    setFormObject({ ...formObject, [e.target.name]: e.target.value });
-  };
+
+
+
+
+    let [formObject, setFormObject] = useState({})
+    // setFormObject({...formObject, "email": user.email})
+    useEffect(() => {
+        setFormObject({...formObject, "email": user.email})
+    },[])
+
+    const handleInputChange = (e) => {
+        setFormObject({ ...formObject, [e.target.name]: e.target.value });
+    };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log(formObject);
+        API.saveConference(formObject)
+        //   .then(res => loadConferences())
+          .catch(err => console.log(err));
     }
-    
+
     return (
+        isAuthenticated && (
         <Form>
+            {/* <Form.Group controlId="formConferenceName">
+                <Form.Control required type="hidden" name="userEmail" placeholder="Enter name of conference" value={formObject.name} className="confemail" onChange={handleInputChange}/>
+                <Form.Control.Feedback type="invalid">
+                </Form.Control.Feedback>
+            </Form.Group> */}
 
             <Form.Group controlId="formConferenceName">
                 <Form.Label>Name of conference</Form.Label>
@@ -46,7 +68,7 @@ const CreateConference = () => {
                 <Form.Control required type="date" name="EndDate" placeholder="Enter conference dates" value={formObject.date} className="confendDates" onChange={handleInputChange} />
                 <Form.Control.Feedback type="invalid">
                 </Form.Control.Feedback>
-      </Form.Group>
+            </Form.Group>
 
             <Form.Group controlId="radioButtons">
                 <Form.Label>Live or virtual?</Form.Label>
@@ -63,9 +85,11 @@ const CreateConference = () => {
 
 
 
-      <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
-    </Form>
-  )
+            <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
+        </Form>
+        )
+
+    )
 }
 
 export default CreateConference;

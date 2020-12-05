@@ -7,9 +7,17 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Conference from "../../components/conference"
+import { useAuth0 } from "@auth0/auth0-react";
+import {Link} from "react-router-dom"
 import "./style.css";
 
+
 function Conferences() {
+    const { user, isAuthenticated } = useAuth0();
+    console.log("from conference")
+    console.log(user)
+
+
   return (
     <Container fluid className="mycontainer">
       <Row>
@@ -19,6 +27,15 @@ function Conferences() {
               <Form inline className="searchArea">
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                 <Button variant="outline-success">Search</Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col lg={2}>
+          <Card col-4>
+            <Card.Body>
+              <Form inline className="newConference">
+                <Link exact to="/create_conference"><Button variant="outline-success">Create a Conference</Button></Link>
               </Form>
             </Card.Body>
           </Card>
