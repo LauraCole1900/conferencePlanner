@@ -45,10 +45,6 @@ function App() {
       </Router>
     </div>
   );
-<<<<<<< HEAD
-}
-=======
 };
->>>>>>> main
 
 export default App;
