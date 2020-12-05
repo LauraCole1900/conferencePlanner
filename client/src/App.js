@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Login from "./pages/login";
 import Logout from "./components/logout";
 import Navbar from "./pages/navbar";
+import Title from "./pages/title";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./pages/session";
@@ -22,6 +23,7 @@ function App() {
       <Profile />
       <Router>
         <header>
+          <Title/>
           <Navbar />
         </header>
         <main>
