@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-import "./style.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserContext from "../../utils/userContext";
+import "./style.css";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
