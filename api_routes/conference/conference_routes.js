@@ -6,6 +6,7 @@ const { Conference } = require("../../models");
 // matches with "/api/conference"
 router.route("/")
     .get(conferenceController.findAll)
+    .post(conferenceController.create);
 
 
 

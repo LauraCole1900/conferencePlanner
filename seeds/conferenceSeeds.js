@@ -10,23 +10,31 @@ mongoose.connect(
 
 const CollectionSeed = [
     {
-        title:"Quartiened Coders",
-        discription:"Fun Coding Workshops",
-        organization: "CodeforthePeople",
+        EndDate: "2020-12-11",
+        StartDate: "2020-12-14",
+        confType: "live",
+        discription: "Get together to code together",
+        email: "beni.mahat@gmail.com",
         location: "Denver Public Library",
-        date: new Date("2020-12-18T16:00:00Z"),
-        attendingCount: 0,
+        organization: "CoderCloser",
+        title: "coders in Quarntiene",
+        attendingCount: 2
+
     },
     {
-        title:"Fantasy Football Draft",
-        discription:"Draft NFL fantasy with your friends",
-        organization: "Bar Stool Sports",
-        location: "The Pub",
-        date: new Date("2020-18-18T16:00:00Z"),
-        attendingCount: 0,
+        EndDate: "2020-12-12",
+        StartDate: "2020-12-16",
+        confType: "live",
+        discription: "Draft for our leauge",
+        email: "beni.mahat@gmail.com",
+        location: "https://us04web.zoom.us/j/72168422332?pwd=KzljKzhjWU9WK05OdndaL01DN2NtUT09",
+        organization: "FantasyFbs",
+        title: "Fantasy Football Draft",
+        attendingCount: 1
     },
     
 ];
+
 
 db.Conference
   .remove({})

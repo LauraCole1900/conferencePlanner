@@ -10,17 +10,18 @@ mongoose.connect(
 
 const userSeed = [
     {
-        name: "Beni MAhat",
-        username: "bmahat1291",
-        password: "password",
         email: "beni.mahat@gmail.com",
-    },
-    {
-        name: "Alec Rewinkel",
-        username: "alecR1234",
-        password:"password",
-        email: "alecrewinkel@gmail.com",
-    },
+        email_verified: true,
+        family_name: "mahat",
+        given_name: "beni",
+        locale: "en",
+        name: "beni mahat",
+        nickname: "beni.mahat",
+        picture: "https://lh3.googleusercontent.com/a-/AOh14GiF0bPBxV392ZH0d4wqZu8__2Bv4XROTr57tiegnHI=s96-c",
+        sub: "google-oauth2|109117049832829656401",
+        updated_at: "2020-12-05T00:09:07.602Z",
+    }
+
     
 ];
 
