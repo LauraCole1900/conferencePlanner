@@ -12,7 +12,7 @@ function Conference({ conference }) {
         <Container>
             <Card col-8 className="conferenceCard">
                 {conference.map(e => (
-                    <div key={e.email}>
+                    <div key={e.title}>
                         <Card.Header className="card-title"><h2>{e.title}</h2></Card.Header>
                         <Card.Body>
                             <Card.Text>
