@@ -10,10 +10,6 @@ const CreateConference = () => {
     const { user, isAuthenticated } = useAuth0();
     console.log("from Create conference")
 
-
-
-
-
     let [formObject, setFormObject] = useState({})
     // setFormObject({...formObject, "email": user.email})
     useEffect(() => {

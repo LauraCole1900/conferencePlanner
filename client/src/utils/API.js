@@ -2,9 +2,8 @@ import axios from "axios";
 
 const API = {
   // Gets all conferences
-  getConferences: function() {
-    const allConferences = axios.get("/api/conference");
-    return allConferences
+  getConference: function() {
+    return axios.get("/api/conference");
   },
   saveConference: function(confData) {
       console.log(confData)
