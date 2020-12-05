@@ -7,7 +7,6 @@ BACK END
 - Querry Confrences associacted with Users from DB
 - Edit Conference
 - Delete Conference
-- Add Admin???
 - Everything With Sessions
 
 FRONT END 
@@ -15,7 +14,7 @@ FRONT END
 Add session button
 Edit confrence button
 Edit Session button
-Details Component ( bootstrap model?)
+Details Component
 
 imporove flow (suggestions)
         >Move Nav > top
