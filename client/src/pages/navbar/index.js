@@ -12,10 +12,16 @@ const Navigation = () => {
     <Navbar expand="sm" className="navbar">
       <Navbar.Brand className="mylogo">
         <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
+        <div>&nbsp;&nbsp;Hello, <Link to="/profile" className={location.pathname === "/profile" ? "mylogo active" : "mylogo"}>
+          {user.name}!
+        </Link></div>
       </Navbar.Brand>
-      <Navbar.Toggle className="randomDot" aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
+          <Link to="/home" className={location.pathname === "/" ? "navlink active" : "navlink"}>
+            Home
+          </Link>
           <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
             My Profile
           </Link>
@@ -23,7 +29,7 @@ const Navigation = () => {
             Conferences
           </Link>
           <span className="logout offset-sm-11" onClick={() => logout({ returnTo: window.location.origin })}>
-            Log Out
+            Logout
           </span>
         </Nav>
       </Navbar.Collapse>
