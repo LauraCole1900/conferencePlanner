@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Conference from "../../components/conference"
 import API from "../../utils/API"
-import { Link } from "react-router-dom"
 import "./style.css";
-import UserContext from "../../utils/userContext";
 
 
 function Conferences() {
@@ -24,41 +22,25 @@ function Conferences() {
 		return data.filter((conference) => conference.title.toLowerCase().indexOf(search) !== -1)
 	}
 
-	console.log("conference array")
-	console.log(conferenceArray)
-
-
 	return (
 		<Container fluid className="mycontainer">
 			<Row>
-				<Col lg={6}>
-					<Card>
-						<Col lg={4}>
-							<Card.Body>
-								<Form inline className="searchArea">
-									<FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
-									<Button>Search</Button>
-								</Form>
-							</Card.Body>
-						</Col>
-					</Card>
+				<Col lg={3}>
+					<Card.Body>
+						<Form inline className="searchArea">
+							<FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
+							<Button>Search</Button>
+						</Form>
+					</Card.Body>
 				</Col>
-				<Col lg={6}>
-					<Card col-4>
-						<Card.Body>
-							<Form inline className="newConference">
-								<Link exact to="/create_conference"><Button variant="outline-success">Create a Conference</Button></Link>
-							</Form>
-						</Card.Body>
-					</Card>
-				</Col>
-				<Col lg={10}>
-					{/* Heres where the conferences are generated, make new rows and then in each row make a conference, give it props */}
-					<Container fluid className="mycontainer">
-						<Row>
-							<Conference conference={searchFilter(conferenceArray)} />
-						</Row>
-					</Container>
+				<Col lg={9}>
+					{searchFilter(conferenceArray).map(passedConference => {
+						return (
+							<Row>
+								<Conference conference={passedConference} />
+							</Row>
+						)
+					})}
 				</Col>
 				{/* <Card border="primary" style={{ width: '18rem' }}>
           <Card.Header>Featured</Card.Header>
