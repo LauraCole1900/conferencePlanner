@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
 import Logout from "./components/logout";
 import Navbar from "./pages/navbar";
@@ -13,24 +14,23 @@ import CreateSession from "./components/forms/createSession";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
 import ConfDetails from "./pages/confDetails";
-import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
 function App() {
 
-  const { isLoading } = useAuth0();
+  const { isLoading, isAuthenticated } = useAuth0();
   if (isLoading) return <div>Loading...</div>
   return (
     <div>
       <Router>
         <header>
           <Title />
-          <Navbar />
+          <div>
+            {isAuthenticated && <Navbar />}
+          </div>
         </header>
         <main>
           <Container fluid className="mycontainer">
-            <Route exact path={["/", "/login"]} component={Login} />
-            <Route exact path={["/", "/logout"]} component={Logout} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session/:id" component={Session} />
@@ -39,11 +39,12 @@ function App() {
             <Route exact path="/conference_created" component={ConfSuccess} />
             <Route exact path="/session_added" component={SessionSuccess} />
             <Route exact path="/conferences/:id" component={ConfDetails} />
+            <Route path={["/", "/login"]} component={Login} />
           </Container>
         </main>
       </Router>
     </div>
-  )
+  );
 };
 
 export default App;

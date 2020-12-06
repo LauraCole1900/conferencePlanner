@@ -4,21 +4,22 @@
 
 
 BACK END
-- Querry Confrences associacted with Users from DB
+- Query Conferences associated with Users from DB
 - Edit Conference
 - Delete Conference
-- Everything With Sessions
+- Edit Session Delete Session
+- 
 
 FRONT END 
 
 Add session button
-Edit confrence button
+Edit conference button
 Edit Session button
 Details Component
 
-imporove flow (suggestions)
-        >Move Nav > top
-        >Move logOut button > nav bar
+improve flow (suggestions)
+  * Move Nav > top
+  * Move logout button > nav bar
 
 
 
@@ -83,11 +84,11 @@ npm run test
 
 ## Credits
 
-N/A
+This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
 
 ## Contributing
 
-This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Brenda Miller, and Alec Rewinkel.
+
 
 ## Questions
 

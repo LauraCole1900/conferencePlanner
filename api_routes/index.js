@@ -4,7 +4,7 @@ const apiConference = require("./conference");
 const apiUser = require("./user");
 const apiSession = require("./session")
 
-// API Routess
+// API Routes
 router.use("/api", apiConference);
 router.use("/api", apiUser);
 router.use("/api", apiSession)

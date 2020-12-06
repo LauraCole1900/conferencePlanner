@@ -27,12 +27,12 @@ body {
 }
   
 .button-hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
 }
 
+
 .loginCard {
-  outline: solid 1px red;
   box-shadow: 0 15px 20px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 60%;
@@ -49,3 +49,6 @@ body {
   
 
 
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

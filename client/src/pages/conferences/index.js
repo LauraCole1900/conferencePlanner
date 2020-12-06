@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Conference from "../../components/conference"
 import API from "../../utils/API"
@@ -6,7 +8,7 @@ import "./style.css";
 
 
 function Conferences() {
-
+	const { user } = useAuth0();
 	const [conferenceArray, setConferenceArray] = useState([])
 	const [search, setSearch] = useState("")
 
@@ -21,6 +23,11 @@ function Conferences() {
 	function searchFilter(data) {
 		return data.filter((conference) => conference.title.toLowerCase().indexOf(search) !== -1)
 	}
+
+	function handleCreate() {
+
+	}
+
 
 	return (
 		<Container fluid className="mycontainer">
@@ -42,16 +49,6 @@ function Conferences() {
 						)
 					})}
 				</Col>
-				{/* <Card border="primary" style={{ width: '18rem' }}>
-          <Card.Header>Featured</Card.Header>
-          <Card.Body>
-            <Card.Title>Special title treatment</Card.Title>
-            <Card.Text>
-              With supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card> */}
 			</Row>
 		</Container>
 	);

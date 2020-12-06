@@ -41,3 +41,12 @@ img {
 .randomDot{
   visibility: hidden;
 }
+
+.logout{
+  float: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logout:hover{
+  cursor: pointer;
+}
