@@ -31,9 +31,6 @@ function App() {
         </header>
         <main>
           <Container fluid className="mycontainer">
-            <Profile />
-            <Route exact path={["/", "/login"]} component={Login} />
-            <Route exact path={["/", "/logout"]} component={Logout} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session/:id" component={Session} />
@@ -42,6 +39,7 @@ function App() {
             <Route exact path="/conference_created" component={ConfSuccess} />
             <Route exact path="/session_added" component={SessionSuccess} />
             <Route exact path="/conferences/:id" component={ConfDetails} />
+            <Route path={["/", "/login"]} component={Login} />
           </Container>
         </main>
       </Router>

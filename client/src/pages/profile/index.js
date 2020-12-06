@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col"
-import API from "../../utils/API"
+import { Container, Row, Col, Button } from "react-bootstrap";
+import Conference from "../../components/conference";
+import API from "../../utils/API";
 import "./style.css";
 
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
-  const { userConfArr, setUserConfArr } = useState([])
-  console.log("from profile page")
-  console.log(user)
-
+  const location = useLocation();
+  const [ userConfArr, setUserConfArr ] = useState([])
 
   function saveUserToDb() {
     API.saveUser(user)
       //   .then(res => loadConferences())
       .catch(err => console.log(err));
-
   }
 
-  useEffect((setUserConfArr) => {
+  useEffect(() => {
     saveUserToDb();
-    API.getConferenceByUser().then(resp => {
+    API.getConferencebyUser(user.email).then(resp => {
       const tempArr = resp.data
       console.log(tempArr)
-      // return setUserConfArr(tempArr);
+      setUserConfArr(tempArr);
     })
-  })
+  },[])
 
-  console.log("userConferenceArray")
-  console.log(userConfArr)
+  // console.log(userConfArr)
 
 
   return (
@@ -47,6 +43,7 @@ const Profile = () => {
               <div id="textbox">
                 <p id="pleft">Edit your information</p>
                 <p id="pright">Change Password</p>
+                <Link to="/create_conference" className={location.pathname === "/create_conference" ? "link active" : "link"}><Button type="button">Create new conference</Button></Link>
               </div>
             </Col>
             <Col lg={9} className="column stats">
@@ -57,7 +54,7 @@ const Profile = () => {
                     <h1>{user.name}</h1>
                     <h3 className="job">Job Title goes Here</h3>
                     <div id="textbox">
-                      <p id="pleft">Edit your information</p>
+                      {/* <p id="pleft">Edit your information</p> */}
                       <p id="pright">Change Password</p>
                     </div>
                   </Col>
@@ -81,53 +78,8 @@ const Profile = () => {
                   <h1>My Conferences</h1>
                 </Row>
                 {/* These will be dynamically generated */}
-                <Row className="conference">
-                  <Col lg={4} className="conferenceCol">
-                    <h3>Conference Name</h3>
-                    <h4>Role: Yourrole</h4>
-                    <h4>Organizer: Whoever</h4>
-                    <h4 id="admins">Admins: Names of every admin</h4>
-                  </Col>
-                  <Col lg={4} className="conferenceCol dates">
-                    <h4>Dates: Dates</h4>
-                    <h4>Location: Where</h4>
-                    <h4 >Attendees: #ofAttendees</h4>
-                  </Col>
-                  <Col lg={4} className="conferenceCol buttons">
-                    <button className="detailsBtn">Details</button>
-                    {/* If admin/organizer  */}
-                    <div id="buttonBox">
-                      <button className="adminBtn">Add Admin</button>
-                      <button className="editBtn">Edit</button>
-                    </div>
-                  </Col>
-                </Row>
+                <Conference conference={userConfArr} />
               </Container>
-            </Col>
-          </Row>
-          <Row id="confRow">
-            <h1 style={{ textAlign: "center" }}>My Conferences</h1>
-          </Row>
-          {/* These will be dynamically generated */}
-          <Row className="conference">
-            <Col lg={4} className="conferenceCol">
-              <h3>Conference Name</h3>
-              <h4>Role: Yourrole</h4>
-              <h4>Organizer: Whoever</h4>
-              <h4 id="admins">Admins: Names of every admin</h4>
-            </Col>
-            <Col lg={4} className="conferenceCol dates">
-              <h4>Dates: Dates</h4>
-              <h4>Location: Where</h4>
-              <h4 >Attendees: #ofAttendees</h4>
-            </Col>
-            <Col lg={4} className="conferenceCol buttons">
-              <button className="detailsBtn">Details</button>
-              {/* If admin/organizer  */}
-              <div id="buttonBox">
-                <button className="adminBtn">Add Admin</button>
-                <button className="editBtn">Edit</button>
-              </div>
             </Col>
           </Row>
         </Container>

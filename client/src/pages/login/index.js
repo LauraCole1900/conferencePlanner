@@ -8,12 +8,12 @@ const Login = () => {
 
   return (
     !isAuthenticated && (
-      <Container>
-        <Card className="card">
-          <h2>Welcome to<br />Cool Cats Conference Planner</h2>
-          <button onClick={() => loginWithRedirect()} className="Login-button">Please log in<br />to continue</button>
-        </Card>
-      </Container>
+      <div >
+        <div className="loginCard">
+            <h2 id="welcome"> Welcome to Your Conference Planner</h2>
+            <button onClick={() => loginWithRedirect()} className="loginBtn">Please log in<br />to continue</button>
+        </div>
+      </div>
     )
   )
 };

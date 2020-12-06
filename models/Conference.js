@@ -8,7 +8,7 @@ const conferenceSchema = new Schema({
     location: {type: String, required: true},
     confType: {type: String, required: true},
     title: {type: String, required: true},
-    discription: {type: String, required: true},
+    description: {type: String, required: true},
     email: {type: String, required: true},
     attendingCount: {type: Number}
 })
