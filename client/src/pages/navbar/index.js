@@ -23,7 +23,7 @@ const Navigation = () => {
             Conferences
           </Link>
           <span className="logout offset-sm-11" onClick={() => logout({ returnTo: window.location.origin })}>
-            Log Out
+            Logout
           </span>
         </Nav>
       </Navbar.Collapse>
