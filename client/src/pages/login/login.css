@@ -1,55 +1,54 @@
 body {
-  background-color: #94a4b6;
+  background-color:  #94a4b6;
 }
-
-h2 {
+  
+#welcome {
   color: rgb(74, 111, 153);
   padding-top: 30px;
-  /* padding-left: 30px; */
-  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-bottom: 15px;
 }
 
-.Login-button {
+.loginBtn {
   box-shadow: 0px 10px 14px -7px #276873;
-  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-  background-color: #599bb3;
-  border-radius: 8px;
-  /* margin-left: 13vw; */
-  cursor: pointer;
-  color: rgb(243, 240, 210);
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  /* font-weight: bold; */
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	cursor: pointer;
+	color:  rgb(243, 240, 210);
+	font-family:Arial;
+	font-size: 20px;
+  font-weight:bold;
   margin-top: auto;
-
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #3d768a;
-  width: 8vw;
-  height: 3.1vw;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
+  width: 17.5%;
+  height: 60px;
 }
-
+  
 .button-hover {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
   background-color: #408c99;
 }
 
-.card {
-  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.2);
+
+.loginCard {
+  box-shadow: 0 15px 20px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 35vw;
-  height: 21vh;
+  width: 60%;
+  height: 200px;
   border-radius: 25px;
-  margin: 10vw auto;
+  margin: 3vw auto;
   background-color: #e4d6bb;
   text-align: center;
-  font-family: 'Playfair Display', serif;
 }
+  
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
-/* Add some padding inside the card container */
-/* .container {
-    padding: 2px 16px;
-  } */

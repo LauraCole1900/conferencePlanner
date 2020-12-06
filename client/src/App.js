@@ -31,8 +31,6 @@ function App() {
         </header>
         <main>
           <Container fluid className="mycontainer">
-            {/* <Profile /> */}
-            {/* <Route exact path={["/", "/logout"]} component={Logout} /> */}
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session/:id" component={Session} />
