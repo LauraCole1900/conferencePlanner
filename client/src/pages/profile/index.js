@@ -23,7 +23,7 @@ const Profile = () => {
 
   useEffect((setUserConfArr) => {
     saveUserToDb();
-    API.getConferenceByUser().then(resp => {
+    API.getConferencebyUser().then(resp => {
       const tempArr = resp.data
       console.log(tempArr)
       // return setUserConfArr(tempArr);
