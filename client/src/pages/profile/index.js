@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
 import API from "../../utils/API"
-import { useAuth0 } from "@auth0/auth0-react";
 import "./style.css";
 
 

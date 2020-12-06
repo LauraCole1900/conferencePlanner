@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateSession = () => {
+	const { user } = useAuth0();
 	let [formObject, setFormObject] = useState({})
 
 	useEffect(() => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
 import Logout from "./components/logout";
 import Navbar from "./pages/navbar";
@@ -13,7 +14,6 @@ import CreateSession from "./components/forms/createSession";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
 import ConfDetails from "./pages/confDetails";
-import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
 function App() {

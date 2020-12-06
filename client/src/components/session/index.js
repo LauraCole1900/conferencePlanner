@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -6,9 +7,10 @@ import Row from "react-bootstrap/Row";
 import "./style.css";
 
 function Session(props) {
+  const { user } = useAuth0();
 
   function handleSessionEdit() {
-    // takes in session ID
+    // takes in user and session ID
     // Redirect to /add_session and calls PUT route
   }
 

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Conference from "../../components/conference"
 import API from "../../utils/API"
-import { Link } from "react-router-dom"
 import "./style.css";
-import UserContext from "../../utils/userContext";
 
 
 function Conferences() {
-
+  const { user } = useAuth0();
 	const [conferenceArray, setConferenceArray] = useState([])
 	const [search, setSearch] = useState("")
 
@@ -26,6 +26,10 @@ function Conferences() {
 
 	console.log("conference array")
 	console.log(conferenceArray)
+
+	function handleCreate() {
+
+	}
 
 
 	return (
@@ -47,7 +51,7 @@ function Conferences() {
 					<Card col-4>
 						<Card.Body>
 							<Form inline className="newConference">
-								<Link exact to="/create_conference"><Button variant="outline-success">Create a Conference</Button></Link>
+								<Button variant="outline-success" onClick={handleCreate}>Create a new conference</Button>
 							</Form>
 						</Card.Body>
 					</Card>

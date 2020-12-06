@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Session from "../../components/session";
 import API from "../../utils/API";
@@ -8,6 +9,7 @@ import "./style.css";
 
 
 function ConfDetails() {
+  const { user } = useAuth0();
   const location = useLocation();
   const [sessionArray, setSessionArray] = useState([])
   const [search, setSearch] = useState("")
