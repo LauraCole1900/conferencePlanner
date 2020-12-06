@@ -6,9 +6,8 @@ const API = {
     return axios.get("/api/conference");
   },
 
-  getConferencebyUser: function(user) {
-      console.log(user)
-      return axios.get("/api/conference/user", user)
+  getConferencebyUser: function() {
+      return axios.get("/api/conference/profile")
   },
 //save conference to DB
   saveConference: function(confData) {
