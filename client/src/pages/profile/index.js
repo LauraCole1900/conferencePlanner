@@ -10,6 +10,8 @@ import "./style.css";
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const {userConferenceArr, setuserConferenceArr} = useState([])
+  console.log("from profile page")
+  console.log(user)
 
 
   function saveUserToDb() {

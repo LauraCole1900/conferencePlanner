@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useAuth0 } from "@auth0/auth0-react";
-import API from "../../utils/API"
+import API from "../../utils/API";
+import {Link} from "react-router-dom";
 import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
@@ -77,7 +78,8 @@ y
 
 
 
-            <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
+             <Button onClick={handleFormSubmit} type="submit">Save</Button>
+             <Link exact to="/profile"><Button>Return</Button></Link>
         </Form>
         )
 
