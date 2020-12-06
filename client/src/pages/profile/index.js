@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col"
+import { Container, Row, Col, Button } from "react-bootstrap";
 import API from "../../utils/API"
 import "./style.css";
 
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  const location = useLocation();
   const { userConfArr, setUserConfArr } = useState([])
   console.log("from profile page")
   console.log(user)
@@ -47,6 +47,7 @@ const Profile = () => {
               <div id="textbox">
                 <p id="pleft">Edit your information</p>
                 <p id="pright">Change Password</p>
+                <Link to="/create_conference" className={location.pathname === "/create_conference" ? "link active" : "link"}><Button type="button">Create new conference</Button></Link>
               </div>
             </Col>
             <Col lg={9} className="column stats">
@@ -57,7 +58,7 @@ const Profile = () => {
                     <h1>{user.name}</h1>
                     <h3 className="job">Job Title goes Here</h3>
                     <div id="textbox">
-                      <p id="pleft">Edit your information</p>
+                      {/* <p id="pleft">Edit your information</p> */}
                       <p id="pright">Change Password</p>
                     </div>
                   </Col>

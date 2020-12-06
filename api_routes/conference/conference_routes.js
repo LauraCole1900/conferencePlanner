@@ -5,11 +5,13 @@ const { Conference } = require("../../models");
 
 // matches with "/api/conference"
 router.route("/")
-    .get(conferenceController.findAll)
-    .post(conferenceController.create);
+  .get(conferenceController.findAll);
 
-router.route("/profile")
-    .get(conferenceController.findById)
+router.route("/post")
+  .post(conferenceController.create);
+
+router.route("/:email")
+  .get(conferenceController.findById)
 
 
 

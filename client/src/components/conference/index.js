@@ -33,7 +33,7 @@ function Conference({ conference }) {
 									<h3 className="cardBody">Description</h3>
 								</Row>
 								<Row>
-									<p className="cardBody">{e.discription}</p>
+									<p className="cardBody">{e.description}</p>
 								</Row>
 								<Row>
 									<h3 className="cardBody">Location: {e.location}</h3>
@@ -45,8 +45,7 @@ function Conference({ conference }) {
 							<div className="btndiv">
 								<Button className="btn" onClick={handleRegister}>Register</Button>
 								{/* <div if user is creator, show; otherwise hide>
-								<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
-								</div> */}
+								<Button className="btn" onClick={handleEdit}>Edit conference info</Button> */}
 							</div>
 						</Card.Body>
 
@@ -57,7 +56,7 @@ function Conference({ conference }) {
 				))}
 
 			</Card>
-		</Container>
+		</Container >
 	);
 }
 

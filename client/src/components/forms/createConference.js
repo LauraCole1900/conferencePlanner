@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -9,10 +10,21 @@ import API from "../../utils/API";
 
 const CreateConference = () => {
   const { user, isAuthenticated } = useAuth0();
-  console.log("from Create conference")
+  const history = useHistory();
+  // console.log("from Create conference")
 
-  let [formObject, setFormObject] = useState({})
-  // setFormObject({...formObject, "email": user.email})
+  let [formObject, setFormObject] = useState({
+    EndDate: "01/01/2021",
+    StartDate: "01/01/2021",
+    organization: "Your organization",
+    location: "Here",
+    confType: "Live",
+    title: "A conference",
+    description: "This is the default conference description",
+    email: "",
+    attendingCount: 0
+  })
+
   useEffect(() => {
     setFormObject({ ...formObject, "email": user.email })
   }, [])
@@ -23,8 +35,8 @@ const CreateConference = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.saveConference(formObject)
-      //   .then(res => loadConferences())
+    API.saveConference({ ...formObject, email: user.email })
+      .then(history.push("/conference_created"))
       .catch(err => console.log(err));
   }
 
