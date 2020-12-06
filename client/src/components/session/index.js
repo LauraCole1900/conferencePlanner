@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -6,6 +7,13 @@ import Row from "react-bootstrap/Row";
 import "./style.css";
 
 function Session(props) {
+  const { user } = useAuth0();
+
+  function handleSessionEdit() {
+    // takes in user and session ID
+    // Redirect to /add_session and calls PUT route
+  }
+
   return (
     <Card className="session-card">
       <Card.Header className="card-title"><h2>{props.name}</h2></Card.Header>
@@ -21,7 +29,7 @@ function Session(props) {
           </Row>
         </Card.Text>
         <div className="btndiv">
-          <Button className="btn" href={props.edit} rel="noreferrer noopener" target="_blank">Edit This Session</Button>
+          <Button className="btn" onClick={handleSessionEdit}>Edit This Session</Button>
         </div>
       </Card.Body>
     </Card>
