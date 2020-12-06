@@ -2,36 +2,32 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import API from "../../utils/API"
+import Conference from "../../components/conference";
+import API from "../../utils/API";
 import "./style.css";
 
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const location = useLocation();
-  const { userConfArr, setUserConfArr } = useState([])
-  console.log("from profile page")
-  console.log(user)
-
+  const [ userConfArr, setUserConfArr ] = useState([])
 
   function saveUserToDb() {
     API.saveUser(user)
       //   .then(res => loadConferences())
       .catch(err => console.log(err));
-
   }
 
-  useEffect((setUserConfArr) => {
+  useEffect(() => {
     saveUserToDb();
-    API.getConferencebyUser().then(resp => {
+    API.getConferencebyUser(user.email).then(resp => {
       const tempArr = resp.data
       console.log(tempArr)
-      // return setUserConfArr(tempArr);
+      setUserConfArr(tempArr);
     })
-  })
+  },[])
 
-  console.log("userConferenceArray")
-  console.log(userConfArr)
+  // console.log(userConfArr)
 
 
   return (
@@ -82,53 +78,8 @@ const Profile = () => {
                   <h1>My Conferences</h1>
                 </Row>
                 {/* These will be dynamically generated */}
-                <Row className="conference">
-                  <Col lg={4} className="conferenceCol">
-                    <h3>Conference Name</h3>
-                    <h4>Role: Yourrole</h4>
-                    <h4>Organizer: Whoever</h4>
-                    <h4 id="admins">Admins: Names of every admin</h4>
-                  </Col>
-                  <Col lg={4} className="conferenceCol dates">
-                    <h4>Dates: Dates</h4>
-                    <h4>Location: Where</h4>
-                    <h4 >Attendees: #ofAttendees</h4>
-                  </Col>
-                  <Col lg={4} className="conferenceCol buttons">
-                    <button className="detailsBtn">Details</button>
-                    {/* If admin/organizer  */}
-                    <div id="buttonBox">
-                      <button className="adminBtn">Add Admin</button>
-                      <button className="editBtn">Edit</button>
-                    </div>
-                  </Col>
-                </Row>
+                <Conference conference={userConfArr} />
               </Container>
-            </Col>
-          </Row>
-          <Row id="confRow">
-            <h1 style={{ textAlign: "center" }}>My Conferences</h1>
-          </Row>
-          {/* These will be dynamically generated */}
-          <Row className="conference">
-            <Col lg={4} className="conferenceCol">
-              <h3>Conference Name</h3>
-              <h4>Role: Yourrole</h4>
-              <h4>Organizer: Whoever</h4>
-              <h4 id="admins">Admins: Names of every admin</h4>
-            </Col>
-            <Col lg={4} className="conferenceCol dates">
-              <h4>Dates: Dates</h4>
-              <h4>Location: Where</h4>
-              <h4 >Attendees: #ofAttendees</h4>
-            </Col>
-            <Col lg={4} className="conferenceCol buttons">
-              <button className="detailsBtn">Details</button>
-              {/* If admin/organizer  */}
-              <div id="buttonBox">
-                <button className="adminBtn">Add Admin</button>
-                <button className="editBtn">Edit</button>
-              </div>
             </Col>
           </Row>
         </Container>
