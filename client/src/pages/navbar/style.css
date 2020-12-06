@@ -1,9 +1,8 @@
 .navbar {
-  margin-top: -30px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   width: 100%;
   font-size: 16px;
-  height: 70px;
+  height:80px;
 }
 
 .navlink {
@@ -36,6 +35,7 @@
 
 img {
   padding-top: 15px;
+
 }
 
 .randomDot{
