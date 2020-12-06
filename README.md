@@ -7,7 +7,8 @@ BACK END
 - Query Conferences associated with Users from DB
 - Edit Conference
 - Delete Conference
-- Everything With Sessions
+- Edit Session Delete Session
+- 
 
 FRONT END 
 

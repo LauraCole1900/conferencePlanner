@@ -8,8 +8,8 @@ router.route("/")
     .get(conferenceController.findAll)
     .post(conferenceController.create);
 
-router.route("/:user")
-    .get(conferenceController.findByUser)
+router.route("/profile")
+    .get(conferenceController.findById)
 
 
 

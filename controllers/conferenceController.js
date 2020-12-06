@@ -16,14 +16,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }, 
-  //need to fix this to querry conferences by email
-   findByUser: function(req, res) {
+
+   findById: function(req, res) {
+       console.log("from conference controller")
+       console.log(req.body.email)
     db.Conference
-        console.log(req.params.email)
-      .findById(req.params.email)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    .find({ email: "beni.mahat@gmail.com" })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
   },
+
   create: function(req, res) {
     db.Conference
       .create(req.body)

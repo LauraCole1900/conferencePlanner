@@ -9,7 +9,9 @@ import "./style.css";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
-  const { userConferenceArr, setuserConferenceArr } = useState([])
+  const { userConfArr, setUserConfArr } = useState([])
+  console.log("from profile page")
+  console.log(user)
 
 
   function saveUserToDb() {
@@ -19,17 +21,18 @@ const Profile = () => {
 
   }
 
-  function UserConferences() {
-    API.getConferencebyUser(user).then(resp => {
-      // const userConferenceArr = resp.data
-      // return setuserConferenceArr(userConferenceArr)
-    })
-  }
-
-  useEffect(() => {
+  useEffect((setUserConfArr) => {
     saveUserToDb();
-    UserConferences();
+    API.getConferenceByUser().then(resp => {
+      const tempArr = resp.data
+      console.log(tempArr)
+      // return setUserConfArr(tempArr);
+    })
   })
+
+  console.log("userConferenceArray")
+  console.log(userConfArr)
+
 
   return (
     isAuthenticated && (

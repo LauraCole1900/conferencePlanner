@@ -8,7 +8,7 @@ import "./style.css";
 
 
 function Conferences() {
-  const { user } = useAuth0();
+	const { user } = useAuth0();
 	const [conferenceArray, setConferenceArray] = useState([])
 	const [search, setSearch] = useState("")
 
@@ -51,7 +51,7 @@ function Conferences() {
 					<Card col-4>
 						<Card.Body>
 							<Form inline className="newConference">
-								<Button variant="outline-success" onClick={handleCreate}>Create a new conference</Button>
+								<Link exact to="/create_conference"><Button variant="outline-success">Create a Conference</Button></Link>
 							</Form>
 						</Card.Body>
 					</Card>

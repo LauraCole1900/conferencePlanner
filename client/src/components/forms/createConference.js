@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useAuth0 } from "@auth0/auth0-react";
-import API from "../../utils/API"
-import { get } from "mongoose";
+import API from "../../utils/API";
+// import {Link} from "react-router-dom";
+// import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateConference = () => {
@@ -73,12 +74,9 @@ const CreateConference = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-
-
         <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
       </Form>
     )
-
   )
 }
 
