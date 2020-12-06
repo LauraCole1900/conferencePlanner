@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import { Navbar, Nav } from "react-bootstrap";
+// import Nav from "react-bootstrap/Nav";
 import "./style.css";
 
 const Navigation = () => {
@@ -28,7 +28,7 @@ const Navigation = () => {
           <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
             Conferences
           </Link>
-          <span className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
+          <span className="logout offset-sm-11" onClick={() => logout({ returnTo: window.location.origin })}>
             Logout
           </span>
         </Nav>
