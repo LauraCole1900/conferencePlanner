@@ -9,7 +9,10 @@ import "./style.css";
 
 function Conference({ conference }) {
 	const { user, isAuthenticated } = useAuth0();
-	let id = conference._id;
+	const idx = conference.findIndex(item => item.email === user.email);
+	let id = conference[idx]._id;
+	console.log(user)
+	console.log(conference)
 
 	function handleRegister() {
 		// grab conference ID
@@ -23,8 +26,8 @@ function Conference({ conference }) {
 
 	return (
 		<Container>
-			<Card col-8 className="conferenceCard">
-				{conference.map(e => (
+			{conference.map(e => (
+				<Card col-8 className="conferenceCard">
 					<div key={e.title}>
 						<Card.Header className="card-title"><h2>{e.title}</h2></Card.Header>
 						<Card.Body>
@@ -44,20 +47,20 @@ function Conference({ conference }) {
 							</Card.Text>
 							<div className="btndiv">
 								<Button className="btn" onClick={handleRegister}>Register</Button>
-								{user.email === conference.email &&
+								{user.email === conference[idx].email &&
 									<div>
 										<Link to={{
 											pathname: `/create_conference/${id}`,
-											state: {confInfo: e}
+											state: { confInfo: e }
 										}}>
-										<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
+											<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
 										</Link>
 									</div>}
 							</div>
 						</Card.Body>
 					</div>
-				))}
-			</Card>
+				</Card>
+			))}
 		</Container >
 	);
 }

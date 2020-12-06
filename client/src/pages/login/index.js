@@ -10,8 +10,8 @@ const Login = () => {
     !isAuthenticated && (
       <div >
         <div className="loginCard">
-            <h2 id="welcome"> Welcome to Your Conference Planner</h2>
-            <button onClick={() => loginWithRedirect()} className="loginBtn">Please log in<br />to continue</button>
+            <h2 id="welcome"> Welcome to Cool Cats Conference Planner</h2>
+            <button onClick={() => loginWithRedirect()} className="loginBtn">Log in</button>
         </div>
       </div>
     )
