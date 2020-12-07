@@ -8,10 +8,10 @@ import API from "../../utils/API";
 // import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
-const CreateConference = () => {
+const CreateConference = (req, res) => {
   const { user, isAuthenticated } = useAuth0();
   const history = useHistory();
-  // console.log("from Create conference")
+  const id = req.params._id
 
   let [formObject, setFormObject] = useState({
     EndDate: "01/01/2021",
@@ -31,6 +31,10 @@ const CreateConference = () => {
     // else
     setFormObject({ ...formObject, "email": user.email })
   }, [])
+
+  const loadForm = () => {
+
+  }
 
   const handleInputChange = (e) => {
     setFormObject({ ...formObject, [e.target.name]: e.target.value });
@@ -96,8 +100,9 @@ const CreateConference = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        {/* ternary operator to show "Submit" or "Update" depending on if ID exists */}
-        <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
+        {id.length > 0 ?
+        <Button onClick={handleFormUpdate} type="submit">Update form</Button> :
+        <Button onClick={handleFormSubmit} type="submit">Submit form</Button>}
       </Form>
     )
   )

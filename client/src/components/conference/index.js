@@ -4,29 +4,22 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import "./style.css";
 
 function Conference({ conference }) {
 	const { user, isAuthenticated } = useAuth0();
-	let id = conference._id;
+	const idx = conference.findIndex(item => item.email === user.email);
 
 	function handleRegister() {
 		// grab conference ID
 		// link to Registration page with conference ID already populated
 	}
 
-	function handleEdit() {
-		// grab conference ID
-		// link to create_conference page with info already populated
-	}
-
 	return (
 		<Container>
-			<Card col-8 className="conferenceCard">
-				{conference.map(e => (
+			{conference.map(e => (
+				<Card col-8 className="conferenceCard">
 					<div key={e.title}>
 						<Card.Header className="card-title"><h2>{e.title}</h2></Card.Header>
 						<Card.Body>
@@ -46,20 +39,20 @@ function Conference({ conference }) {
 							</Card.Text>
 							<div className="btndiv">
 								<Button className="btn" onClick={handleRegister}>Register</Button>
-								{user.email === conference.email &&
+								{user.email === e.email &&
 									<div>
 										<Link to={{
-											pathname: `/create_conference/${id}`,
-											state: {confInfo: e}
+											state: { confInfo: conference },
+											pathname: `/create_conference/${e._id}`
 										}}>
-										<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
+											<Button className="btn">Edit conference info</Button>
 										</Link>
 									</div>}
 							</div>
 						</Card.Body>
 					</div>
-				))}
-			</Card>
+				</Card>
+			))}
 		</Container >
 	);
 }
