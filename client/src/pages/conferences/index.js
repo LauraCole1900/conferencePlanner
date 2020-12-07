@@ -41,13 +41,9 @@ function Conferences() {
 					</Card.Body>
 				</Col>
 				<Col lg={9}>
-					{searchFilter(conferenceArray).map(passedConference => {
-						return (
-							<Row>
-								<Conference conference={passedConference} />
-							</Row>
-						)
-					})}
+					<Row>
+						<Conference conference={conferenceArray} />
+					</Row>
 				</Col>
 			</Row>
 		</Container>

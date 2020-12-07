@@ -15,12 +15,12 @@ function ConfDetails() {
   const [search, setSearch] = useState("")
 
 
-  useEffect(() => {
-    API.getSession().then(resp => {
-      const sessionArr = resp.data
-      return setSessionArray(sessionArr)
-    })
-  }, [])
+  // useEffect(() => {
+  //   API.getSession().then(resp => {
+  //     const sessionArr = resp.data
+  //     return setSessionArray(sessionArr)
+  //   })
+  // }, [])
 
   function searchFilter(data) {
     return data.filter((session) => session.title.toLowerCase().indexOf(search) !== -1)
@@ -74,16 +74,6 @@ function ConfDetails() {
             </Row>
           </Container>
         </Col>
-        {/* <Card border="primary" style={{ width: '18rem' }}>
-          <Card.Header>Featured</Card.Header>
-          <Card.Body>
-            <Card.Title>Special title treatment</Card.Title>
-            <Card.Text>
-              With supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card> */}
       </Row>
     </Container>
   );

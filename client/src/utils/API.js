@@ -29,6 +29,7 @@ const API = {
     return axios.post("/api/user", userData);
   }
 
+  //getSession called in confDetails
 
 };
 
