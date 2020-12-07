@@ -5,13 +5,16 @@ const API = {
   getConference: function () {
     return axios.get("/api/conference");
   },
-
+  // get conference by user email
   getConferencebyUser: function (email) {
     return axios.get(`/api/conference/${email}`)
   },
-
-  getConferencebyId: function (id) {
-    return axios.get(`/api/conference/id/${id}`)
+  // update confrence attending field
+  updateRegisteredById: function (id, email) {
+      console.log("from API")
+      console.log(id)
+      console.log(email)
+    return axios.put(`/api/conference/id/${id}`, email)
   },
 
   //save conference to DB
@@ -27,7 +30,13 @@ const API = {
   //save user to DB
   saveUser: function (userData) {
     return axios.post("/api/user", userData);
+  },
+
+  //saveSession
+  saveSession: function (confId) {
+      return axios.post("/api/session/post", confId)
   }
+
 
   //getSession called in confDetails
 

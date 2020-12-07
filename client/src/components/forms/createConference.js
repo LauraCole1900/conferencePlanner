@@ -21,14 +21,16 @@ const CreateConference = () => {
     title: "A conference",
     description: "This is the default conference description",
     email: "",
-    attendingCount: 0
+    attendingCount: 0,
+    registeredUsers: []
+
   })
 
   useEffect(() => {
     // if ID already exists
     // set formObject with that information
     // else
-    setFormObject({ ...formObject, "email": user.email })
+    setFormObject({ ...formObject, "email": user.email, "registeredUsers":[user.email] })
   }, [])
 
   const loadForm = () => {
@@ -36,12 +38,12 @@ const CreateConference = () => {
   }
 
   const handleInputChange = (e) => {
-    setFormObject({ ...formObject, [e.target.name]: e.target.value });
+    setFormObject({ ...formObject, [e.target.name]: e.target.value, registeredUsers:[user.email] });
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.saveConference({ ...formObject, email: user.email })
+    API.saveConference({ ...formObject, email: user.email,  })
       .then(history.push("/conference_created"))
       .catch(err => console.log(err));
   }

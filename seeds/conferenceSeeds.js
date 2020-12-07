@@ -18,7 +18,9 @@ const ConferenceSeed = [
         location: "Denver Public Library",
         organization: "CoderCloser",
         title: "coders in Quarntiene",
-        attendingCount: 2
+        attendingCount: 2,
+        registeredUsers: [],
+        
 
     },
     {
@@ -30,7 +32,8 @@ const ConferenceSeed = [
         location: "https://us04web.zoom.us/j/72168422332?pwd=KzljKzhjWU9WK05OdndaL01DN2NtUT09",
         organization: "FantasyFbs",
         title: "Fantasy Football Draft",
-        attendingCount: 1
+        attendingCount: 1,
+        registeredUsers: [],
     },
     
 ];
