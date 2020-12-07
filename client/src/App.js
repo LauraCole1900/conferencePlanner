@@ -38,7 +38,7 @@ function App() {
             <Route path="/session_added" component={SessionSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
-            <Route path="/add_session" component={CreateSession} />
+            <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </Container>
         </main>

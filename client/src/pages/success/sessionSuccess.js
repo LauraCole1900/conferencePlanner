@@ -6,6 +6,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 const SessionSuccess = () => {
   const { user } = useAuth0();
   const location = useLocation();
+  const urlArray = window.location.href.split("/")
+	const confId = urlArray[urlArray.length - 1]
 
   return (
     <Container fluid>
@@ -19,7 +21,7 @@ const SessionSuccess = () => {
       <Row>
         <Col sm={3}></Col>
         <Col sm={3}>
-          <Link to="/add_session" className={location.pathname === "/add_session" ? "sessionbtn active" : "sessionbtn"}>
+          <Link to={`/add_session/${confId}`} className={location.pathname === "/add_session" ? "sessionbtn active" : "sessionbtn"}>
             <Button type="button">Yes, add sessions!</Button>
           </Link>
         </Col>
