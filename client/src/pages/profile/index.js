@@ -33,6 +33,7 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div>
+        {/* user info */}
         <Container fluid className="mycontainer">
           <Row className="rowMain">
             <Col lg={3} className="column info">
@@ -45,12 +46,14 @@ const Profile = () => {
                 <Link to="/create_conference" className={location.pathname === "/create_conference" ? "link active" : "link"}><Button type="button">Create new conference</Button></Link>
               </div>
             </Col>
-            <Col lg={9} className="column stats">
+
+            {/* my conferences */}
+               <Col lg={9} className="column stats">
               <Container fluid className="mycontainer">
                 <Row id="confRow">
                   <h1>My Conferences</h1>
                 </Row>
-                {/* These will be dynamically generated */}
+               {/* These will be dynamically generated */}
                 <Conference conference={userConfArr} />
               </Container>
             </Col>
