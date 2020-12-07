@@ -4,17 +4,17 @@ import './index.css';
 
 
 const Logout = () => {
-    const { logout, isAuthenticated } = useAuth0();
-    return ( 
-        isAuthenticated && (
-        <div >
-        <div className="container">
+	const { logout, isAuthenticated } = useAuth0();
+	return (
+		isAuthenticated && (
+			<div >
+				<div className="container">
 
-            <button onClick={() => logout()} className ="Logout-button">Log Out</button>
-            </div>
-        </div>
-    )
-    )
+					<button onClick={() => logout()} className="Logout-button">Log Out</button>
+				</div>
+			</div>
+		)
+	)
 }
 
 export default Logout
