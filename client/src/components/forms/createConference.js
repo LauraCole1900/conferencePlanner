@@ -41,7 +41,7 @@ const CreateConference = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.saveConference({ ...formObject, email: user.email })
+     API.saveConference({ ...formObject, email: user.email })
       .then(history.push("/conference_created"))
       .catch(err => console.log(err));
   }

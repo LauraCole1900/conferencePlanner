@@ -70,7 +70,8 @@ function ConfDetails() {
           {/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
           <Container fluid className="mycontainer">
             <Row>
-              <Session session={searchFilter(sessionArray)} />
+              {/* map over session array and pull out sessions with conference id that matches id in url */}
+              <Session session={sessionArray} />
             </Row>
           </Container>
         </Col>
