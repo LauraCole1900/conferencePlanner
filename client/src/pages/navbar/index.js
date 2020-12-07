@@ -22,7 +22,7 @@ const Navigation = () => {
           <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
             Conferences
           </Link>
-          <span className="logout offset-sm-11" onClick={() => logout({ returnTo: window.location.origin })}>
+          <span className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
             Logout
           </span>
         </Nav>

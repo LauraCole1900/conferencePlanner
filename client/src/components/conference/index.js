@@ -10,18 +10,10 @@ import "./style.css";
 function Conference({ conference }) {
 	const { user, isAuthenticated } = useAuth0();
 	const idx = conference.findIndex(item => item.email === user.email);
-	let id = conference[idx]._id;
-	console.log(user)
-	console.log(conference)
 
 	function handleRegister() {
 		// grab conference ID
 		// link to Registration page with conference ID already populated
-	}
-
-	function handleEdit() {
-		// grab conference ID
-		// link to create_conference page with info already populated
 	}
 
 	return (
@@ -50,10 +42,10 @@ function Conference({ conference }) {
 								{user.email === conference[idx].email &&
 									<div>
 										<Link to={{
-											pathname: `/create_conference/${id}`,
-											state: { confInfo: e }
+											state: { confInfo: conference },
+											pathname: `/create_conference/${e._id}`
 										}}>
-											<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
+											<Button className="btn">Edit conference info</Button>
 										</Link>
 									</div>}
 							</div>

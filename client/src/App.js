@@ -34,11 +34,11 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route exact path="/session/:id" component={Session} />
-            <Route exact path="/create_conference" component={CreateConference} />
-            <Route exact path="/add_session" component={CreateSession} />
             <Route exact path="/conference_created" component={ConfSuccess} />
             <Route exact path="/session_added" component={SessionSuccess} />
             <Route exact path="/conferences/:id" component={ConfDetails} />
+            <Route path="/create_conference" component={CreateConference} />
+            <Route path="/add_session" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </Container>
         </main>
