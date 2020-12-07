@@ -7,15 +7,22 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
 	const { user, isAuthenticated } = useAuth0();
-	let id = conference._id;
 
-	function handleRegister() {
-		// grab conference ID
-		// link to Registration page with conference ID already populated
+	function handleRegister(confid) {
+        console.log("from componenet")
+        const email = {email: user.email}
+        API.updateRegisteredById(confid, email).then(resp => {
+            // const tempArr = resp.data
+            // console.log(tempArr)
+            // setUserConfArr(tempArr);
+          })
+
+		
 	}
 
 	function handleEdit() {
@@ -45,11 +52,11 @@ function Conference({ conference }) {
 								</Row>
 							</Card.Text>
 							<div className="btndiv">
-								<Button className="btn" onClick={handleRegister}>Register</Button>
+								<Button className="btn" value="" onClick={()=> handleRegister(e._id)}>Register</Button>
 								{user.email === conference.email &&
 									<div>
 										<Link to={{
-											pathname: `/create_conference/${id}`,
+											pathname: `/create_conference/${e._id}`,
 											state: {confInfo: e}
 										}}>
 										<Button className="btn" onClick={handleEdit}>Edit conference info</Button>

@@ -10,7 +10,9 @@ const conferenceSchema = new Schema({
     title: {type: String, required: true},
     description: {type: String, required: true},
     email: {type: String, required: true},
-    attendingCount: {type: Number}
+    attendingCount: {type: Number},
+    registeredUsers:[{type: String}]
+    
 })
 
 const Conference = mongoose.model("Conference", conferenceSchema)
