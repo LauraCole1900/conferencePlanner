@@ -10,7 +10,7 @@
 }
 
 .job {
-  /* margin-top: -0px; */
+  margin-top: -0px;
 }
 
 .info {
@@ -32,8 +32,6 @@
 .stats {
   font-size: large;
   padding: 42px 5px;
-  /* outline: solid 1p #D0DCE0;
-  background-color: #D0DCE0; */
 }
 
 #confRow {
@@ -80,7 +78,3 @@
   width: 100px;
   background-color: lightcoral;
 }
-
-/* .rowMain {
-  background-color:#86949A ;
-} */
