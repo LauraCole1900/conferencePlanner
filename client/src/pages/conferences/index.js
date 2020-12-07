@@ -42,7 +42,7 @@ function Conferences() {
 				</Col>
 				<Col lg={9}>
 					<Row>
-						<Conference conference={conferenceArray} />
+						<Conference conference={searchFilter(conferenceArray)} />
 					</Row>
 				</Col>
 			</Row>

@@ -23,6 +23,14 @@ const API = {
     return axios.post("/api/conference/post", confData)
   },
 
+  //update Conference by confID
+  updateConference: function (id, formObj) {
+      console.log("from api")
+      console.log(id)
+      console.log(formObj)
+    return axios.put(`/api/conference/update/id/${id}`, formObj)
+  },
+
   //Get all users from DB
   getUsers: function () {
     return axios.get("/api/users");

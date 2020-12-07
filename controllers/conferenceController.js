@@ -28,7 +28,7 @@ module.exports = {
     //used to display for ones the user is attending
     findAttending: function (req, res) {
         db.Conference
-            .find({registeredUsers: req.params.email})
+            .find({ registeredUsers: req.params.email })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
@@ -39,6 +39,31 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+
+    update: function (req, res) {
+        console.log("from controller")
+        console.log(req.params)
+        console.log(req.body)
+        db.Conference
+            .updateMany({ _id: req.params.id },
+                {
+                    $set:
+                    {
+                        EndDate: req.body.EndDate,
+                        StartDate: req.body.StartDate,
+                        confType: req.body.confType,
+                        description: req.body.description,
+                        location: req.body.location,
+                        organization: req.body.organization,
+                        title: req.body.title
+                    }
+                })
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+    },
+
+
+
     updateRegistered: function (req, res) {
         db.Conference
             .updateOne({ _id: req.params.id }, { $push: { registeredUsers: req.body.email } })
