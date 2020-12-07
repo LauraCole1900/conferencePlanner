@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,18 +8,13 @@ import API from "../../utils/API"
 
 const CreateSession = () => {
 	const { user } = useAuth0();
-    let [formObject, setFormObject] = useState({})
-    
-
-    const urlArray = window.location.href.split("/")
-    const userId = urlArray[urlArray.length - 1]
-
-
-
-
+	let [formObject, setFormObject] = useState({})
+	const history = useHistory();
+	const urlArray = window.location.href.split("/")
+	const confId = urlArray[urlArray.length - 1]
 
 	useEffect(() => {
-		setFormObject({ ...formObject, "confId": userId })
+		setFormObject({ ...formObject, "confId": confId })
 	}, [])
 
 	const handleInputChange = (e) => {
@@ -27,8 +23,9 @@ const CreateSession = () => {
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
-        API.saveSession({ ...formObject, confId: userId })
-        .catch(err => console.log(err))
+		API.saveSession({ ...formObject, confId: confId })
+			.then(history.push(`/session_added/${confId}`))
+			.catch(err => console.log(err));
 	}
 
 	return (

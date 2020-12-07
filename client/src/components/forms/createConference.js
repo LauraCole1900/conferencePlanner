@@ -23,7 +23,6 @@ const CreateConference = () => {
     email: "",
     attendingCount: 0,
     registeredUsers: []
-
   })
 
   useEffect(() => {
