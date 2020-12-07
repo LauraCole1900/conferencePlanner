@@ -11,7 +11,6 @@ import API from "../../utils/API";
 const CreateConference = () => {
   const { user, isAuthenticated } = useAuth0();
   const history = useHistory();
-  // console.log("from Create conference")
 
   let [formObject, setFormObject] = useState({
     EndDate: "01/01/2021",
@@ -33,6 +32,10 @@ const CreateConference = () => {
     // else
     setFormObject({ ...formObject, "email": user.email, "registeredUsers":[user.email] })
   }, [])
+
+  const loadForm = () => {
+
+  }
 
   const handleInputChange = (e) => {
     setFormObject({ ...formObject, [e.target.name]: e.target.value, registeredUsers:[user.email] });
@@ -98,7 +101,7 @@ const CreateConference = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        {/* ternary operator to show "Submit" or "Update" depending on if ID exists */}
+        <Button onClick={handleFormUpdate} type="submit">Update form</Button>
         <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
       </Form>
     )

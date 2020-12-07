@@ -4,8 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import API from "../../utils/API";
 import "./style.css";
@@ -25,15 +23,10 @@ function Conference({ conference }) {
 		
 	}
 
-	function handleEdit() {
-		// grab conference ID
-		// link to create_conference page with info already populated
-	}
-
 	return (
 		<Container>
-			<Card col-8 className="conferenceCard">
-				{conference.map(e => (
+			{conference.map(e => (
+				<Card col-8 className="conferenceCard">
 					<div key={e.title}>
 						<Card.Header className="card-title"><h2>{e.title}</h2></Card.Header>
 						<Card.Body>
@@ -52,21 +45,30 @@ function Conference({ conference }) {
 								</Row>
 							</Card.Text>
 							<div className="btndiv">
-								<Button className="btn" value="" onClick={()=> handleRegister(e._id)}>Register</Button>
-								{user.email === conference.email &&
+								<Button className="btn" onClick={handleRegister}>Register</Button>
+								{user.email === e.email &&
 									<div>
 										<Link to={{
-											pathname: `/create_conference/${e._id}`,
-											state: {confInfo: e}
+											state: { confInfo: conference },
+											pathname: `/create_conference/${e._id}`
 										}}>
-										<Button className="btn" onClick={handleEdit}>Edit conference info</Button>
+											<Button className="btn">Edit conference info</Button>
+										</Link>
+									</div>}
+									{user.email === e.email &&
+									<div>
+										<Link to={{
+											state: { confInfo: conference },
+											pathname: `/add_session/${e._id}`
+										}}>
+											<Button className="btn">Add session</Button>
 										</Link>
 									</div>}
 							</div>
 						</Card.Body>
 					</div>
-				))}
-			</Card>
+				</Card>
+			))}
 		</Container >
 	);
 }
