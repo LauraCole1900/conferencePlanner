@@ -5,7 +5,7 @@ import { Navbar } from "react-bootstrap";
 import "./style.css";
 
 const Navigation = () => {
-  const logout = useAuth0();
+  const { logout } = useAuth0();
   const location = useLocation();
   return (
     // <Navbar expand="sm" className="navbar">
