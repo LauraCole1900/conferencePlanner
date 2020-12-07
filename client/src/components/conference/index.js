@@ -55,7 +55,7 @@ function Conference({ conference }) {
 								</div>
 								{user.email !== e.email &&
 									<div>
-										<Button className="btn" onClick={handleRegister}>Register</Button>
+										<Button className="btn" onClick={()=>handleRegister(e._id)}>Register</Button>
 									</div>}
 								{user.email === e.email &&
 									<div>
