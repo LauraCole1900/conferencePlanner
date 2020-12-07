@@ -36,7 +36,6 @@ const Profile = () => {
         <Container fluid className="mycontainer">
           <Row className="rowMain">
             <Col lg={3} className="column info">
-              {/* <img src={user.picture} alt ={user.name} /> */}
               <h1>{user.name.toUpperCase()}</h1>
               <img className="profilePic" src={user.picture} alt="profilePic"></img>
               <h3 className="job">{user.email}</h3>
@@ -48,32 +47,6 @@ const Profile = () => {
             </Col>
             <Col lg={9} className="column stats">
               <Container fluid className="mycontainer">
-                <Row className="rowMain">
-                  <Col lg={3} className="column info">
-                    {/* <img src={user.picture} alt ={user.name} /> */}
-                    <h1>{user.name}</h1>
-                    <h3 className="job">Job Title goes Here</h3>
-                    <div id="textbox">
-                      {/* <p id="pleft">Edit your information</p> */}
-                      <p id="pright">Change Password</p>
-                    </div>
-                  </Col>
-                  <Col lg={9} className="column stats">
-                    <Container fluid className="mycontainer">
-                      <Row>
-                        <Col lg={3} className="d-lg-block d-md-none"></Col>
-                        <Col lg={2} className="column">
-                          <p id="pcreate">Created: X</p>
-                        </Col>
-                        <Col lg={2} className="d-lg-block d-md-none"></Col>
-                        <Col lg={2} className="column">
-                          <p id="pattend">Attending: Y</p>
-                        </Col>
-                        <Col lg={3} className="column"></Col>
-                      </Row>
-                    </Container>
-                  </Col>
-                </Row>
                 <Row id="confRow">
                   <h1>My Conferences</h1>
                 </Row>
