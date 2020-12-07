@@ -25,6 +25,10 @@ const CreateConference = () => {
     registeredUsers: []
   })
 
+  const urlArray = window.location.href.split("/")
+  const confId = urlArray[urlArray.length - 1]
+
+
   useEffect(() => {
     // if ID already exists
     // set formObject with that information
@@ -49,8 +53,8 @@ const CreateConference = () => {
 
   const handleFormUpdate = (e) => {
     e.preventDefault();
-    API.updateConference({ ...formObject, email: user.email })
-      .then(history.push("/conference_created"))
+    API.updateConference(confId, formObject )
+    //   .then(history.push("/conference_created"))
       .catch(err => console.log(err));
   }
 
