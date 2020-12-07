@@ -8,10 +8,9 @@ import API from "../../utils/API";
 // import { get } from "mongoose";
 // import ConferenceContext from "../../utils/conferenceContext";
 
-const CreateConference = (req, res) => {
+const CreateConference = () => {
   const { user, isAuthenticated } = useAuth0();
   const history = useHistory();
-  const id = req.params._id
 
   let [formObject, setFormObject] = useState({
     EndDate: "01/01/2021",
@@ -100,9 +99,8 @@ const CreateConference = (req, res) => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        {id.length > 0 ?
-        <Button onClick={handleFormUpdate} type="submit">Update form</Button> :
-        <Button onClick={handleFormSubmit} type="submit">Submit form</Button>}
+        <Button onClick={handleFormUpdate} type="submit">Update form</Button>
+        <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
       </Form>
     )
   )

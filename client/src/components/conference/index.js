@@ -9,7 +9,6 @@ import "./style.css";
 
 function Conference({ conference }) {
 	const { user, isAuthenticated } = useAuth0();
-	const idx = conference.findIndex(item => item.email === user.email);
 
 	function handleRegister() {
 		// grab conference ID
@@ -46,6 +45,15 @@ function Conference({ conference }) {
 											pathname: `/create_conference/${e._id}`
 										}}>
 											<Button className="btn">Edit conference info</Button>
+										</Link>
+									</div>}
+									{user.email === e.email &&
+									<div>
+										<Link to={{
+											state: { confInfo: conference },
+											pathname: `/add_session/${e._id}`
+										}}>
+											<Button className="btn">Add session</Button>
 										</Link>
 									</div>}
 							</div>
