@@ -4,7 +4,6 @@ import { Container, Card, Row, Col, Form, FormControl, Button } from "react-boot
 import Session from "../../components/session";
 import API from "../../utils/API";
 import { Link, useLocation } from "react-router-dom";
-import UserContext from "../../utils/userContext";
 import "./style.css";
 
 

@@ -5,14 +5,22 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
 	const { user } = useAuth0();
 
-	function handleRegister() {
-		// grab conference ID
-		// link to Registration page with conference ID already populated
+	function handleRegister(confid) {
+		console.log("from componenet")
+		const email = { email: user.email }
+		API.updateRegisteredById(confid, email).then(resp => {
+			// const tempArr = resp.data
+			// console.log(tempArr)
+			// setUserConfArr(tempArr);
+		})
+
+
 	}
 
 	return (
