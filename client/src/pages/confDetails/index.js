@@ -4,7 +4,6 @@ import { Container, Card, Row, Col, Form, FormControl, Button } from "react-boot
 import Session from "../../components/session";
 import API from "../../utils/API";
 import { Link, useLocation } from "react-router-dom";
-import UserContext from "../../utils/userContext";
 import "./style.css";
 
 
@@ -70,7 +69,8 @@ function ConfDetails() {
           {/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
           <Container fluid className="mycontainer">
             <Row>
-              <Session session={searchFilter(sessionArray)} />
+              {/* map over session array and pull out sessions with conference id that matches id in url */}
+              <Session session={sessionArray} />
             </Row>
           </Container>
         </Col>

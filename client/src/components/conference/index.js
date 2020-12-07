@@ -9,18 +9,18 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
-	const { user, isAuthenticated } = useAuth0();
+	const { user } = useAuth0();
 
 	function handleRegister(confid) {
-        console.log("from componenet")
-        const email = {email: user.email}
-        API.updateRegisteredById(confid, email).then(resp => {
-            // const tempArr = resp.data
-            // console.log(tempArr)
-            // setUserConfArr(tempArr);
-          })
+		console.log("from componenet")
+		const email = { email: user.email }
+		API.updateRegisteredById(confid, email).then(resp => {
+			// const tempArr = resp.data
+			// console.log(tempArr)
+			// setUserConfArr(tempArr);
+		})
 
-		
+
 	}
 
 	return (
@@ -45,8 +45,18 @@ function Conference({ conference }) {
 								</Row>
 							</Card.Text>
 							<div className="btndiv">
-
-								<Button className="btn" onClick={()=>handleRegister(e._id)}>Register</Button>
+								<div>
+									<Link to={{
+										state: { confInfo: conference },
+										pathname: `/conferences/${e._id}`
+									}}>
+										<Button className="btn">Show conference details</Button>
+									</Link>
+								</div>
+								{user.email !== e.email &&
+									<div>
+										<Button className="btn" onClick={handleRegister}>Register</Button>
+									</div>}
 								{user.email === e.email &&
 									<div>
 										<Link to={{
@@ -56,7 +66,7 @@ function Conference({ conference }) {
 											<Button className="btn">Edit conference info</Button>
 										</Link>
 									</div>}
-									{user.email === e.email &&
+								{user.email === e.email &&
 									<div>
 										<Link to={{
 											state: { confInfo: conference },
