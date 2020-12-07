@@ -39,7 +39,7 @@ function Conference({ conference }) {
 							</Card.Text>
 							<div className="btndiv">
 								<Button className="btn" onClick={handleRegister}>Register</Button>
-								{user.email === conference[idx].email &&
+								{user.email === e.email &&
 									<div>
 										<Link to={{
 											state: { confInfo: conference },
