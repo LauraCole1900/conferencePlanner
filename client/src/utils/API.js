@@ -30,7 +30,13 @@ const API = {
   //save user to DB
   saveUser: function (userData) {
     return axios.post("/api/user", userData);
+  },
+
+  //saveSession
+  saveSession: function (confId) {
+      return axios.post("/api/session/post", confId)
   }
+
 
   //getSession called in confDetails
 

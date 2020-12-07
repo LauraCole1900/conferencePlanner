@@ -45,7 +45,8 @@ function Conference({ conference }) {
 								</Row>
 							</Card.Text>
 							<div className="btndiv">
-								<Button className="btn" onClick={handleRegister}>Register</Button>
+
+								<Button className="btn" onClick={()=>handleRegister(e._id)}>Register</Button>
 								{user.email === e.email &&
 									<div>
 										<Link to={{

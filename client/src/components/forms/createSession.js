@@ -2,14 +2,23 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import API from "../../utils/API"
 // import ConferenceContext from "../../utils/conferenceContext";
 
 const CreateSession = () => {
 	const { user } = useAuth0();
-	let [formObject, setFormObject] = useState({})
+    let [formObject, setFormObject] = useState({})
+    
+
+    const urlArray = window.location.href.split("/")
+    const userId = urlArray[urlArray.length - 1]
+
+
+
+
 
 	useEffect(() => {
-		setFormObject({ ...formObject, "confId": "23324234" })
+		setFormObject({ ...formObject, "confId": userId })
 	}, [])
 
 	const handleInputChange = (e) => {
@@ -18,7 +27,8 @@ const CreateSession = () => {
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
-		console.log(formObject);
+        API.saveSession({ ...formObject, confId: userId })
+        .catch(err => console.log(err))
 	}
 
 	return (
