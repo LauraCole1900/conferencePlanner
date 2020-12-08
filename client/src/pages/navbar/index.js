@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Row } from "react-bootstrap";
 import "./style.css";
 
 const Navigation = () => {
@@ -25,10 +25,16 @@ const Navigation = () => {
     //     </Nav>
     //   </Navbar.Collapse>
     // </Navbar >
-    <Navbar className="navbar navbar-expand-lg">
-      <Navbar.Brand className="mylogo">
+    <Navbar className="navbar navbar-expand-lg" style={{borderRadius:"15px"}}>
+        <Row>
+      <Navbar.Brand className="mylogo ml-3">
         <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
-      </Navbar.Brand>
+        <div style={{textAlign:"center", paddingLeft:"1vw"}}>
+        <div>COOL CATS</div>
+        <div style={{fontSize:"0.7vw", fontWeight:"bold"}}>Conference Planner</div>
+        </div>
+        </Navbar.Brand>
+      </Row>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -47,9 +53,9 @@ const Navigation = () => {
           </Link>
           </li>
           <li className="nav-item">
-            <span className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
+            <Link className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
               Log Out
-            </span>
+            </Link>
           </li>
         </ul>
       </div>
