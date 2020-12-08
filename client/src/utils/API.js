@@ -11,6 +11,8 @@ const API = {
   },
 
   getConferencebyID: function (confId) {
+      console.log("from API")
+      console.log(confId)
     return axios.get(`/api/conference/id/${confId}`)
   },
 
@@ -54,7 +56,11 @@ const API = {
   //getSession called in confDetails
   getSession: function (Id) {
       return axios.get(`api/session/conference/:${Id}`)
-  }
+  },
+
+  deleteConference: function (id) {
+      return axios.delete(`/api/conference/delete/${id}`)
+  },
 
 };
 

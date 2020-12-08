@@ -4,7 +4,6 @@
   "description": "Conference Planner client side",
   "private": true,
   "proxy": "http://localhost:3001",
-  "secure": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",

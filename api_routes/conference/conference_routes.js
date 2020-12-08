@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const conferenceController = require("../../controllers/conferenceController.js");
-const { Conference } = require("../../models");
+
 
 
 // matches with "/api/conference"
@@ -21,6 +21,9 @@ router.route("/id/:id")
     
 router.route("/update/id/:id")
     .put(conferenceController.update)
+
+router.route("/delete/:id")
+    .delete(conferenceController.remove)
 
 
 

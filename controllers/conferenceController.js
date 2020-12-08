@@ -1,4 +1,4 @@
-const { Conference } = require("../models");
+const ObjectId = require('mongodb').ObjectId; 
 const db = require("../models");
 
 
@@ -30,12 +30,12 @@ module.exports = {
         console.log("confId from Conf cont")
         console.log(req.params.confId)
         db.Conference
-            .find({ _id: req.params.confId })
+            .find(ObjectId(req.params.confId))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
 
-
+    // .find({"_id": new ObjectId(req.params.confId) })
     //used to display for ones the user is attending
     findAttending: function (req, res) {
         db.Conference
@@ -83,8 +83,10 @@ module.exports = {
     },
 
     remove: function (req, res) {
+        console.log("ConfId from Remove")
+        console.log(req.params.id)
         db.Conference
-            .findById({ _id: req.params.id })
+            .findById({"_id": ObjectId(req.params.id)})
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
