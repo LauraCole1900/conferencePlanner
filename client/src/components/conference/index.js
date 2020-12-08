@@ -9,87 +9,91 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
-	const { user } = useAuth0();
+    const { user } = useAuth0();
 
-	function handleRegister(confid) {
-		console.log("from component")
-		const email = { email: user.email }
-		API.updateRegisteredById(confid, email).then(resp => {
-			// const tempArr = resp.data
-			// console.log(tempArr)
-			// setUserConfArr(tempArr);
-		})
-	}
+    function handleRegister(confid) {
+        console.log("from componenet")
+        const email = { email: user.email }
+        API.updateRegisteredById(confid, email).then(resp => {
+            // const tempArr = resp.data
+            // console.log(tempArr)
+            // setUserConfArr(tempArr);
+        })
 
-	function handleDelete(confid) {
-		API.deleteConference(confid)
-		// .then(resp => {})
-		// .catch(err => console.log(err))
-	}
 
-	return (
-		<Container>
-			{conference.map(e => (
-				<Card col-8 className="conferenceCard">
-					<div key={e._id}>
-						<Card.Header className="card-title">
-							{user.email === e.email &&
-								<div>
-									<span onClick={() => handleDelete(e._id)}><img src="/images/trash-can.png" alt="Delete" className="delete float-right" /></span>
-								</div>}
-							<h2>{e.title}</h2>
-						</Card.Header>
-						<Card.Body>
-							<Card.Text>
-								<Row>
-									<h3 className="cardBody">{e.description}</h3>
-								</Row>
-								<Row>
-									<h3 className="cardBody">Location: {e.location}</h3>
-								</Row>
-								<Row>
-									<h3 className="cardBody"> Dates: {e.StartDate} through {e.EndDate}</h3>
-								</Row>
-							</Card.Text>
-							<div className="btndiv">
-								<div>
-									<Link to={{
-										state: { confInfo: conference },
-										pathname: `/conferences/${e._id}`
-									}}>
-										<Button className="btn">Show conference details</Button>
-									</Link>
-								</div>
-								{user.email !== e.email &&
-									<div>
-										<Button className="btn" onClick={() => handleRegister(e._id)}>Register</Button>
-									</div>}
-								{user.email === e.email &&
-									<div>
-										<Link to={{
-											state: { confInfo: conference },
-											pathname: `/edit/:id/${e._id}`
-										}}>
-											<Button className="btn">Edit conference info</Button>
-										</Link>
-									</div>}
-								{user.email === e.email &&
-									<div>
+    }
 
-										<Link to={{
-											state: { confInfo: conference },
-											pathname: `/add_session/${e._id}`
-										}}>
-											<Button className="btn">Add session</Button>
-										</Link>
-									</div>}
-							</div>
-						</Card.Body>
-					</div>
-				</Card>
-			))}
-		</Container >
-	);
+    function handleDelete(id){
+        API.deleteConference(id)
+    }
+
+    return (
+        <Container>
+            {conference.map(e => (
+                <Card col-8 className="conferenceCard">
+                    <div key={e.title}>
+                        <Card.Header className="card-title">
+                            {user.email === e.email &&
+                                <div>
+                                    <span onClick={() => handleDelete(e._id)}><img src="/images/trash-can.png" alt="Delete" className="delete float-right" /></span>
+                                </div>}
+
+
+                            <h2>{e.title}</h2></Card.Header>
+                        <Card.Body>
+                            <Card.Text>
+                                <Row className="cardBody">
+                                    <h3 className="cardBody">Description</h3>
+                                </Row>
+                                <Row>
+                                    <p className="cardBody">{e.description}</p>
+                                </Row>
+                                <Row>
+                                    <h3 className="cardBody">Location: {e.location}</h3>
+                                </Row>
+                                <Row>
+                                    <h3 className="cardBody"> Dates: {e.StartDate} through {e.EndDate}</h3>
+                                </Row>
+                            </Card.Text>
+                            <div className="btndiv">
+                                <div>
+                                    <Link to={{
+                                        state: { confInfo: conference },
+                                        pathname: `/conferences/${e._id}`
+                                    }}>
+                                        <Button className="btn">Show conference details</Button>
+                                    </Link>
+                                </div>
+                                {user.email !== e.email &&
+                                    <div>
+                                        <Button className="btn" onClick={() => handleRegister(e._id)}>Register</Button>
+                                    </div>}
+                                {user.email === e.email &&
+                                    <div>
+                                        <Link to={{
+                                            state: { confInfo: conference },
+                                            pathname: `/edit/:id/${e._id}`
+                                        }}>
+                                            <Button className="btn">Edit conference info</Button>
+                                        </Link>
+                                    </div>}
+                                {user.email === e.email &&
+                                    <div>
+
+                                        <Link to={{
+                                            state: { confInfo: conference },
+                                            pathname: `/add_session/${e._id}`
+                                        }}>
+                                            <Button className="btn">Add session</Button>
+                                        </Link>
+                                    </div>}
+                            </div>
+                        </Card.Body>
+                    </div>
+                </Card>
+            ))}
+        </Container >
+    );
 }
 
 export default Conference;

@@ -19,8 +19,6 @@ module.exports = {
     },
     //checks if user is in DB, if not then saves
     create: function (req, res) {
-        console.log("from Controller")
-        console.log(req)
         db.User
             .findOne({ email: req.body.email }, function (err, user) {
                 if (err) {
