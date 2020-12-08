@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./components/session";
 import CreateConference from "./components/forms/createConference";
+import EditConference from "./components/conference/Edit"
 import CreateSession from "./components/forms/createSession";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
@@ -38,6 +39,7 @@ function App() {
             <Route path="/session_added" component={SessionSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
+            <Route path="/edit/:id" component={EditConference} />
             <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </Container>

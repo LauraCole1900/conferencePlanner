@@ -61,13 +61,14 @@ function Conference({ conference }) {
 									<div>
 										<Link to={{
 											state: { confInfo: conference },
-											pathname: `/create_conference/${e._id}`
+											pathname: `/edit/:id/${e._id}`
 										}}>
 											<Button className="btn">Edit conference info</Button>
 										</Link>
 									</div>}
 								{user.email === e.email &&
 									<div>
+									
 										<Link to={{
 											state: { confInfo: conference },
 											pathname: `/add_session/${e._id}`

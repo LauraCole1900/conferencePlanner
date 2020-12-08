@@ -17,7 +17,7 @@ const ConferenceSeed = [
         email: "beni.mahat@gmail.com",
         location: "Denver Public Library",
         organization: "CoderCloser",
-        title: "coders in Quarntiene",
+        title: "Coders in Quarantine",
         attendingCount: 2,
         registeredUsers: [],
         
