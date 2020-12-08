@@ -9,10 +9,7 @@ const Title= () => {
   return (
     <Jumbotron fluid className="jumbotron">
   <Container>
-    <h1 className="top">COOL CATS</h1>
-    <h2 className="subtitle">
-     Conference Planner
-    </h2>
+  <img className="img" alt="logo" src="/images/ccLogo2.png" height="200"/> 
   </Container>
 </Jumbotron>
   )
