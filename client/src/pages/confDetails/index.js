@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Session from "../../components/session";
+import Conference from "../../components/conference";
 import API from "../../utils/API";
 import { Link, useLocation } from "react-router-dom";
 import "./style.css";

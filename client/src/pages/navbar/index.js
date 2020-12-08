@@ -11,12 +11,16 @@ const Navigation = () => {
 
         <>
             <Navbar className="navbar navbar-expand-lg" style={{ borderRadius: "15px" }} collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#home" className="mylogo ml-3">
-                    <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
-                    <div style={{ textAlign: "center", paddingLeft: "1vw" }}>
-                        <div>COOL CATS</div>
-                        <div style={{ fontSize: "0.7vw", fontWeight: "bold" }}>Conference Planner</div>
-                    </div></Navbar.Brand>
+                <Navbar.Brand className="mylogo ml-3">
+                    <Link to="/profile">
+                        <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
+                        </Link>
+                        <div style={{ textAlign: "center", paddingLeft: "1vw" }}>
+                            <div>COOL CATS</div>
+                            <div style={{ fontSize: "0.7vw", fontWeight: "bold" }}>Conference Planner</div>
+                        </div>
+
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -41,10 +45,10 @@ const Navigation = () => {
                                 My Profile</Link>
                         </Nav.Link>
                         <Nav.Item className="mt-2">
-                        <Link style={{fontWeight:"bold"}} className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
+                            <Link style={{ fontWeight: "bold" }} className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
                                 LOG OUT</Link>
                         </Nav.Item>
-                        
+
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
