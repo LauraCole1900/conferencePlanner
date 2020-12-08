@@ -15,6 +15,8 @@ router.route("/post")
 router.route("/update/id/:id")
     .put(sessionController.update);
 
+router.route("/delete/:id")
+    .delete(sessionController.remove);
 
 
 
