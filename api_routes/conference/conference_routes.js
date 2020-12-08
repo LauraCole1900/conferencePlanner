@@ -13,6 +13,9 @@ router.route("/post")
 router.route("/:email")
     .get(conferenceController.findByEmail)
 
+router.route("/id/:confId")
+    .get(conferenceController.findById)
+
 router.route("/id/:id")
     .put(conferenceController.updateRegistered)
     

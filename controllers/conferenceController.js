@@ -25,6 +25,17 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+
+    findById: function (req, res) {
+        console.log("confId from Conf cont")
+        console.log(req.params.confId)
+        db.Conference
+            .find({ _id: req.params.confId })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+
+
     //used to display for ones the user is attending
     findAttending: function (req, res) {
         db.Conference
