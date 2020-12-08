@@ -9,9 +9,19 @@
   align-items: center;
 }
 
-.searchArea {
-  text-align: right;
+#searchArea {
+  text-align: center;
+  width: 100%;
 }
+
+.search-area {
+  width: 100%;
+}
+
+#search-button{
+  margin-left: -50px;
+}
+
 
 .cardBody {
   text-align: center;

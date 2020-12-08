@@ -8,31 +8,14 @@ const Navigation = () => {
   const { logout } = useAuth0();
   const location = useLocation();
   return (
-    // <Navbar expand="sm" className="navbar">
-    //   <Navbar.Brand className="mylogo">
-    //     <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
-    //   </Navbar.Brand>
-    //   <Navbar.Toggle className="randomDot" aria-controls="basic-navbar-nav" />
-    //   <Navbar.Collapse id="basic-navbar-nav">
-    //     <Nav>
-    //       <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
-    //         My Profile
-    //       </Link>
-
-    //       <span className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
-    //         Logout
-    //       </span>
-    //     </Nav>
-    //   </Navbar.Collapse>
-    // </Navbar >
-    <Navbar className="navbar navbar-expand-lg" style={{borderRadius:"15px"}}>
-        <Row>
-      <Navbar.Brand className="mylogo ml-3">
-        <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
-        <div style={{textAlign:"center", paddingLeft:"1vw"}}>
-        <div>COOL CATS</div>
-        <div style={{fontSize:"0.7vw", fontWeight:"bold"}}>Conference Planner</div>
-        </div>
+    <Navbar className="navbar navbar-expand-lg" style={{ borderRadius: "15px" }}>
+      <Row>
+        <Navbar.Brand className="mylogo ml-3">
+          <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
+          <div style={{ textAlign: "center", paddingLeft: "1vw" }}>
+            <div>COOL CATS</div>
+            <div style={{ fontSize: "0.7vw", fontWeight: "bold" }}>Conference Planner</div>
+          </div>
         </Navbar.Brand>
       </Row>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -40,7 +23,7 @@ const Navigation = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <div className="collapse navbar-collapse test" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
