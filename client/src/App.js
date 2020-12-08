@@ -26,7 +26,6 @@ function App() {
     <div style={{margin:"2vw"}}>
       <Router>
         <header>
-          <Title />
           <div>
             {isAuthenticated && <Navbar />}
           </div>
@@ -45,6 +44,7 @@ function App() {
             <Route path={["/", "/login"]} component={Login} />
           </div>
         </main>
+        <Title />
       </Router>
     </div>
     </div>

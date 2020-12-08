@@ -11,6 +11,7 @@ const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
     const location = useLocation();
     const [userConfArr, setUserConfArr] = useState([])
+    const [attConfArr, setAttConfArr] = useState([])
 
     function saveUserToDb() {
         API.saveUser(user)
@@ -25,6 +26,17 @@ const Profile = () => {
             console.log(tempArr)
             setUserConfArr(tempArr);
         })
+
+        API.getAttConference(user.email).then( resp => {
+            const attArr = resp.data
+            console.log(attArr)
+            setAttConfArr(attArr)
+        })
+
+
+
+
+
     }, [])
 
     // console.log(userConfArr)
@@ -35,12 +47,12 @@ const Profile = () => {
             <div>
                 {/* user info */}
                 <Col lg={12}>
-                    <div style={{ margin: "auto", width: "50%", border: "3px solid primary", padding: "10px" }} className="info mt-5">
+                    <div style={{ margin: "auto", width: "50%", borderRadius: "15px"}} className="info mt-5">
                         <div style={{ paddingLeft: "6vw" }}>
                             <Row>
                                 <img className="profilePic" style={{ borderRadius: "50%" }} src={user.picture} alt="profilePic"></img>
                                 <div className="pl-3">
-                                    <h1>{user.name.toUpperCase()}</h1>
+                                    <h1>{user.nickname.toUpperCase()}</h1>
                                     <h3 style={{ fontSize: "2vh" }} className="job">{user.email}</h3>
                                 </div>
                             </Row>
@@ -48,13 +60,14 @@ const Profile = () => {
                     </div>
                 </Col>
 
+                <div className="headerBorder"></div>
 
 
                 {/* my conferences */}
-                <div style={{ marginTop: "5vh" }}>
+                <div>
                     <Row>
                         <Col lg={6} md={12}>
-                            <Card >
+                            <Card  style={{borderRadius:"15px"}} >
                                 <Col lg={12}>
                                     <Row>
                                         <Card.Header style={{ width: "100%"}}>
@@ -78,24 +91,21 @@ const Profile = () => {
                                             </Row>
                                         </Card.Header>
                                     </Row>
-
-
                                 </Col>
-
                                 <Conference conference={userConfArr} />
                             </Card>
                         </Col>
                         {/* attending conference */}
                         <Col lg={6} md={12}>
-                            <Card >
+                            <Card style={{borderRadius:"15px"}} >
                                 <Col lg={12}>
                                     <Row>
-                                        <Card.Header style={{ width: "100%" }}>
+                                        <Card.Header style={{ width: "100%", }}>
                                             <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Attending</h1>
                                         </Card.Header>
                                     </Row>
                                 </Col>
-                                <Conference conference={userConfArr} />
+                                <Conference conference={attConfArr} />
                             </Card>
                         </Col>
                     </Row>

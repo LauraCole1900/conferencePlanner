@@ -7,9 +7,16 @@ import "./style.css";
 const Title = () => {
 
     return (
-        <div className="center">
-            <img className="img" alt="logo" src="/images/ccLogo2.png" height="200" />
-        </div>
+        <>
+        
+            <div className="headerBorder"></div>
+            <div className="center">
+                <img className="img" alt="logo" src="/images/ccLogo2.png" height="200" />
+            </div>
+
+           
+
+        </>
     )
 }
 
