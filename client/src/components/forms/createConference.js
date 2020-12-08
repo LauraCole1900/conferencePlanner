@@ -104,7 +104,7 @@ const CreateConference = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Button onClick={handleFormUpdate} type="submit">Update form</Button>
+        {/* <Button onClick={handleFormUpdate} type="submit">Update form</Button> */}
         <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
       </Form>
     )
