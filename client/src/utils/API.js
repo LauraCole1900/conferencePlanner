@@ -60,12 +60,10 @@ const API = {
     return axios.post("/api/session/post", confId)
   },
 
-
   //gets all sessions for a particular conference, called in confDetails
   getSession: function (confId) {
     return axios.get(`/api/session/conference/${confId}`)
   },
-
 };
 
 
