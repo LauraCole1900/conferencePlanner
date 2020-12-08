@@ -43,9 +43,6 @@ function ConfDetails() {
   console.log(conference)
   console.log(sessionArray)
 
-  //   console.log("session array")
-  //   console.log(sessionArray)
-
 
   function addSession() {
   }

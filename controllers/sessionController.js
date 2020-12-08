@@ -18,12 +18,16 @@ module.exports = {
     },
     //need to fix this to query Sessions by email
     findByConfId: function (req, res) {
-        console.log("confID from Controller")
-        console.log(req.params.Id)
+        console.log("confID from Controller", req.params.id)
         db.Session
-            .find({ confId: req.params.Id })
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+            .find({ confId: req.params.id })
+            .then(dbModel => {
+                console.log("Model", dbModel)
+                res.json(dbModel)
+            })
+            .catch(err => {
+                console.log(err)
+                res.status(422).json(err)});
     },
     create: function (req, res) {
         db.Session
