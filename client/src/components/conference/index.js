@@ -93,7 +93,7 @@ function Conference({ conference }) {
 												<div className="pt-5">
 													<Row>
 														<Col lg={12}>
-                                                            {user.email !== e.email && e.registeredUsers.includes(user.email) &&                                           
+                                                            {user.email !== e.email &&                                         
 																<div>
 																	<Button style={{ width: "100%", marginTop: "6.5vh" }} onClick={() => handleRegister(e._id)}>Register</Button>
 																</div>}
