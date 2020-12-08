@@ -52,7 +52,7 @@ class Edit extends Component {
   render() {
     return (
         // isAuthenticated && (
-          <Form>
+          <Form className="confForm">
             <h3 class="panel-title">
               Edit Conference
             </h3>

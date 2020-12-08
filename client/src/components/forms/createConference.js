@@ -60,7 +60,7 @@ const CreateConference = () => {
 
   return (
     isAuthenticated && (
-      <Form>
+      <Form className="confForm">
         <Form.Group controlId="formConferenceName">
           <Form.Label>Name of conference</Form.Label>
           <Form.Control required type="input" name="title" placeholder="Enter name of conference" value={formObject.name} className="confName" onChange={handleInputChange} />
