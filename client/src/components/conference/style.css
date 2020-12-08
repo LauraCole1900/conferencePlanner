@@ -16,8 +16,13 @@
     margin-left: 2vw;
 }
 
+.delete {
+    max-height: 25px;
+    cursor: pointer;
+}
+
   
- #confTypeLive{
+#confTypeLive{
      margin-right: 4px;
     
  }

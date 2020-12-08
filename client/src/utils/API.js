@@ -15,17 +15,21 @@ const API = {
   },
 
   getConferencebyID: function (confId) {
-      console.log("from API")
-      console.log(confId)
+    console.log("from API")
+    console.log(confId)
     return axios.get(`/api/conference/id/${confId}`)
   },
 
-  // update confrence attending field
+  // update conference attending field
   updateRegisteredById: function (id, email) {
-      console.log("from API")
-      console.log(id)
-      console.log(email)
+    console.log("from API")
+    console.log(id)
+    console.log(email)
     return axios.put(`/api/conference/id/${id}`, email)
+  },
+  // delete conference
+  deleteConference: function (id) {
+    return axios.delete(`/api/conference/delete/${id}`)
   },
 
   //save conference to DB
@@ -36,9 +40,9 @@ const API = {
 
   //update Conference by confID
   updateConference: function (id, formObj) {
-      console.log("from api")
-      console.log(id)
-      console.log(formObj)
+    console.log("from api")
+    console.log(id)
+    console.log(formObj)
     return axios.put(`/api/conference/update/id/${id}`, formObj)
   },
 
@@ -53,19 +57,13 @@ const API = {
 
   //saveSession
   saveSession: function (confId) {
-      return axios.post("/api/session/post", confId)
+    return axios.post("/api/session/post", confId)
   },
 
 
-  //getSession called in confDetails
-  getSession: function (Id) {
-      console.log("from Api get Sess")
-      console.log(Id)
-      return axios.get(`api/session/conference/:${Id}`)
-  },
-
-  deleteConference: function (id) {
-      return axios.delete(`/api/conference/delete/${id}`)
+  //gets all sessions for a particular conference, called in confDetails
+  getSession: function (confId) {
+    return axios.get(`api/session/conference/${confId}`)
   },
 
 };

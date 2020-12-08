@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Row, Button, Col } from "react-bootstrap";
@@ -6,7 +6,8 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
-    const { user } = useAuth0();
+		const { user } = useAuth0();
+		const history = useHistory();
 
 
     function handleRegister(confid) {
@@ -19,10 +20,10 @@ function Conference({ conference }) {
 
     }
 
-
-    function handleDelete(id) {
-        API.deleteConference(id);
-
+    function handleDelete(id){
+        API.deleteConference(id).then(
+					history.push("/conference_deleted")
+				)
     }
 
     return (

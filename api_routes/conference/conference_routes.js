@@ -22,7 +22,7 @@ router.route("/id/:confId")
 
 router.route("/id/:id")
     .put(conferenceController.updateRegistered)
-    
+
 router.route("/update/id/:id")
     .put(conferenceController.update)
 

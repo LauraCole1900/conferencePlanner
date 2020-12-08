@@ -14,6 +14,7 @@ import EditConference from "./components/conference/Edit"
 import CreateSession from "./components/forms/createSession";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
+import DeleteSuccess from "./pages/success/deleteSuccess";
 import ConfDetails from "./pages/confDetails";
 import "./App.css";
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/session" component={Session} />
             <Route path="/conference_created" component={ConfSuccess} />
             <Route path="/session_added" component={SessionSuccess} />
+            <Route path="/conference_deleted" component={DeleteSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
             <Route path="/edit/:id" component={EditConference} />
