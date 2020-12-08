@@ -13,6 +13,10 @@ router.route("/post")
 router.route("/:email")
     .get(conferenceController.findByEmail)
 
+router.route("/attending/:email")
+    .get(conferenceController.findAttending)
+
+
 router.route("/id/:confId")
     .get(conferenceController.findById)
 

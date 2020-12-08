@@ -23,16 +23,16 @@ function App() {
   const { isLoading, isAuthenticated } = useAuth0();
   if (isLoading) return <div>Loading...</div>
   return (
-    <div>
+      <div className="Body">
+    <div style={{margin:"2vw"}}>
       <Router>
         <header>
-          <Title />
           <div>
             {isAuthenticated && <Navbar />}
           </div>
         </header>
         <main>
-          <Container fluid className="mycontainer">
+          <div className="container-fluid" style={{width:"80%", paddingBottom:"10vh"}}>
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route path="/session" component={Session} />
@@ -44,9 +44,11 @@ function App() {
             <Route path="/edit/:id" component={EditConference} />
             <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
-          </Container>
+          </div>
         </main>
+        <Title />
       </Router>
+    </div>
     </div>
   );
 };

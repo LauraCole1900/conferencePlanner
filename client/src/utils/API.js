@@ -10,6 +10,10 @@ const API = {
     return axios.get(`/api/conference/${email}`)
   },
 
+  getAttConference: function (email) {
+      return axios.get(`/api/conference/attending/${email}`)
+  },
+
   getConferencebyID: function (confId) {
     console.log("from API")
     console.log(confId)
