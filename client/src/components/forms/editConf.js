@@ -48,7 +48,8 @@ function EditConference() {
 
 	const handleFormUpdate = (e) => {
 		e.preventDefault();
-		API.updateConference({ ...conference, email: user.email })
+		console.log(confId);
+		API.updateConference({...conference}, confId)
 			.then(history.push("/conference_created"))
 			.catch(err => console.log(err));
 	}

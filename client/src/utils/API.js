@@ -39,7 +39,7 @@ const API = {
   },
 
   //update Conference by confID
-  updateConference: function (id, formObj) {
+  updateConference: function (formObj, id) {
     console.log("from api")
     console.log(id)
     console.log(formObj)
