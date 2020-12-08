@@ -53,9 +53,6 @@ function ConfDetails() {
   }
 
 
-
-
-
   return (
     <Container fluid className="mycontainer">
       <Row>
@@ -72,7 +69,16 @@ function ConfDetails() {
                   <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
                   <Button>Search</Button>
                 </Form>
-                <Button type="button" variant="outline-success" onClick={addSession}>Add a session</Button>
+                {/* {user.email === e.email &&
+									<div>
+
+										<Link to={{
+											state: { confInfo: conference },
+											pathname: `/add_session/${e._id}`
+										}}>
+											<Button className="btn">Add session</Button>
+										</Link>
+									</div>} */}
               </Card.Body>
             </Col>
           </Card>
