@@ -72,6 +72,8 @@ module.exports = {
     },
 
     remove: function (req, res) {
+        console.log("from Controller");
+        console.log(req.params);
         db.Conference
             .findById({ _id: req.params.id })
             .then(dbModel => dbModel.remove())

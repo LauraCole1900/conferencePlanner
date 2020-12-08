@@ -9,12 +9,18 @@ const API = {
   getConferencebyUser: function (email) {
     return axios.get(`/api/conference/${email}`)
   },
-  // update confrence attending field
+  // update conference attending field
   updateRegisteredById: function (id, email) {
       console.log("from API")
       console.log(id)
       console.log(email)
     return axios.put(`/api/conference/id/${id}`, email)
+  },
+  // delete conference
+  deleteConference: function(id) {
+    console.log("from API");
+    console.log(id);
+    return axios.delete("/api/conference/delete/:id", id)
   },
 
   //save conference to DB

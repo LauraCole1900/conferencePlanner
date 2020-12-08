@@ -19,16 +19,26 @@ function Conference({ conference }) {
 			// console.log(tempArr)
 			// setUserConfArr(tempArr);
 		})
+	}
 
-
+	function handleDelete(confid) {
+		API.deleteConference(confid)
+		// .then()
+		// .catch(err => console.log(err))
 	}
 
 	return (
 		<Container>
 			{conference.map(e => (
 				<Card col-8 className="conferenceCard">
-					<div key={e.title}>
-						<Card.Header className="card-title"><h2>{e.title}</h2></Card.Header>
+					<div key={e._id}>
+						<Card.Header className="card-title">
+							{user.email === e.email &&
+								<div>
+									<span onClick={() => handleDelete(e._id)}><img src="/images/trash-can.png" alt="Delete" className="delete float-right" /></span>
+								</div>}
+							<h2>{e.title}</h2>
+						</Card.Header>
 						<Card.Body>
 							<Card.Text>
 								<Row className="cardBody">
@@ -55,7 +65,7 @@ function Conference({ conference }) {
 								</div>
 								{user.email !== e.email &&
 									<div>
-										<Button className="btn" onClick={()=>handleRegister(e._id)}>Register</Button>
+										<Button className="btn" onClick={() => handleRegister(e._id)}>Register</Button>
 									</div>}
 								{user.email === e.email &&
 									<div>
@@ -68,7 +78,7 @@ function Conference({ conference }) {
 									</div>}
 								{user.email === e.email &&
 									<div>
-									
+
 										<Link to={{
 											state: { confInfo: conference },
 											pathname: `/add_session/${e._id}`
