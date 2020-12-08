@@ -64,6 +64,13 @@ const API = {
   getSession: function (confId) {
     return axios.get(`/api/session/conference/${confId}`)
   },
+
+  // gets one session by session id
+  getSessionbyID: function (confId) {
+    console.log("from API")
+    console.log(confId)
+    return axios.get(`/api/conference/id/${confId}`)
+  },
 };
 
 
