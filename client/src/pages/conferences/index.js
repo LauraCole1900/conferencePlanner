@@ -30,28 +30,28 @@ function Conferences() {
 
 
 	return (
-		<Container className="mycontainer" style={{width:"50%"}}>
-		
-				
-					<Card.Body>
-						<Form inline className="searchArea">
-                            <Row>
-                            <Col lg={8}>
-							<FormControl style={{width:"100%"}} className="mr-lg-5" type="text" placeholder="Enter Conference Name..." value={search} onChange={(e) => setSearch(e.target.value)} />
-                            </Col>
-                            <Col lg={4}>
-
-							<Button>Search</Button>
-                            </Col>
-                            </Row>
-						</Form>
-					</Card.Body>
-
-					<Row>
-						<Conference conference={searchFilter(conferenceArray)} />
+		<Container className="mycontainer">
+			<Card.Body>
+				<Form inline>
+					<Row style={{width: "100%"}}>
+						<div id="searchArea">
+							<FormControl className="mr-lg-5 search-area" type="text"  value={search} onChange={(e) => setSearch(e.target.value)} />
+							<Button id="search-button">Search</Button>
+						</div>
 					</Row>
-	
-		
+				</Form>
+			</Card.Body>
+
+			<Row>
+				<Col lg={6}>
+					<Conference conference={searchFilter(conferenceArray.slice(0,Math.ceil(conferenceArray.length/2)))} />
+				</Col>
+				<Col lg={6}>
+					<Conference conference={searchFilter(conferenceArray.slice(Math.ceil(conferenceArray.length/2)))} />
+				</Col>
+			</Row>
+
+
 		</Container>
 	);
 }

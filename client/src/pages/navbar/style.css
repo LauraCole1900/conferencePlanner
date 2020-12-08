@@ -33,10 +33,6 @@
   color: #c5c5c5;
 }
 
-.randomDot{
-  visibility: hidden;
-}
-
 .logout{
   padding-left: .7em;
   font-family: 'Roboto', sans-serif;
