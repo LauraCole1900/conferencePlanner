@@ -16,7 +16,7 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    //need to fix this to querry Sessions by email
+    //need to fix this to query Sessions by email
     findByConfId: function (req, res) {
         console.log("confID from Controller")
         console.log(req.params.Id)
