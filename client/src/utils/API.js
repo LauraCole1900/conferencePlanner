@@ -63,7 +63,7 @@ const API = {
 
   //gets all sessions for a particular conference, called in confDetails
   getSession: function (confId) {
-    return axios.get(`api/session/conference/${confId}`)
+    return axios.get(`/api/session/conference/${confId}`)
   },
 
 };

@@ -43,9 +43,6 @@ function ConfDetails() {
   console.log(conference)
   console.log(sessionArray)
 
-  //   console.log("session array")
-  //   console.log(sessionArray)
-
 
   function addSession() {
   }
@@ -54,9 +51,6 @@ function ConfDetails() {
   function searchFilter(data) {
     return data.filter((session) => session.title.toLowerCase().indexOf(search) !== -1)
   }
-
-
-
 
 
   return (
@@ -75,7 +69,16 @@ function ConfDetails() {
                   <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
                   <Button>Search</Button>
                 </Form>
-                <Button type="button" variant="outline-success" onClick={addSession}>Add a session</Button>
+                {/* {user.email === e.email &&
+									<div>
+
+										<Link to={{
+											state: { confInfo: conference },
+											pathname: `/add_session/${e._id}`
+										}}>
+											<Button className="btn">Add session</Button>
+										</Link>
+									</div>} */}
               </Card.Body>
             </Col>
           </Card>

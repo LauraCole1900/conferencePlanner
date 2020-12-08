@@ -6,8 +6,8 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Conference({ conference }) {
-		const { user } = useAuth0();
-		const history = useHistory();
+	const { user } = useAuth0();
+	const history = useHistory();
 
 
     function handleRegister(confid) {
@@ -18,13 +18,13 @@ function Conference({ conference }) {
         })
 
 
-    }
+	}
 
-    function handleDelete(id){
-        API.deleteConference(id).then(
-					history.push("/conference_deleted")
-				)
-    }
+	function handleDelete(id) {
+		API.deleteConference(id).then(
+			history.push("/conference_deleted")
+		)
+	}
 
     return (
         <div>

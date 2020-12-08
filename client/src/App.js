@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
-import Logout from "./components/logout";
 import Navbar from "./pages/navbar";
 import Title from "./pages/title";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./components/session";
 import CreateConference from "./components/forms/createConference";
-import EditConference from "./components/conference/Edit"
+import EditConference from "./components/forms/editConf";
+import EditSession from "./components/forms/editSess";
 import CreateSession from "./components/forms/createSession";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
@@ -41,7 +41,8 @@ function App() {
             <Route path="/conference_deleted" component={DeleteSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
-            <Route path="/edit/:id" component={EditConference} />
+            <Route path="/edit_conference/*" component={EditConference} />
+            <Route path="edit_session/*" component={EditSession} />
             <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </div>

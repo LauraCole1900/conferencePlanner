@@ -1,12 +1,9 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
+import { Container, Card, Button, Image, Row } from "react-bootstrap";
 import "./style.css";
 
-function Session(props) {
+function Session({ session }) {
   const { user } = useAuth0();
 
   function handleSessionEdit() {
@@ -15,24 +12,28 @@ function Session(props) {
   }
 
   return (
-    <Card className="session-card">
-      <Card.Header className="card-title"><h2>{props.name}</h2></Card.Header>
-      <Card.Img src={props.image} alt="{props.name}" />
-      <Card.Body>
-        <Card.Text>
-          <Row>
-            <h3 className="float-left">{props.presenter}</h3>
-            <Image src={props.image} alt="{props.presenter}" thumbnail className="float-right" />
-          </Row>
-          <Row>
-            <p>{props.description}</p>
-          </Row>
-        </Card.Text>
-        <div className="btndiv">
-          <Button className="btn" onClick={handleSessionEdit}>Edit This Session</Button>
-        </div>
-      </Card.Body>
-    </Card>
+    <Container>
+      {session.map(e => (
+        <Card className="session-card">
+          <Card.Header className="card-title"><h2>{e.sessName}</h2></Card.Header>
+          <Card.Img src={e.image} alt={e.name} />
+          <Card.Body>
+            <Card.Text>
+              <Row>
+                <h3 className="float-left">{e.sessPresenter}</h3>
+                <Image src={e.image} alt={e.sessPresenter} thumbnail className="float-right" />
+              </Row>
+              <Row>
+                <p>{e.sessDesc}</p>
+              </Row>
+            </Card.Text>
+            <div className="btndiv">
+              <Button className="btn" onClick={handleSessionEdit}>Edit This Session</Button>
+            </div>
+          </Card.Body>
+        </Card>
+      ))}
+    </Container>
   );
 }
 
