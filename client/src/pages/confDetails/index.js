@@ -16,6 +16,8 @@ function ConfDetails() {
 
   const urlArray = window.location.href.split("/")
   const confId = urlArray[urlArray.length - 1]
+  console.log("Variable check")
+  console.log(confId)
 
 
 
@@ -23,23 +25,23 @@ function ConfDetails() {
     API.getConferencebyID(confId).then(resp => {
       console.log("confbyID")
       console.log(resp.data)
-      const temparr = resp.data
-      setConference(temparr[0])
+      const tempArr = resp.data
+      setConference(tempArr[0])
       return
     })
 
     API.getSession(confId).then(resp => {
       console.log("sessions")
       console.log(resp.data)
-      const temparr = resp.data
-      setSessionArray(temparr)
+      const sessArr = resp.data
+      setSessionArray(sessArr)
       return
     })
   }, [])
 
 
-
   console.log(conference)
+  console.log(sessionArray)
 
   //   console.log("session array")
   //   console.log(sessionArray)
