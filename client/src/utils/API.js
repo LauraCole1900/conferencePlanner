@@ -59,6 +59,8 @@ const API = {
 
   //getSession called in confDetails
   getSession: function (Id) {
+      console.log("from Api get Sess")
+      console.log(Id)
       return axios.get(`api/session/conference/:${Id}`)
   },
 

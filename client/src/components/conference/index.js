@@ -31,10 +31,10 @@ function Conference({ conference }) {
                 <Col>
                     <Row>
 
-                        <div className="backgroudBody m-3 " style={{ width: "100%" }} key={e.title}>
+                        <div className="backgroudBody m-3 " style={{ width: "100%", borderRadius:"15px", }} key={e.title}>
                             <Card.Body  >
 
-                                <Card>
+                                <Card style={{borderRadius:"10px"}}>
                                     <Card.Header>
                                         <Row>
                                             <Col lg={10}>
