@@ -15,40 +15,23 @@ function EditConference() {
 	const confId = urlArray[urlArray.length - 1]
 
 	useEffect(() => {
-		API.updateConference(confId).then(resp => {
+		API.getConferencebyID(confId).then(resp => {
 			console.log("confbyID")
 			console.log(resp.data)
 			const tempArr = resp.data
-			setConference(tempArr)
+			setConference(tempArr[0])
 			setPageReady(true)
-			//return
 		})
 	}, [])
-
-
-	console.log("conference")
-	console.log(conference)
-
 
 	const handleInputChange = (e) => {
 		setConference({ ...conference, [e.target.name]: e.target.value, registeredUsers: [] });
 	};
 
-	// const handleInputChange = (e) => {
-	// 	const state = conference
-	// 	state[e.target.name] = e.target.value;
-	// 	setState({ conference: state });
-	// }
-
-	const onSubmit = (e) => {
-		e.preventDefault();
-
-		// const { EndDate, StartDate, organization, location, confType, title, description, email, attendingCount } = conference;
-	}
-
 	const handleFormUpdate = (e) => {
 		e.preventDefault();
-		API.updateConference({ ...conference, email: user.email })
+		console.log(confId);
+		API.updateConference({...conference}, confId)
 			.then(history.push("/conference_created"))
 			.catch(err => console.log(err));
 	}

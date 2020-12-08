@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Button, Image, Row } from "react-bootstrap";
 import "./style.css";
 
-function Session({ session }) {
+function Session({ session, email }) {
   const { user } = useAuth0();
 
   return (
@@ -23,7 +23,7 @@ function Session({ session }) {
                 <p>{e.sessDesc}</p>
               </Row>
             </Card.Text>
-            {/* {user.email === e.email && */}
+            {user.email === email &&
               <div>
                 <Link to={{
                   state: { sessInfo: session },
@@ -31,7 +31,7 @@ function Session({ session }) {
                 }}>
                   <Button style={{ width: "100%" }}>Edit</Button>
                 </Link>
-              </div>
+              </div>}
           </Card.Body>
         </Card>
       ))}

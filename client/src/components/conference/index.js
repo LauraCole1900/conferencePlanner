@@ -9,15 +9,12 @@ function Conference({ conference }) {
 	const { user } = useAuth0();
 	const history = useHistory();
 
-
 	function handleRegister(confid) {
-		console.log("from componenet")
+		console.log("from component")
 		const email = { email: user.email }
 		API.updateRegisteredById(confid, email).then(() => {
 			alert("Registered")
 		})
-
-
 	}
 
 	function handleDelete(confId) {
@@ -32,7 +29,7 @@ function Conference({ conference }) {
 				<Col>
 					<Row>
 
-						<div className="backgroudBody m-3 " style={{ width: "100%", borderRadius: "15px", }} key={e.title}>
+						<div className="backgroundBody m-3 " style={{ width: "100%", borderRadius: "15px", }} key={e.title}>
 							<Card.Body  >
 
 								<Card style={{ borderRadius: "10px" }}>

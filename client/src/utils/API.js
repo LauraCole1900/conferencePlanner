@@ -39,7 +39,7 @@ const API = {
   },
 
   //update Conference by confID
-  updateConference: function (id, formObj) {
+  updateConference: function (formObj, id) {
     console.log("from api")
     console.log(id)
     console.log(formObj)
@@ -60,12 +60,10 @@ const API = {
     return axios.post("/api/session/post", confId)
   },
 
-
   //gets all sessions for a particular conference, called in confDetails
   getSession: function (confId) {
     return axios.get(`/api/session/conference/${confId}`)
   },
-
 };
 
 

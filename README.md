@@ -39,7 +39,7 @@ improve flow (suggestions)
 
 ## Description
 
-Application description and instructions here
+Welcome to Cool Cats conference planner, your confrence planning home.  This appication is designed to be a hub for all things coference.  Here you can create a conference, keep track of the necnessary details, see available conferences and register.  Gone are the days of important conference details lost in a mess of scrap paper.  
 
 ## Links
 
@@ -68,11 +68,15 @@ Page for a specific conference:
 
 ## Installation Instructions
 
-npm i
+npm i 
 
 ## Usage
 
-This application is intended to be used to facilitate the creation and management of conventions, conferences and seminars.
+This application is intended to be used to facilitate the creation and management of conventions, conferences and seminars. Simply open the application on your desired web browser, login and you are ready to go.  
+
+After logging in the app will take you to the profile page.  Here you can see your basic infomration, a list of the conferences you created and conferences you are attending.  Clicking the plus button will allow you to create a new conference.  The details button allows you to see the the detials for the conference, including sessions and speakers.    
+
+The conference page allows you to search excisting conferences and register for them.  Upon registration the conference will be added to your profile page.  
 
 ## Technologies Used
 
@@ -88,7 +92,7 @@ This app was built by Anna Battista, Laura Cole, Beni Mahat, Travis Messall, Bre
 
 ## Contributing
 
-
+We believe code is never finished, welcome your contributions to enhance the applications functionality. Please adhere to the Code of Conduct for the Contributer Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
 
 ## Questions
 
