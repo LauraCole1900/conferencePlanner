@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const conferenceController = require("../../controllers/conferenceController.js");
-const { Conference } = require("../../models");
+
 
 
 // matches with "/api/conference"
@@ -13,11 +13,17 @@ router.route("/post")
 router.route("/:email")
     .get(conferenceController.findByEmail)
 
+router.route("/id/:confId")
+    .get(conferenceController.findById)
+
 router.route("/id/:id")
     .put(conferenceController.updateRegistered)
     
 router.route("/update/id/:id")
     .put(conferenceController.update)
+
+router.route("/delete/:id")
+    .delete(conferenceController.remove)
 
 
 

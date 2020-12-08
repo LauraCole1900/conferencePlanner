@@ -9,6 +9,13 @@ const API = {
   getConferencebyUser: function (email) {
     return axios.get(`/api/conference/${email}`)
   },
+
+  getConferencebyID: function (confId) {
+      console.log("from API")
+      console.log(confId)
+    return axios.get(`/api/conference/id/${confId}`)
+  },
+
   // update confrence attending field
   updateRegisteredById: function (id, email) {
       console.log("from API")
@@ -43,10 +50,17 @@ const API = {
   //saveSession
   saveSession: function (confId) {
       return axios.post("/api/session/post", confId)
-  }
+  },
 
 
   //getSession called in confDetails
+  getSession: function (Id) {
+      return axios.get(`api/session/conference/:${Id}`)
+  },
+
+  deleteConference: function (id) {
+      return axios.delete(`/api/conference/delete/${id}`)
+  },
 
 };
 
