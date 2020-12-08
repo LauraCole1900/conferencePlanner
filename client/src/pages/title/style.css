@@ -1,4 +1,4 @@
-.subtitle {
+/* .subtitle {
     color: #4A5869;
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -11,8 +11,12 @@
     color: #4A5869;
     text-align: center;
     font-family: 'Playfair Display SC', serif;
-}
+} */
 
 .img{
-    padding-left: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
 }

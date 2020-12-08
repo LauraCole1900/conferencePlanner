@@ -47,9 +47,9 @@ const Navigation = () => {
           </Link>
           </li>
           <li className="nav-item">
-            <span className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
+            <Link className="logout" onClick={() => logout({ returnTo: window.location.origin })}>
               Log Out
-            </span>
+            </Link>
           </li>
         </ul>
       </div>

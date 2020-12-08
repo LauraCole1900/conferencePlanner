@@ -4,15 +4,13 @@ import Container from "react-bootstrap/Container";
 import "./style.css";
 
 
-const Title= () => {
+const Title = () => {
 
-  return (
-    <Jumbotron fluid className="jumbotron">
-  <Container>
-  <img className="img" alt="logo" src="/images/ccLogo2.png" height="200"/> 
-  </Container>
-</Jumbotron>
-  )
+    return (
+        <div className="center">
+            <img className="img" alt="logo" src="/images/ccLogo2.png" height="200" />
+        </div>
+    )
 }
 
 export default Title

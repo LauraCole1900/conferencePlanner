@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import Form from "react-bootstrap/Form";
+import{ Form, Row, Col }from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { useAuth0 } from "@auth0/auth0-react";
 import API from "../../utils/API";
@@ -59,14 +59,31 @@ const CreateConference = () => {
   }
 
   return (
+     
     isAuthenticated && (
+        <div className="container" style={{width:"50%", paddingTop:"10vh"}}>
+      
+
       <Form className="confForm">
+      <Row>
+            <Col>
         <Form.Group controlId="formConferenceName">
           <Form.Label>Name of conference</Form.Label>
           <Form.Control required type="input" name="title" placeholder="Enter name of conference" value={formObject.name} className="confName" onChange={handleInputChange} />
           <Form.Control.Feedback type="invalid">
           </Form.Control.Feedback>
         </Form.Group>
+        </Col>
+        <Col>
+        <Form.Group controlId="formConferenceOrganization">
+          <Form.Label>Conference Organization</Form.Label>
+          <Form.Control required type="input" name="organization" placeholder="Enter your organization" value={formObject.name} className="confOrganization" onChange={handleInputChange} />
+          <Form.Control.Feedback type="invalid">
+          </Form.Control.Feedback>
+        </Form.Group>
+        </Col>
+
+        </Row>
 
         <Form.Group controlId="formConferenceDescription">
           <Form.Label>Conference Description</Form.Label>
@@ -75,12 +92,6 @@ const CreateConference = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group controlId="formConferenceOrganization">
-          <Form.Label>Conference Organization</Form.Label>
-          <Form.Control required type="input" name="organization" placeholder="Enter your organization" value={formObject.name} className="confOrganization" onChange={handleInputChange} />
-          <Form.Control.Feedback type="invalid">
-          </Form.Control.Feedback>
-        </Form.Group>
 
         <Form.Group controlId="formConferenceDate">
           <Form.Label>Starting date of conference</Form.Label>
@@ -107,7 +118,9 @@ const CreateConference = () => {
         {/* <Button onClick={handleFormUpdate} type="submit">Update form</Button> */}
         <Button onClick={handleFormSubmit} type="submit">Submit form</Button>
       </Form>
+      </div>
     )
+  
   )
 }
 

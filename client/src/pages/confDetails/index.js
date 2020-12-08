@@ -31,8 +31,8 @@ function ConfDetails() {
         API.getSession(confId).then(resp => {
             console.log("sessions")
             console.log(resp.data)
-            const temparr = resp.data
-            setSessionArray(temparr)
+            const Sesarr = resp.data
+            setSessionArray(Sesarr)
             return 
         })
     }, [])
