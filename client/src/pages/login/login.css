@@ -1,9 +1,9 @@
 body {
-  background-color:  #94a4b6;
+  background-color:  #d0dce0;
 }
   
 #welcome {
-  color: rgb(74, 111, 153);
+  color: #3a4043;
   padding-top: 30px;
   padding-left: 30px;
   padding-bottom: 15px;
@@ -11,9 +11,9 @@ body {
 }
 
 .loginBtn {
-  box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
+  box-shadow: 0px 10px 14px -7px #75929d;
+	background:linear-gradient(to bottom, #afccd8 5%, #75929d 100%);
+	background-color:#afccd8;
 	border-radius:8px;
 	cursor: pointer;
 	color:  rgb(243, 240, 210);
@@ -29,8 +29,8 @@ body {
 }
   
 .button-hover {
-  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-  background-color: #408c99;
+  background: linear-gradient(to bottom, #afccd8 5%, #86949a 100%);
+  background-color: #afccd8;
 }
 
 
@@ -41,7 +41,7 @@ body {
   height: 200px;
   border-radius: 25px;
   margin: 3vw auto;
-  background-color: lightgray;
+  background-color: #EEF1EC;
   text-align: center;
 }
   

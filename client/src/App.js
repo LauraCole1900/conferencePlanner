@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
 import Navbar from "./pages/navbar";
-import Title from "./pages/title";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./components/session";
@@ -47,7 +46,6 @@ function App() {
             <Route path={["/", "/login"]} component={Login} />
           </div>
         </main>
-        <Title />
       </Router>
     </div>
     </div>
