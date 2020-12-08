@@ -107,7 +107,7 @@ function Conference({ conference }) {
 																<div>
 																	<Link to={{
 																		state: { confInfo: conference },
-																		pathname: `/edit/:id/${e._id}`
+																		pathname: `/edit_conference/${e._id}`
 																	}}>
 																		<Button style={{ width: "100%" }}>Edit</Button>
 																	</Link>
@@ -133,7 +133,7 @@ function Conference({ conference }) {
 																	state: { confInfo: conference },
 																	pathname: `/conferences/${e._id}`
 																}}>
-																	<Button style={{ width: "100%" }} > Details</Button>
+																	<Button style={{ width: "100%" }} >Details</Button>
 																</Link>
 															</div>
 														</Col>
