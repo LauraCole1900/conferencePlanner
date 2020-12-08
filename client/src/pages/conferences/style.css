@@ -1,7 +1,6 @@
 .conferenceCard {
   padding-bottom: 10px;
   border: 2px solid;
-
   background: #e8f3ff;
   margin-bottom: 25px;
   box-shadow: 0 15px 20px 0 rgba(0,0,0,0.2);
@@ -14,7 +13,7 @@
   text-align: right;
 }
 
-.cardBody{
+.cardBody {
   text-align: center;
 }
 

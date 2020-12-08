@@ -23,6 +23,12 @@ const API = {
       console.log(email)
     return axios.put(`/api/conference/id/${id}`, email)
   },
+  // delete conference
+  deleteConference: function(id) {
+    console.log("from API");
+    console.log(id);
+    return axios.delete("/api/conference/delete/:id", id)
+  },
 
   //save conference to DB
   saveConference: function (confData) {
