@@ -88,7 +88,7 @@ const CreateConference = () => {
 
                     <Form.Group controlId="formConferenceDescription">
                         <Form.Label>Conference Description</Form.Label>
-                        <Form.Control required type="input" name="description" placeholder="Enter description of conference" value={formObject.name} className="confDescription" onChange={handleInputChange}/>
+                        <Form.Control required as="textarea" rows={8} type="input" name="description" placeholder="Enter description of conference" value={formObject.name} className="confDescription" onChange={handleInputChange}/>
                         <Form.Control.Feedback type="invalid">
                         </Form.Control.Feedback>
                     </Form.Group>

@@ -31,8 +31,8 @@ function Conference({ conference }) {
                 <Col>
                     <Row>
 
-                        <div className="backgroudBody my-3" style={{ width: "100%" }} key={e.title}>
-                            <Card.Body >
+                        <div className="backgroudBody m-3 " style={{ width: "100%" }} key={e.title}>
+                            <Card.Body  >
 
                                 <Card>
                                     <Card.Header>
@@ -93,7 +93,7 @@ function Conference({ conference }) {
                                                         <Col lg={12}>
                                                             {user.email !== e.email &&
                                                                 <div>
-                                                                    <Button style={{ width: "100%" }} onClick={() => handleRegister(e._id)}>Register</Button>
+                                                                    <Button style={{ width: "100%", marginTop: "6.5vh" }} onClick={() => handleRegister(e._id)}>Register</Button>
                                                                 </div>}
                                                         </Col>
 
@@ -136,15 +136,29 @@ function Conference({ conference }) {
                                                 </div>
                                             </Col>
                                         </Row>
-                                        <div style={{ borderTop: "1px solid #33A5FF", marginTop:"2vh", paddingTop:"1vh"}}>
-                                            <Row>
-                                                <div >
-                                                    <h3 style={{ fontSize: "1vw", fontWeight: "bold",  }}>Location</h3>
-                                                </div>
-                                                <div>
-                                                    <h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}>{e.location}</h3>
-                                                </div>
-                                            </Row>
+                                        <div style={{ borderTop: "1px solid #33A5FF", marginTop: "2vh", paddingTop: "1vh" }}>
+                                            <div className="ml-3">
+                                                <Row>
+                                                    {e.confType === "live" &&
+                                                        <>
+                                                            <div >
+                                                                <h3 style={{ fontSize: "1vw", fontWeight: "bold", }}>Location</h3>
+                                                            </div>
+                                                            <div>
+                                                                <h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} src={`https://www.google.com/maps/search/${e.location.replace(" ","+")}`}>{e.location}</Link></h3>
+                                                            </div>
+                                                        </>}
+                                                    {e.confType === "virtual" &&
+                                                        <>
+                                                            <div >
+                                                                <h3 style={{ fontSize: "1vw", fontWeight: "bold", }}>URL</h3>
+                                                            </div>
+                                                            <div>
+                                                                <h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} to={e.location}>Link</Link> </h3>
+                                                            </div>
+                                                        </>}
+                                                </Row>
+                                            </div>
                                         </div>
                                     </Card.Body>
 
