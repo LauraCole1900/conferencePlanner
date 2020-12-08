@@ -52,7 +52,7 @@ class Edit extends Component {
   render() {
     return (
         // isAuthenticated && (
-          <Form>
+          <Form className="confForm">
             <h3 class="panel-title">
               Edit Conference
             </h3>
@@ -98,8 +98,8 @@ class Edit extends Component {
               <Form.Control.Feedback type="invalid">
               </Form.Control.Feedback>
             </Form.Group>
-            <button type="submit" className="btn btn-default">Submit</button>
-            {/* <Button onClick={this.handleFormUpdate} type="submit">Update form</Button> */}
+            {/* <button type="submit" className="btn btn-default">Submit</button> */}
+            <Button onClick={this.handleFormUpdate} type="submit">Update form</Button>
           </Form>
         )
       
