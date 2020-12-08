@@ -9,15 +9,12 @@ function Conference({ conference }) {
 	const { user } = useAuth0();
 	const history = useHistory();
 
-
 	function handleRegister(confid) {
 		console.log("from component")
 		const email = { email: user.email }
 		API.updateRegisteredById(confid, email).then(() => {
 			alert("Registered")
 		})
-
-
 	}
 
 	function handleDelete(confId) {

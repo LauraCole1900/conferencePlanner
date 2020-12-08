@@ -13,7 +13,7 @@ function ConfDetails() {
   const [conference, setConference] = useState()
   const [sessionArray, setSessionArray] = useState([])
   const [search, setSearch] = useState("")
-
+  const [pageReady, setPageReady] = useState(false)
   const urlArray = window.location.href.split("/")
   const confId = urlArray[urlArray.length - 1]
   console.log("Variable check")
@@ -27,7 +27,8 @@ function ConfDetails() {
       console.log(resp.data)
       const tempArr = resp.data
       setConference(tempArr[0])
-      return
+      setPageReady(true)
+      
     })
 
     API.getSession(confId).then(resp => {
@@ -49,22 +50,24 @@ function ConfDetails() {
 
 
   return (
-    <Container fluid className="mycontainer">
-      <Row>
+    <>
+      { pageReady === true && (
+        <Container fluid className="mycontainer">
+          <Row>
 
-        <div>
-          <div>conference info</div>
-        </div>
+            <div>
+              <div>conference info</div>
+            </div>
 
-        <Col lg={6}>
-          <Card>
-            <Col lg={4}>
-              <Card.Body>
-                <Form inline className="searchArea">
-                  <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
-                  <Button>Search</Button>
-                </Form>
-                {/* {user.email === conference[0].email &&
+            <Col lg={6}>
+              <Card>
+                <Col lg={4}>
+                  <Card.Body>
+                    <Form inline className="searchArea">
+                      <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
+                      <Button>Search</Button>
+                    </Form>
+                    {user.email === conference.email &&
 									<div>
 
 										<Link to={{
@@ -73,22 +76,24 @@ function ConfDetails() {
 										}}>
 											<Button className="btn">Add session</Button>
 										</Link>
-									</div>} */}
-              </Card.Body>
+									</div>}
+                  </Card.Body>
+                </Col>
+              </Card>
             </Col>
-          </Card>
-        </Col>
-        <Col lg={10}>
-          {/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
-          <Container fluid className="mycontainer">
-            <Row>
-              {/* map over session array and pull out sessions with conference id that matches id in url */}
-              <Session session={sessionArray} />
-            </Row>
-          </Container>
-        </Col>
-      </Row>
-    </Container>
+            <Col lg={10}>
+              {/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
+              <Container fluid className="mycontainer">
+                <Row>
+                  {/* map over session array and pull out sessions with conference id that matches id in url */}
+                  <Session session={sessionArray} email={conference.email} />
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      )};
+    </>
   );
 }
 
