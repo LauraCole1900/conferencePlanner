@@ -66,7 +66,7 @@ const Profile = () => {
         {/* my conferences */}
         <div>
           <Row>
-            <Col lg={6} md={12}>
+            <Col lg={6} md={12} className="bigCol">
               <Card style={{ borderRadius: "15px" }} >
                 <Col lg={12}>
                   <Row>
@@ -96,7 +96,7 @@ const Profile = () => {
               </Card>
             </Col>
             {/* attending conference */}
-            <Col lg={6} md={12}>
+            <Col lg={6} md={12} className="bigCol">
               <Card style={{ borderRadius: "15px" }} >
                 <Col lg={12}>
                   <Row>
