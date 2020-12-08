@@ -57,7 +57,7 @@ function ConfDetails() {
           <Row>
 
             <div>
-              <div>conference info</div>
+             <Conference conference={conference}/>
             </div>
 
             <Col lg={6}>
