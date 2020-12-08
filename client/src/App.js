@@ -38,7 +38,7 @@ function App() {
             <Route path="/session" component={Session} />
             <Route path="/conference_created" component={ConfSuccess} />
             <Route path="/session_added" component={SessionSuccess} />
-            <Route path="/conference_deleted" component={DeleteSuccess} />
+            <Route path="/deleted" component={DeleteSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
             <Route path="/add_session/*" component={CreateSession} />

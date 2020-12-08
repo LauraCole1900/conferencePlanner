@@ -78,6 +78,10 @@ const API = {
     console.log(formObj)
     return axios.put(`/api/session/update/id/${id}`, formObj)
   },
+  // delete session
+  deleteSession: function (id) {
+    return axios.delete(`/api/session/delete/${id}`)
+  },
 
 };
 

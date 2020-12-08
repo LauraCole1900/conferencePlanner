@@ -19,7 +19,7 @@ function Conference({ conference }) {
 
 	function handleDelete(confId) {
 		API.deleteConference(confId).then(
-			history.push("/conference_deleted")
+			history.push("/deleted")
 		)
 	}
 
@@ -42,7 +42,7 @@ function Conference({ conference }) {
 												{user.email === e.email &&
 													<Link to={{
 														state: { confInfo: conference },
-														pathname: `/conference_deleted`
+														pathname: `/deleted`
 													}}>
 
 														<Button data-toggle="popover" title="Delete This Conference" onClick={() => handleDelete(e._id)}>
