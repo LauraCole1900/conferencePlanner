@@ -154,7 +154,7 @@ function Conference({ conference }) {
                                                                 <h3 style={{ fontSize: "1vw", fontWeight: "bold", }}>URL</h3>
                                                             </div>
                                                             <div>
-                                                                <h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} to={e.location}>Link</Link> </h3>
+                                                                <h3 style={{ fontSize: "0.7vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} to={e.location}>{e.location}</Link> </h3>
                                                             </div>
                                                         </>}
                                                 </Row>
