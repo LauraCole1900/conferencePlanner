@@ -1,15 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Container, Card, Button, Image, Row } from "react-bootstrap";
 import "./style.css";
 
 function Session({ session }) {
   const { user } = useAuth0();
-
-  function handleSessionEdit() {
-    // takes in user and session ID
-    // Redirect to /add_session and calls PUT route
-  }
 
   return (
     <Container>
@@ -27,9 +23,15 @@ function Session({ session }) {
                 <p>{e.sessDesc}</p>
               </Row>
             </Card.Text>
-            <div className="btndiv">
-              <Button className="btn" onClick={handleSessionEdit}>Edit This Session</Button>
-            </div>
+            {/* {user.email === e.email && */}
+              <div>
+                <Link to={{
+                  state: { sessInfo: session },
+                  pathname: `/edit_session/${e._id}`
+                }}>
+                  <Button style={{ width: "100%" }}>Edit</Button>
+                </Link>
+              </div>
           </Card.Body>
         </Card>
       ))}

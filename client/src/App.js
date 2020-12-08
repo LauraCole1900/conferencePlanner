@@ -42,7 +42,7 @@ function App() {
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
             <Route path="/edit_conference/*" component={EditConference} />
-            <Route path="edit_session/*" component={EditSession} />
+            <Route path="/edit_session/*" component={EditSession} />
             <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </div>

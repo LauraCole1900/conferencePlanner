@@ -43,11 +43,6 @@ function ConfDetails() {
   console.log(conference)
   console.log(sessionArray)
 
-
-  function addSession() {
-  }
-  function handleSessionEdit() {
-  }
   function searchFilter(data) {
     return data.filter((session) => session.title.toLowerCase().indexOf(search) !== -1)
   }
@@ -69,12 +64,12 @@ function ConfDetails() {
                   <FormControl className="mr-sm-2" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
                   <Button>Search</Button>
                 </Form>
-                {/* {user.email === e.email &&
+                {/* {user.email === conference[0].email &&
 									<div>
 
 										<Link to={{
 											state: { confInfo: conference },
-											pathname: `/add_session/${e._id}`
+											pathname: `/add_session/${conference._id}`
 										}}>
 											<Button className="btn">Add session</Button>
 										</Link>
