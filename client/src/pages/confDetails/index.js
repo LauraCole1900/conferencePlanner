@@ -56,15 +56,6 @@ function ConfDetails({ conference }) {
             </Col>
           </Card>
         </Col>
-        {/* <Col lg={6}>
-          <Card col-4>
-            <Card.Body>
-              <Form inline className="newSession">
-                <Link exact to="/add_session"><Button variant="outline-success">Add a Session</Button></Link>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col> */}
         <Col lg={10}>
           {/* Here's where the sessions are generated, make new rows and then in each row make a session, give it props */}
           <Container fluid className="mycontainer">

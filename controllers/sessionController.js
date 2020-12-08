@@ -6,7 +6,7 @@ module.exports = {
   findAll: function(req, res) {
     db.Session
       .find({})
-    //   .sort({ date: -1 })
+    //   .sort({ StartDate: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

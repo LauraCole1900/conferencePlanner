@@ -12,7 +12,7 @@ function Conference({ conference }) {
 	const { user } = useAuth0();
 
 	function handleRegister(confid) {
-		console.log("from componenet")
+		console.log("from component")
 		const email = { email: user.email }
 		API.updateRegisteredById(confid, email).then(resp => {
 			// const tempArr = resp.data
@@ -23,7 +23,7 @@ function Conference({ conference }) {
 
 	function handleDelete(confid) {
 		API.deleteConference(confid)
-		// .then()
+		// .then(resp => {})
 		// .catch(err => console.log(err))
 	}
 
@@ -41,11 +41,8 @@ function Conference({ conference }) {
 						</Card.Header>
 						<Card.Body>
 							<Card.Text>
-								<Row className="cardBody">
-									<h3 className="cardBody">Description</h3>
-								</Row>
 								<Row>
-									<p className="cardBody">{e.description}</p>
+									<h3 className="cardBody">{e.description}</h3>
 								</Row>
 								<Row>
 									<h3 className="cardBody">Location: {e.location}</h3>
