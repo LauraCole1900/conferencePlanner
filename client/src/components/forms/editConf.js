@@ -96,7 +96,7 @@ function EditConference() {
 				<Form.Control.Feedback type="invalid">
 				</Form.Control.Feedback>
 			</Form.Group>
-			{/* <button type="submit" className="btn btn-default">Submit</button> */}
+
 			<Button onClick={handleFormUpdate} type="submit">Update form</Button>
 		</Form>
 	)
