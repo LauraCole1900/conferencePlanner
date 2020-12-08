@@ -96,7 +96,7 @@ function Conference({ conference }) {
 												<div className="pt-5">
 													<Row>
 														<Col lg={12}>
-															{user.email !== e.email &&
+                                                            {user.email !== e.email && e.registeredUsers.includes(user.email) &&                                           
 																<div>
 																	<Button style={{ width: "100%", marginTop: "6.5vh" }} onClick={() => handleRegister(e._id)}>Register</Button>
 																</div>}
@@ -150,7 +150,7 @@ function Conference({ conference }) {
 																<h3 style={{ fontSize: "1vw", fontWeight: "bold", }}>Location</h3>
 															</div>
 															<div>
-																<h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} src={`https://www.google.com/maps/search/${e.location.replace(" ", "+")}`}>{e.location}</Link></h3>
+																<h3 style={{ fontSize: "1vw", paddingLeft: "1vw" }}><a target={"_blank"} href={`https://www.google.com/maps/search/${e.location.replace(" ", "+")}`}>{e.location}</a></h3>
 															</div>
 														</>}
 													{e.confType === "virtual" &&
@@ -159,7 +159,7 @@ function Conference({ conference }) {
 																<h3 style={{ fontSize: "1vw", fontWeight: "bold", }}>URL</h3>
 															</div>
 															<div>
-																<h3 style={{ fontSize: "0.7vw", paddingLeft: "1vw" }}><Link exact target={"_blank"} to={e.location}>{e.location}</Link> </h3>
+																<h3 style={{ fontSize: "0.7vw", paddingLeft: "1vw" }}><a target={"_blank"} href={e.location}>{e.location}</a> </h3>
 															</div>
 														</>}
 												</Row>
