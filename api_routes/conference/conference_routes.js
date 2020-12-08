@@ -20,7 +20,7 @@ router.route("/id/:id")
     .put(conferenceController.updateRegistered)
 
 router.route("/update/id/:id")
-    .put(conferenceController.update)
+    .put(conferenceController.updateForm)
 
 router.route("/delete/:id")
     .delete(conferenceController.remove)
