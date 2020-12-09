@@ -49,12 +49,12 @@ const Profile = () => {
       <div>
         {/* user info */}
         <Col lg={12}>
-          <div style={{ margin: "auto", width: "50%", borderRadius: "15px" }} className="info mt-5">
+          <div style={{ margin: "auto", width: "50%", borderRadius: "15px" }} className="gradient my-3">
             <div style={{ paddingLeft: "6vw" }}>
               <Row>
                 <img className="profilePic" style={{ borderRadius: "50%" }} src={user.picture} alt="profilePic"></img>
                 <div className="pl-3">
-                  <h1>{user.nickname.toUpperCase()}</h1>
+                  <h1 className="play_fair">{user.nickname.toUpperCase()}</h1>
                   <h3 style={{ fontSize: "2vh" }} className="job">{user.email}</h3>
                 </div>
               </Row>
@@ -62,21 +62,20 @@ const Profile = () => {
           </div>
         </Col>
 
-        <div className="headerBorder"></div>
 
 
         {/* my conferences */}
-        <div>
+        <div  >
           <Row>
-            <Col lg={6} md={12} className="bigCol">
-              <Card style={{ borderRadius: "15px" }} >
+            <Col style={{ borderRadius: "15px" }} lg={6} md={12} className="bigCol">
+              <Card  >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header style={{ width: "100%" }}>
+                    <Card.Header className="gradient" style={{ width: "100%" }}>
                       <Row>
 
                         <Col lg={9}>
-                          <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Your Conferences</h1>
+                          <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Your Conferences</h1>
                         </Col>
                         <Col lg={3}>
                           <div className="ml-4">
@@ -102,8 +101,8 @@ const Profile = () => {
               <Card style={{ borderRadius: "15px" }} >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header style={{ width: "100%", }}>
-                      <h1 style={{ textAlign: "center", fontSize: "2vw" }}>Attending</h1>
+                    <Card.Header className="gradient" style={{ width: "100%", }}>
+                      <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Attending</h1>
                     </Card.Header>
                   </Row>
                 </Col>
