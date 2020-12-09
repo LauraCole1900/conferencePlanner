@@ -38,22 +38,41 @@
 }
 
 button {
-  background: linear-gradient(to bottom, #afccd8 5%, #75929d 100%);
-  background-color: #afccd8;
-}
-.gradient1 {
-  background: linear-gradient(to bottom, #afccd8 5%, #75929d 100%);
-  background-color: #afccd8;
+  background: #274046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #274046 40%,
+    #274046 100%
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #274046 40%,
+    #274046 100%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.gradient2 {
-  background: linear-gradient(to top, #afccd8 5%, #75929d 100%);
-  background-color: #afccd8;
+.grad {
+  background: #c9d6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #e2e2e2,
+    #c9d6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #e2e2e2,
+    #c9d6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradientvan {
+  background: #c0c0c0;
 }
 
-.gradient3{
-  background:linear-gradient(to bottom, #c6d3d8 5%, #a3aaad 100%);
-	background-color:#afccd8;
+.gradientnav {
+  background: #d3d3d3;
+}
+.gradientnav3 {
+  background: #d3d3d3;
 }
 
 .play_fair {
