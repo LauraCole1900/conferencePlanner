@@ -10,14 +10,14 @@ const Navigation = () => {
     return (
 
         <>
-            <Navbar className="navbar navbar-expand-lg" style={{ borderRadius: "15px" }} collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className="gradientnav navbar-expand-lg" style={{ borderRadius: "15px" }} collapseOnSelect expand="lg"  variant="dark">
                 <Navbar.Brand className="mylogo ml-3">
                     <Link to="/profile">
                         <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
                         </Link>
                         <div style={{ textAlign: "center", paddingLeft: "1vw" }}>
-                            <div>COOL CATS</div>
-                            <div style={{ fontSize: "0.7vw", fontWeight: "bold" }}>Conference Planner</div>
+                            <div className="play_fair">COOL CATS</div>
+                            <div className="play_fair"style={{ fontSize: "0.7vw", fontWeight: "bold" }}>Conference Planner</div>
                         </div>
 
                 </Navbar.Brand>
@@ -30,18 +30,18 @@ const Navigation = () => {
                                     Conferences</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                                <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
+                                <Link  to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
                                     Profile </Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link>
-                            <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
+                        <div className="roboto">
+                            <Link style={{ fontWeight: "bold" }} to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
                                 Conferences</Link>
-                        </Nav.Link>
+                        </div>
                         <Nav.Link eventKey={2}>
-                            <Link to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
+                            <Link style={{ fontWeight: "bold" }} className="roboto" to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
                                 My Profile</Link>
                         </Nav.Link>
                         <Nav.Item className="mt-2">
