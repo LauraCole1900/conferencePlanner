@@ -16,7 +16,8 @@ function Conferences() {
 	useEffect(() => {
 		API.getConference().then(resp => {
 			const conferenceArr = resp.data
-			return setConferenceArray(conferenceArr)
+			const sortedConfs = conferenceArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
+			return setConferenceArray(sortedConfs)
 		})
 	}, [])
 
