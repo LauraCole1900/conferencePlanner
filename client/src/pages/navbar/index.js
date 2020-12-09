@@ -36,12 +36,12 @@ const Navigation = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <div className="roboto">
-                            <Link style={{ fontWeight: "bold" }} to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
+                        <Nav.Link className="roboto">
+                            <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
                                 Conferences</Link>
-                        </div>
+                        </Nav.Link>
                         <Nav.Link eventKey={2}>
-                            <Link style={{ fontWeight: "bold" }} className="roboto" to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
+                            <Link className="roboto" to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
                                 My Profile</Link>
                         </Nav.Link>
                         <Nav.Item className="mt-2">
