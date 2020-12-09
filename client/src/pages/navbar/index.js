@@ -37,11 +37,11 @@ const Navigation = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link className="roboto">
-                            <Link to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
+                            <Link style={{fontWeight:"bold", color:"#120321"}} to="/conferences" className={location.pathname === "/conferences" ? "navlink active" : "navlink"}>
                                 Conferences</Link>
                         </Nav.Link>
                         <Nav.Link eventKey={2}>
-                            <Link className="roboto" to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
+                            <Link style={{fontWeight:"bold", color:"#120321"}} to="/profile" className={location.pathname === "/profile" ? "navlink active" : "navlink"}>
                                 My Profile</Link>
                         </Nav.Link>
                         <Nav.Item className="mt-2">
