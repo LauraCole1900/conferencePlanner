@@ -32,7 +32,7 @@ function App() {
           </div>
         </header>
         <main>
-          <div className="container-fluid" style={{marginLeft:"auto", marginRight:"auto"}}>
+          <div className="container-fluid" style={{width:"75%"}}>
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/conferences" component={Conference} />
             <Route path="/session" component={Session} />
