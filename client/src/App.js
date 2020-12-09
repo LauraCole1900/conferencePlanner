@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
 import Navbar from "./pages/navbar";
 import Profile from "./pages/profile";
 import Conference from "./pages/conferences";
 import Session from "./components/session";
+import CreateSession from "./components/forms/createSession";
+import EditSession from "./components/forms/editSess";
 import CreateConference from "./components/forms/createConference";
 import EditConference from "./components/forms/editConf";
-import EditSession from "./components/forms/editSess";
-import CreateSession from "./components/forms/createSession";
+import ConfUpdated from "./pages/success/confUpdated";
+import SessionUpdated from "./pages/success/sessionUpdated";
 import ConfSuccess from "./pages/success/confSuccess";
 import SessionSuccess from "./pages/success/sessionSuccess";
 import DeleteSuccess from "./pages/success/deleteSuccess";
@@ -37,12 +38,14 @@ function App() {
             <Route path="/session" component={Session} />
             <Route path="/conference_created" component={ConfSuccess} />
             <Route path="/session_added" component={SessionSuccess} />
-            <Route path="/conference_deleted" component={DeleteSuccess} />
+            <Route path="/deleted" component={DeleteSuccess} />
             <Route path="/conferences/*" component={ConfDetails} />
             <Route path="/create_conference" component={CreateConference} />
+            <Route path="/add_session/*" component={CreateSession} />
+            <Route path="/conference_updated" component={ConfUpdated} />
+            <Route path="/session_updated" component={SessionUpdated} />
             <Route path="/edit_conference/*" component={EditConference} />
             <Route path="/edit_session/*" component={EditSession} />
-            <Route path="/add_session/*" component={CreateSession} />
             <Route path={["/", "/login"]} component={Login} />
           </div>
         </main>

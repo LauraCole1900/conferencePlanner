@@ -11,7 +11,7 @@ const API = {
   },
 
   getAttConference: function (email) {
-      return axios.get(`/api/conference/attending/${email}`)
+    return axios.get(`/api/conference/attending/${email}`)
   },
 
   getConferencebyID: function (confId) {
@@ -64,6 +64,25 @@ const API = {
   getSession: function (confId) {
     return axios.get(`/api/session/conference/${confId}`)
   },
+
+  // gets one session by session id
+  getSessionbyID: function (sessId) {
+    console.log("session ID from API", sessId)
+    return axios.get(`/api/session/id/${sessId}`)
+  },
+
+  //update Session by sessID
+  updateSession: function (formObj, id) {
+    console.log("from api")
+    console.log(id)
+    console.log(formObj)
+    return axios.put(`/api/session/update/id/${id}`, formObj)
+  },
+  // delete session
+  deleteSession: function (id) {
+    return axios.delete(`/api/session/delete/${id}`)
+  },
+
 };
 
 

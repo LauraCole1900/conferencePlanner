@@ -33,7 +33,7 @@ function EditConference() {
 		e.preventDefault();
 		console.log(confId);
 		API.updateConference({...conference}, confId)
-			.then(history.push("/conference_created"))
+			.then(history.push("/conference_updated"))
 			.catch(err => console.log(err));
 	}
 
