@@ -24,13 +24,15 @@ const Profile = () => {
     API.getConferencebyUser(user.email).then(resp => {
       const tempArr = resp.data
       console.log(tempArr)
-      setUserConfArr(tempArr);
+      const sortedArr = tempArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
+      setUserConfArr(sortedArr);
     })
 
     API.getAttConference(user.email).then(resp => {
       const attArr = resp.data
       console.log(attArr)
-      setAttConfArr(attArr)
+      const sortedAtt = attArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
+      setAttConfArr(sortedAtt);
     })
 
 
