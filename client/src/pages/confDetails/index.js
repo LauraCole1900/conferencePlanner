@@ -69,7 +69,7 @@ function ConfDetails() {
                             <Card style={{border:"5px solid #274046", borderRadius: "15px", marginTop: "4.5vh" }} >
                                 <Col lg={12}>
                                     <Row>
-                                        <Card.Header className="gradient" style={{ width: "100%", }}>
+                                        <Card.Header className="gradient" style={{ width: "100%", borderBottom:"solid 3px #274046" }}>
                                             <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Conference</h1>
                                         </Card.Header>
                                     </Row>
@@ -84,7 +84,7 @@ function ConfDetails() {
                             <Card style={{border:"5px solid #274046", borderRadius: "15px", marginTop: "4.5vh" }} >
                                 <Col lg={12}>
                                     <Row>
-                                        <Card.Header className="gradient" style={{ width: "100%", }}>
+                                        <Card.Header className="gradient" style={{ width: "100%", borderBottom:"solid 3px #274046" }}>
                                             <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Sessions</h1>
                                         </Card.Header>
                                     </Row>

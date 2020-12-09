@@ -52,16 +52,19 @@ background: linear-gradient(to left, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Fi
 
 }
 .gradientvan {
-   background:  #274046
+   background:  #C0C0C0
 }
 
 
 .gradientnav {
 
    
-    background:  #E6DADA
+    background:  #D3D3D3
     
     
+}
+.gradientnav3 {
+    background: #D3D3D3
 }
 
 .play_fair{

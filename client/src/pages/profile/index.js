@@ -77,7 +77,7 @@ const Profile = () => {
                             <Card  style={{ borderRadius: "15px", border: "5px solid #274046"  }}  >
                                 <Col lg={12}>
                                     <Row>
-                                        <Card.Header   className="gradient" style={{ width: "100%" }}>
+                                        <Card.Header style={{ width: "100%", borderBottom:"solid 3px #274046" }}>
                                             <Row>
 
                                                 <Col lg={9}>
@@ -107,7 +107,7 @@ const Profile = () => {
                             <Card style={{ borderRadius: "15px", border: "5px solid #274046"  }} >
                                 <Col lg={12}>
                                     <Row>
-                                        <Card.Header className="gradient" style={{ width: "100%", }}>
+                                        <Card.Header className="gradient" style={{ width: "100%", borderBottom:"solid 3px #274046" }}>
                                             <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Attending</h1>
                                         </Card.Header>
                                     </Row>

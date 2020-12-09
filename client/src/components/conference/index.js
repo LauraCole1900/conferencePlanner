@@ -32,7 +32,7 @@ function Conference({ conference }) {
                         <div className="backgroundBody gradientvan" style={{ width: "100%" }} key={e.title}>
                             <Card.Body className="gradient">
 
-                                <Card className="gradient2" style={{ borderRadius: "10px" }}>
+                                <Card className="gradient2" style={{ borderRadius: "10px", border:"solid 3px #274046" }}>
                                     <Card.Header>
                                         <Row>
                                             <Col lg={10} md={10} sm={10}>
@@ -59,7 +59,7 @@ function Conference({ conference }) {
 
 
 
-                                    <Card.Body style={{borderTop: "5px solid #274046" }} className="gradientnav">
+                                    <Card.Body style={{borderTop: "3px solid #274046" }} className="gradientnav3">
                                         <Row>
                                             <Col lg={8}>
                                                 <div className="roboto" style={{ fontSize: "1vw"}}>{e.description}</div>
@@ -160,16 +160,16 @@ function Conference({ conference }) {
                                                 </div>
                                             </Col>
                                         </Row>
-                                        <div style={{ borderTop: " 5px solid #274046", marginTop: "2vh", paddingTop: "1vh" }}>
+                                        <div style={{ borderTop: " 2px solid #A9A9A9", marginTop: "2vh", paddingTop: "1vh" }}>
                                             <div className="ml-3">
                                                 <Row>
                                                     {e.confType === "live" &&
                                                         <>
                                                             <div >
-                                                                <h3 className="roboto" style={{ fontSize: "1vw", fontWeight: "bold", }}>Location</h3>
+                                                                <h3 className="roboto" style={{ fontSize: "1vw", fontWeight: "bold", color: "black" }}>Location</h3>
                                                             </div>
                                                             <div>
-                                                                <h3 className="roboto" style={{ fontSize: "1vw", paddingLeft: "1vw" }}><a target={"_blank"} href={`https://www.google.com/maps/search/${e.location.replace(" ", "+")}`}>{e.location}</a></h3>
+                                                                <h3 className="roboto" style={{ fontSize: "1vw", paddingLeft: "1vw", color: "#A9A9A9" }}><a target={"_blank"} href={`https://www.google.com/maps/search/${e.location.replace(" ", "+")}`}>{e.location}</a></h3>
                                                             </div>
                                                         </>}
                                                     {e.confType === "virtual" &&

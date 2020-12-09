@@ -24,7 +24,7 @@ function Session({ session, email }) {
                         <Row>
                             <div className="backgroundBody gradient" style={{ width: "100%", borderRadius: "15px", }} key={e.sessName}>
                                 <Card.Body className="gradientvan" >
-                                    <Card style={{ borderRadius: "10px" }}>
+                                    <Card style={{ borderRadius: "10px", border:"3px solid black" }}>
                                         <Card.Header className="gradient2">
                                             <Row>
                                                 <Col lg={10}>
