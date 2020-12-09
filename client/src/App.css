@@ -39,25 +39,32 @@
 }
 
 button {
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom,#86949A 40%, #86949A 100%);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom,#86949A 40%, #86949A 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #274046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom,#274046 40%, #274046 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#274046 40%, #274046 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.gradient {
-   
-    background:  #afccdb
+
+.grad {
+    background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.gradientvan {
+   background:  #C0C0C0
 }
 
-.gradient2 {
-    background:  #CFDEF3
-}
 
 .gradientnav {
-    background: #D0DCE0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #AFCCD8 40%, #75929D 100%);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom,#AFCCD8 40%, #75929D 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
+
+   
+    background:  #D3D3D3
+    
+    
+}
+.gradientnav3 {
+    background: #D3D3D3
 }
 
 .play_fair{

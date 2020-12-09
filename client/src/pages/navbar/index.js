@@ -10,7 +10,7 @@ const Navigation = () => {
     return (
 
         <>
-            <Navbar className="gradientnav navbar-expand-lg" style={{ borderRadius: "15px" }} collapseOnSelect expand="lg"  variant="dark">
+            <Navbar className="gradientnav navbar-expand-lg" style={{ borderRadius: "15px", border: "5px solid #274046"  }} collapseOnSelect expand="lg"  variant="dark">
                 <Navbar.Brand className="mylogo ml-3">
                     <Link to="/profile">
                         <div><img alt="logo" src="/images/ccLogo.png" height="60" /></div>
