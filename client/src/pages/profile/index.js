@@ -58,7 +58,7 @@ const Profile = () => {
                                 </Col>
                                 <Col lg={8}>
                                 <div style={{margin:"auto", paddingLeft:"1vw"}}>
-                                    <h1 style={{fontSize:"2vw"}} className="play_fair">{user.nickname.toUpperCase()}</h1>
+                                    <h1 style={{fontSize:"2vw"}} className="play_fair">{user.name.toUpperCase()}</h1>
                                     <h3 style={{ fontSize: "1vw" }} className="job">{user.email}</h3>
                                 </div>
                                 </Col>
