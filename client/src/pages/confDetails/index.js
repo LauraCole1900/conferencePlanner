@@ -37,7 +37,7 @@ function ConfDetails() {
       console.log(resp.data)
       const sessArr = resp.data
       const sortedSess = sessArr.sort((a, b) => (a.startTime > b.startTime) ? 1 : -1);
-      setSessionArray(sessArr)
+      setSessionArray(sortedSess)
       return
     })
   }, [])
