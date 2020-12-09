@@ -31,13 +31,12 @@ function Conferences() {
 
 
 	return (
-		<Container className="mycontainer">
+		<>
 			<Card.Body>
 				<Form inline>
 					<Row style={{width: "100%"}}>
 						<div id="searchArea">
-							<FormControl className="mr-lg-5 search-area" type="text"  value={search} onChange={(e) => setSearch(e.target.value)} />
-							<Button id="search-button">Search</Button>
+							<FormControl style={{width:"50%", marginLeft:"10%"}} className="mr-lg-5 search-area" type="text"  placeholder="Search for Conference" value={search} onChange={(e) => setSearch(e.target.value)} />
 						</div>
 					</Row>
 				</Form>
@@ -53,7 +52,7 @@ function Conferences() {
 			</Row>
 
 
-		</Container>
+		</>
 	);
 }
 
