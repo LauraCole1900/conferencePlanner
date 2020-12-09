@@ -35,8 +35,8 @@ function ConfDetails() {
         API.getSession(confId).then(resp => {
             console.log("sessions")
             console.log(resp.data)
-            const sessArr = resp.data
-            setSessionArray(sessArr)
+            const sortedSess = sessArr.sort((a, b) => (a.startTime > b.startTime) ? 1 : -1);
+            setSessionArray(sortedSess)
             return
         })
     }, [])
