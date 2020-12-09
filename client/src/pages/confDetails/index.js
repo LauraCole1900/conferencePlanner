@@ -46,9 +46,9 @@ function ConfDetails() {
   console.log(conference)
   console.log(sessionArray)
 
-  const confArry = [];
-  confArry.push(conference)
-  console.log(confArry)
+  const confArray = [];
+  confArray.push(conference)
+  console.log(confArray)
 
 
 
@@ -61,30 +61,30 @@ function ConfDetails() {
     <>
       { pageReady === true && (
         <div className="mt-4">
-          <Form className="gradient" style={{ width: "50%", margin: "auto" }}>
+          <Form style={{ width: "50%", margin: "auto" }}>
             <FormControl type="text" placeholder="Enter Session Name..." value={search} onChange={(e) => setSearch(e.target.value)} />
           </Form>
           <Row>
             <Col lg={6} md={12}>
-              <Card style={{ borderRadius: "15px", marginTop: "4.5vh" }} >
+              <Card style={{ borderRadius: "15px", marginTop: "4.5vh" }} className="gradient3" >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header className="gradient" style={{ width: "100%", }}>
+                    <Card.Header className="gradient2" style={{ width: "100%", }}>
                       <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Conference</h1>
                     </Card.Header>
                   </Row>
                 </Col>
-                <Conference conference={confArry} />
+                <Conference conference={confArray} />
               </Card>
 
 
 
             </Col>
             <Col lg={6} md={12}>
-              <Card style={{ borderRadius: "15px", marginTop: "4.5vh" }} >
+              <Card style={{ borderRadius: "15px", marginTop: "4.5vh" }} className="gradient3" >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header className="gradient" style={{ width: "100%", }}>
+                    <Card.Header className="gradient2" style={{ width: "100%", }}>
                       <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Sessions</h1>
                     </Card.Header>
                   </Row>

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 .App-logo {
@@ -39,32 +38,29 @@
 }
 
 button {
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom,#86949A 40%, #86949A 100%);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom,#86949A 40%, #86949A 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(to bottom, #afccd8 5%, #75929d 100%);
+  background-color: #afccd8;
 }
-.gradient {
-   
-    background:  #afccdb
+.gradient1 {
+  background: linear-gradient(to bottom, #afccd8 5%, #75929d 100%);
+  background-color: #afccd8;
 }
 
 .gradient2 {
-    background:  #CFDEF3
+  background: linear-gradient(to top, #afccd8 5%, #75929d 100%);
+  background-color: #afccd8;
 }
 
-.gradientnav {
-    background: #D0DCE0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #AFCCD8 40%, #75929D 100%);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom,#AFCCD8 40%, #75929D 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;
+.gradient3{
+  background:linear-gradient(to bottom, #c6d3d8 5%, #a3aaad 100%);
+	background-color:#afccd8;
 }
 
-.play_fair{
-    font-family: 'Playfair Display SC', serif;  
-    color: #120321
+.play_fair {
+  font-family: "Playfair Display SC", serif;
+  color: #120321;
 }
-.roboto{
-    font-family: 'Roboto', sans-serif;
-    color: #120321
+.roboto {
+  font-family: "Roboto", sans-serif;
+  color: #120321;
 }

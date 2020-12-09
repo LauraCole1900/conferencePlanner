@@ -49,12 +49,12 @@ const Profile = () => {
       <div>
         {/* user info */}
         <Col lg={12}>
-          <div style={{ margin: "auto", borderRadius: "15px", paddingTop: "2vh" }} className="gradient my-3 mt-5">
+          <div style={{ margin: "auto", borderRadius: "15px", paddingTop: "2vh" }} className="gradient1 my-3 mt-5">
             <div style={{ paddingLeft: "35vw" }}>
               <Row>
                 <img className="profilePic" style={{ borderRadius: "50%", marginBottom: "1vw" }} src={user.picture} alt="profilePic"></img>
                 <div style={{ marginTop: "1vw", paddingLeft: "1vw" }}>
-                  <h1 style={{ fontSize: "2vw" }} className="play_fair">{user.nickname.toUpperCase()}</h1>
+                  <h1 style={{ fontSize: "2vw" }} className="play_fair">{user.name.toUpperCase()}</h1>
                   <h3 style={{ fontSize: "1vw" }} className="job">{user.email}</h3>
                 </div>
               </Row>
@@ -68,10 +68,10 @@ const Profile = () => {
         <div  >
           <Row>
             <Col lg={6} md={12} className="bigCol">
-              <Card   >
+              <Card className="gradient3"  >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header className="gradient" style={{ width: "100%" }}>
+                    <Card.Header className="gradient2" style={{ width: "100%" }}>
                       <Row>
 
                         <Col lg={9}>
@@ -98,10 +98,10 @@ const Profile = () => {
             </Col>
             {/* attending conference */}
             <Col lg={6} md={12} className="bigCol">
-              <Card style={{ borderRadius: "15px" }} >
+              <Card style={{ borderRadius: "15px" }} className="gradient3" >
                 <Col lg={12}>
                   <Row>
-                    <Card.Header className="gradient" style={{ width: "100%", }}>
+                    <Card.Header className="gradient2" style={{ width: "100%", }}>
                       <h1 className="play_fair" style={{ textAlign: "center", fontSize: "2vw" }}>Attending</h1>
                     </Card.Header>
                   </Row>
