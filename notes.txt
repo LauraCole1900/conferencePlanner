@@ -47,6 +47,7 @@ Presenter:
   * Ability to POST and UPDATE supplemental materials for own presentation
   * Ability to GET schedule
   * Ability to link to website
+  * Ability to insert video or slideshow content
 
 Organizer:
   * Attendee access PLUS:
@@ -162,3 +163,20 @@ Components
 * Create schedule
   * Times
   * Sessions
+
+
+Allow those that create a conference to insert video content
+Create a registration page where you can see everyone who signed up
+Create a digital registration packet for conference attendees
+Working links to take them to where virtual conference is being held
+Maps for conference location layout
+Comment section where users can ask questions
+Ability to export and share conference information
+Ability to create a session schedule in table format for ease of viewing
+Ability to link to conference creator’s payment-processor of choice for ease of collecting registration fees
+Multiple permission levels, so presenters and exhibitors can post additional information, links, etc.
+Ability to search presenters and exhibitors
+Ability to translate content and render it in different font sizes
+Ability to cap number of attendees
+Registration form
+An “un-register” feature
