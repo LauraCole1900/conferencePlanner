@@ -32,7 +32,7 @@ function EditConference() {
 	const handleFormUpdate = (e) => {
 		e.preventDefault();
 		console.log(confId);
-		API.updateConference({...conference}, confId)
+		API.updateConference({ ...conference }, confId)
 			.then(history.push("/conference_updated"))
 			.catch(err => console.log(err));
 	}
@@ -40,79 +40,79 @@ function EditConference() {
 
 	return (
 		<>
-		
+
 			{ pageReady === true && (
 				// isAuthenticated && (
-					<div className="container" style={{ width: "50%", paddingTop: "10vh" }}>		
-				<Form className="confForm">
-					
-					<h3 className="panel-title">
-						Edit Conference</h3>
-					<Row>
-						<Col>			
-					<Form.Group controlId="formConferenceName">
-						<Form.Label>Name of conference</Form.Label>
-						<Form.Control required type="input" name="title" value={conference.title} className="confName" onChange={handleInputChange} />
-						<Form.Control.Feedback type="invalid">
-						</Form.Control.Feedback>
-					</Form.Group>
-					    </Col>
+				<div className="container" style={{ width: "50%", paddingTop: "10vh" }}>
+					<Form className="confForm">
 
-				    <Col>
-					<Form.Group controlId="formConferenceDescription">
-						<Form.Label>Conference Description</Form.Label>
-						<Form.Control required type="input" name="description" placeholder="Enter description of conference" value={conference.description} className="confDescription" onChange={handleInputChange} />
-						<Form.Control.Feedback type="invalid">
-						</Form.Control.Feedback>
-					</Form.Group>
-					</Col>
-
-                  </Row>
-					<Form.Group controlId="formConferenceOrganization">
-						<Form.Label>Conference Organization</Form.Label>
-						<Form.Control required as="textarea" rows={8} type="input" placeholder="Enter your organization" value={conference.organization} className="confOrganization" onChange={handleInputChange} />
-						<Form.Control.Feedback type="invalid">
-						</Form.Control.Feedback>
-					</Form.Group>
-
-					<Form.Group controlId="formConferenceDate">
-					<Row>
-							<Col>
-						<Form.Label>Starting date of conference</Form.Label>
-						<Form.Control required type="date" name="StartDate" placeholder="Enter conference dates" value={conference.StartDate} className="confStartDates" onChange={handleInputChange} />
-						</Col>
-							
-						<Col>
-						<Form.Label>Ending date of conference</Form.Label>
-						<Form.Control required type="date" name="EndDate" placeholder="Enter conference dates" value={conference.EndDate} className="confEndDates" onChange={handleInputChange} />
-						</Col>
-
-						<Form.Control.Feedback type="invalid">
-						</Form.Control.Feedback>
-						</Row>
-					</Form.Group>
-
-					<Form.Group controlId="radioButtons">
-						<Form.Label>Live or virtual?</Form.Label>
+						<h3 className="panel-title">
+							Edit Conference</h3>
 						<Row>
-						<Col lg={3}>
-						<Form.Check type="radio" id="confTypeLive" name="confType" label="Live" value="live" onChange={handleInputChange} />
-						</Col>
-						<Col lg={3}>
-						<Form.Check type="radio" id="confTypeVirtual" name="confType" label="Virtual" value="virtual" onChange={handleInputChange} />
-						</Col>
+							<Col>
+								<Form.Group controlId="formConferenceName">
+									<Form.Label>Name of conference</Form.Label>
+									<Form.Control required type="input" name="title" value={conference.title} className="confName" onChange={handleInputChange} />
+									<Form.Control.Feedback type="invalid">
+									</Form.Control.Feedback>
+								</Form.Group>
+							</Col>
+
+							<Col>
+								<Form.Group controlId="formConferenceOrganization">
+									<Form.Label>Conference Organization</Form.Label>
+									<Form.Control required type="input" name="organization" placeholder="Enter description of conference" value={conference.organization} className="confOrganization" onChange={handleInputChange} />
+									<Form.Control.Feedback type="invalid">
+									</Form.Control.Feedback>
+								</Form.Group>
+							</Col>
+
 						</Row>
-					</Form.Group>
+						<Form.Group controlId="formConferenceDescription">
+							<Form.Label>Conference Description</Form.Label>
+							<Form.Control required as="textarea" rows={8} type="input" name="description" placeholder="Enter your organization" value={conference.description} className="confDescription" onChange={handleInputChange} />
+							<Form.Control.Feedback type="invalid">
+							</Form.Control.Feedback>
+						</Form.Group>
 
-					<Form.Group controlId="formConferenceLocation">
-						<Form.Label>Conference Location</Form.Label>
-						<Form.Control required type="input" name="location" placeholder="Enter Address or URL" value={conference.location} className="confLocation" onChange={handleInputChange} />
-						<Form.Control.Feedback type="invalid">
-						</Form.Control.Feedback>
-					</Form.Group>
+						<Form.Group controlId="formConferenceDate">
+							<Row>
+								<Col>
+									<Form.Label>Starting date of conference</Form.Label>
+									<Form.Control required type="date" name="StartDate" placeholder="Enter conference dates" value={conference.StartDate} className="confStartDates" onChange={handleInputChange} />
+								</Col>
 
-					<Button onClick={handleFormUpdate} type="submit">Update form</Button>
-				</Form>
+								<Col>
+									<Form.Label>Ending date of conference</Form.Label>
+									<Form.Control required type="date" name="EndDate" placeholder="Enter conference dates" value={conference.EndDate} className="confEndDates" onChange={handleInputChange} />
+								</Col>
+
+								<Form.Control.Feedback type="invalid">
+								</Form.Control.Feedback>
+							</Row>
+						</Form.Group>
+
+						<Form.Group controlId="radioButtons">
+							<Form.Label>Live or virtual?</Form.Label>
+							<Row>
+								<Col lg={3}>
+									<Form.Check type="radio" id="confTypeLive" name="confType" label="Live" value="live" onChange={handleInputChange} />
+								</Col>
+								<Col lg={3}>
+									<Form.Check type="radio" id="confTypeVirtual" name="confType" label="Virtual" value="virtual" onChange={handleInputChange} />
+								</Col>
+							</Row>
+						</Form.Group>
+
+						<Form.Group controlId="formConferenceLocation">
+							<Form.Label>Conference Location</Form.Label>
+							<Form.Control required type="input" name="location" placeholder="Enter Address or URL" value={conference.location} className="confLocation" onChange={handleInputChange} />
+							<Form.Control.Feedback type="invalid">
+							</Form.Control.Feedback>
+						</Form.Group>
+
+						<Button onClick={handleFormUpdate} type="submit">Update form</Button>
+					</Form>
 				</div>
 			)}
 		</>
